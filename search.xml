@@ -33,8 +33,10 @@ https://zhuanlan.zhihu.com/p/71544809</p>
 command</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
 <h2 id="attention">Attention!</h2>
-<p>注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo
-4.2.1应该使用node 12.18.3</p>
+<p>注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题（例如<a
+href="https://evestorm.github.io/posts/430/">ERR_INVALID_ARG_TYPE</a>）。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo
+4.2.1应该使用node
+12.18.3，这样可以快速修复或者继续使用之前的hexo项目。</p>
 <p>降低版本方法参考：https://blog.csdn.net/weixin_46316234/article/details/121475363</p>
 <ol type="1">
 <li><p>安装node版本管理模块 n</p>

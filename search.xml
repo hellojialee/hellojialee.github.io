@@ -10,7 +10,7 @@ any problems when using Hexo, you can find the answer in <a
 href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
 you can ask me on <a
 href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<p>注意⚠️：需要在博客项目文件夹路径下执行hexo命令！</p>
+<p>注意⚠️：需要在博客项目文件夹路径下执行hexo命令！命令行export代理后，部署到github更快</p>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="create-a-new-post">Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
@@ -125,7 +125,7 @@ Valine，而博客文章下面就有了留言板。</p>
 <h3 id="side-bar添加访问者ip地区地图">Side bar添加访问者ip地区地图</h3>
 <p>使用clustrmaps，选择插件风格，拷贝网站出现的脚本 javascript代码</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">'text/javascript'</span> id=<span class="string">'clustrmaps'</span> src=<span class="string">'//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=a&amp;t=n&amp;d=QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY'</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件<code>/***lee.github.io/themes/next/layout/_macro/sidebar.swig</code>粘贴代码，插入如下：</p>
+<p>粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件<code>/***jlee.github.io/themes/next/layout/_macro/sidebar.swig</code>粘贴代码，插入如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;aside class&#x3D;&quot;sidebar&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;sidebar-inner&quot;&gt;</span><br><span class="line"></span><br><span class="line">      &#123;%- set display_toc &#x3D; page.toc.enable and display_toc %&#125;</span><br><span class="line">      &#123;%- if display_toc %&#125;</span><br><span class="line">        &#123;%- set toc &#x3D; toc(page.content, &#123; &quot;class&quot;: &quot;nav&quot;, list_number: page.toc.number, max_depth: page.toc.max_depth &#125;) %&#125;</span><br><span class="line">        &#123;%- set display_toc &#x3D; toc.length &gt; 1 and display_toc %&#125;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">      &lt;!-- Insert clustrmaps.com, the following single line is inserted by jialee--&gt;</span><br><span class="line">      &lt;script type&#x3D;&#39;text&#x2F;javascript&#39; id&#x3D;&#39;clustrmaps&#39; src&#x3D;&#39;&#x2F;&#x2F;cdn.clustrmaps.com&#x2F;map_v2.js?cl&#x3D;ffffff&amp;w&#x3D;a&amp;t&#x3D;n&amp;d&#x3D;QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY&#39;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>最后我们来看一下效果</p>
 <p><img

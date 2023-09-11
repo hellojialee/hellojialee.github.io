@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hellojialee.github.io/about/index.html</loc>
+    
+    <lastmod>2023-09-11T03:43:05.798Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellojialee.github.io/2020/01/28/L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    
+    <lastmod>2023-09-11T03:30:36.434Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2023-09-11T03:26:41.546Z</lastmod>
@@ -26,20 +40,6 @@
     <loc>https://hellojialee.github.io/2023/03/14/hello-world/</loc>
     
     <lastmod>2023-09-11T03:25:07.143Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/2020/01/28/L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
-    
-    <lastmod>2023-09-11T03:24:28.026Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/about/index.html</loc>
-    
-    <lastmod>2023-09-11T03:23:16.564Z</lastmod>
     
   </url>
   

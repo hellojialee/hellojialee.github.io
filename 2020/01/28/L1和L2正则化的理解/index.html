@@ -24,7 +24,7 @@
     scheme: 'Mist',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -54,7 +54,7 @@
 <meta property="og:description" content="最小结构风险的概率解释和几何解释">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-28T04:11:44.000Z">
-<meta property="article:modified_time" content="2020-11-29T08:52:57.000Z">
+<meta property="article:modified_time" content="2023-09-11T03:24:28.026Z">
 <meta property="article:author" content="Jia Li">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-29 16:52:57" itemprop="dateModified" datetime="2020-11-29T16:52:57+08:00">2020-11-29</time>
+                <time title="Modified: 2023-09-11 11:24:28" itemprop="dateModified" datetime="2023-09-11T11:24:28+08:00">2023-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +312,7 @@ id="首先给出一个例子解释l1的作用可以使得模型获得稀疏解">
 <p><a
 href="https://blog.csdn.net/xiaojiajia007/article/details/90611838">点击查看：L1正则能够使得模型的解稀疏</a>
 <img
-src="https://img-blog.csdnimg.cn/20190529105352198.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70"
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111123216.jpeg"
 alt="在这里插入图片描述" /></p>
 <p><strong>正则化之所以能够降低过拟合的原因在于，正则化是结构风险最小化的一种策略实现。</strong></p>
 <p>给loss function加上正则化项，能使得新得到的优化目标函数h =
@@ -325,7 +325,7 @@ function后边所加正则项为L2范数的平方，加上L2正则相比于L1正
 <p><a
 href="https://blog.csdn.net/liangdong2014/article/details/79517638">摘录自</a></p>
 <p><img
-src="https://img-blog.csdnimg.cn/20190529163213574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70"
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124537.png"
 alt="在这里插入图片描述" />
 <strong>从等高线和取值空间的交点可以看到L1更容易倾向一个权重偏大一个权重为0。L2更容易倾向权重都较小。</strong></p>
 <p>而通过求导数可以看出，对于两种正则带来的梯度更新：</p>
@@ -408,7 +408,7 @@ N\left(0, \sigma^{2}\right)\)</span>，</h3>
 e^{-\frac{\left(w_{j}\right)^{2}}{2 \sigma^{2}}}\right]=-\frac{1}{2
 \sigma^{2}} \sum_{j} w_{j}^{2}+C^{\prime}
 \]</span> <img
-src="https://img-blog.csdnimg.cn/20190529105226461.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70"
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124147.jpeg"
 alt="高斯分布" /> 可以看到，在高斯分布下<span
 class="math inline">\(\log{P(w)}\)</span>的效果等价于在代价函数中增加<span
 class="math inline">\(L_{2}\)</span>正则项，也就是说<strong>在MAP中使用一个高斯分布的先验等价于在MLE中采用L2的正则</strong>。从上图可以看出<span
@@ -424,7 +424,7 @@ e^{\frac{-\left|w_{j}\right|}{a}}\)</span></h3>
 e^{\frac{-\left|w_{j}\right|}{a}}=-\frac{1}{a}
 \sum_{j}\left|w_{j}\right|+C^{\prime}
 \]</span> <img
-src="https://img-blog.csdnimg.cn/2019052910525070.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70"
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124443.jpeg"
 alt="拉普拉斯分布" /> 可以看到，在拉普拉斯分布下<span
 class="math inline">\(\log{P(w)}\)</span>的效果等价于在代价函数中增加<span
 class="math inline">\(L_{1}\)</span>正则项。从下图可以看出<span
@@ -513,10 +513,13 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/" rel="next" title="一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练)">
-      一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练) <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/" rel="prev" title="一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练)">
+      <i class="fa fa-chevron-left"></i> 一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/03/Pytorch%E4%B8%AD%E7%9A%84Batch-Normalization-layer%E8%B8%A9%E5%9D%91/" rel="next" title="Pytorch中的Batch Normalization layer踩坑">
+      Pytorch中的Batch Normalization layer踩坑 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

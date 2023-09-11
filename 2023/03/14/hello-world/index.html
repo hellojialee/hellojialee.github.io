@@ -24,7 +24,7 @@
     scheme: 'Mist',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -53,15 +53,12 @@
 <meta property="og:site_name" content="小佳の博客 Jia&#39;s Blog">
 <meta property="og:description" content="hexo简单入门配置和next主题使用">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528154750912.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200203182511137.png">
 <meta property="article:published_time" content="2023-03-14T07:16:25.000Z">
-<meta property="article:modified_time" content="2020-09-17T04:36:21.000Z">
+<meta property="article:modified_time" content="2023-09-11T03:25:07.143Z">
 <meta property="article:author" content="Jia Li">
 <meta property="article:tag" content="测试专用">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200528154750912.png">
 
 <link rel="canonical" href="https://hellojialee.github.io/2023/03/14/hello-world/">
 
@@ -245,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-17 12:36:21" itemprop="dateModified" datetime="2020-09-17T12:36:21+08:00">2020-09-17</time>
+                <time title="Modified: 2023-09-11 11:25:07" itemprop="dateModified" datetime="2023-09-11T11:25:07+08:00">2023-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,14 +345,15 @@ Hexo 和 GitHub Pages 搭建博客</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  # Default (true) will load mathjax &#x2F; katex script on demand.</span><br><span class="line">  # That is it only render those page which has &#96;mathjax: true&#96; in Front-matter.</span><br><span class="line">  # If you set it to false, it will load mathjax &#x2F; katex srcipt EVERY PAGE.</span><br><span class="line">  per_page: false</span><br><span class="line"></span><br><span class="line">  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br><span class="line">    # See: https:&#x2F;&#x2F;mhchem.github.io&#x2F;MathJax-mhchem&#x2F;</span><br><span class="line">    mhchem: false</span><br></pre></td></tr></table></figure>
 <h2 id="行内数学公式显示异常">行内数学公式显示异常</h2>
 <p>未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况
-<img src="https://img-blog.csdnimg.cn/20200528154750912.png"
-alt="在这里插入图片描述" /> <strong>暂时的接近办法</strong>： -
-通过尝试发现，对于有些显示不正常的行内公式<span
+<img
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png"
+alt="在这里插入图片描述" /> <strong>暂时的接近办法</strong>：</p>
+<ul>
+<li><p>通过尝试发现，对于有些显示不正常的行内公式<span
 class="math inline">\(X=\left(x_{1}, x_{2}, \ldots,
 x_{n}\right)\)</span>我们只需要在前面或者后面一个$符号插入一个空格,
-或者在前后都插入一个空格，公式渲染显示就正常了。</p>
-<ul>
-<li><del>而且有时例如需要( x_{1} 在(后插入一个空格。</del></li>
+或者在前后都插入一个空格，公式渲染显示就正常了。</p></li>
+<li><p><del>而且有时例如需要( x_{1} 在(后插入一个空格。</del></p></li>
 </ul>
 <h2 id="更改markdown信息头模板">更改markdown信息头模板</h2>
 <p>默认的信息头不全，我们把markdown模板
@@ -386,11 +384,12 @@ href="https://zhuanlan.zhihu.com/p/25959864">Hexo+Next配置Blog</a></p>
 中找到font size，把font-size-base默认值更改即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Font size</span><br><span class="line">$font-size-base           &#x3D; (hexo-config(&#39;font.enable&#39;) and hexo-config(&#39;font.global.size&#39;) is a &#39;unit&#39;) ? unit(hexo-config(&#39;font.global.size&#39;), em) : 14px;</span><br></pre></td></tr></table></figure>
 <h3 id="网址缩略图">网址缩略图</h3>
-<p><img src="https://img-blog.csdnimg.cn/20200203182511137.png"
+<p><img
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124411.png"
 alt="在这里插入图片描述" />
 如果我们想要更改网址栏左侧的缩略图标，我们先制作好图标，放入对应的
 <code>/Users/lijia/科研&amp;学习/github博客/themes/next/source/images</code>
-文件夹下，然后更改主题（我们用的是next）下的配置文件如下：</p>
+文件夹下，然后更改主题（我们用的是next)下的配置文件如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;flower-16x16.png</span><br><span class="line">  medium: &#x2F;images&#x2F;flower.ico # 建议使用ico图标而不是png图片，以防兼容性问题</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;flower.png # apple-touch-icon-next.png</span><br><span class="line">  #safari_pinned_tab: &#x2F;images&#x2F;flower.svg #logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
 <h3
 id="接入评论系统以及文章阅读次数显示">接入评论系统以及文章阅读次数显示</h3>
@@ -398,7 +397,7 @@ id="接入评论系统以及文章阅读次数显示">接入评论系统以及�
 http://www.zhangblog.com/2019/06/16/hexo06/ 使用 <a
 href="https://leancloud.cn/dashboard/applist.html#/apps">LeanCloud</a>，可以同时实现评论留言系统以及文章阅读次数统计。
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Valine</span><br><span class="line"># For more information: https:&#x2F;&#x2F;valine.js.org, https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine</span><br><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: hcHrBNtFBdqhBMIhjL67LT0t-gzGzoHsz # Your leancloud application appid</span><br><span class="line">  appkey: Pe1HEgFp3AUcNCQ7dpQ3HRE4 # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: 欢迎讨论留言！ # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: # Language, available values: en, zh-cn</span><br><span class="line">  visitor: true # Article reading statistic # 这里控制显示文章阅读次数</span><br></pre></td></tr></table></figure> 设置完成后文章的开头就会显示如下： <img
-src="https://img-blog.csdnimg.cn/20200203203817826.png"
+src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124192.png"
 alt="在这里插入图片描述" /> 增加了 Views 和
 Valine，而博客文章下面就有了留言板。</p>
 <h3 id="side-bar添加访问者ip地区地图">Side bar添加访问者ip地区地图</h3>

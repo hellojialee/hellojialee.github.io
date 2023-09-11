@@ -21,10 +21,10 @@
   var CONFIG = {
     hostname: new URL('https://hellojialee.github.io').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -56,8 +56,8 @@
 <meta property="article:published_time" content="2020-02-03T09:59:17.000Z">
 <meta property="article:modified_time" content="2020-02-03T10:03:48.000Z">
 <meta property="article:author" content="Jia Li">
-<meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="pytorch">
+<meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
 
@@ -136,14 +136,14 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-about-me">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About Me</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-blogs">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Blogs</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -400,8 +400,8 @@ inputs.</p>
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
               <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
               <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
           </div>
 
@@ -411,8 +411,8 @@ inputs.</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/28/L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/" rel="prev" title="L1，L2正则化的理解">
-      <i class="fa fa-chevron-left"></i> L1，L2正则化的理解
+    <a href="/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/" rel="prev" title="一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练)">
+      <i class="fa fa-chevron-left"></i> 一个 Pytorch 训练实践 (分布式训练 + 半精度_混合精度训练)
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/02/12/Apex%E7%9B%B8%E5%85%B3/" rel="next" title="Apex相关（同时涉及egg-info的说明）">
@@ -524,13 +524,13 @@ scalar type Half but found Float</span></a></li></ol></div>
         <a href="https://github.com/hellojialee" title="GitHub → https://github.com/hellojialee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
+        <a href="https://scholar.google.com/citations?user=LVAnDxwAAAAJ" title="Scholar → https://scholar.google.com/citations?user=LVAnDxwAAAAJ" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Scholar</a>
+      </span>
+      <span class="links-of-author-item">
         <a href="mailto:hellojialee@gmail.com" title="E-Mail → mailto:hellojialee@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm" title="SchoolPage → http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>SchoolPage</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://blog.csdn.net/xiaojiajia007" title="CSDN → https://blog.csdn.net/xiaojiajia007" rel="noopener" target="_blank"><i class="fa fa-fw fa-codiepie"></i>CSDN</a>
@@ -578,7 +578,7 @@ scalar type Half but found Float</span></a></li></ol></div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
   </div>
 
 
@@ -605,7 +605,7 @@ scalar type Half but found Float</span></a></li></ol></div>
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>

@@ -26,12 +26,29 @@ href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># or hexo d</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a>，
+https://zhuanlan.zhihu.com/p/71544809</p>
+<p>逻辑：新建hexo分支，保存hexo博客源码到github的hexo
+分支，然后默认待渲染的HTML项目放到master分支</p>
 <h3 id="generate-and-deploy-in-one-command">Generate and deploy in one
 command</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<h2 id="attention">Attention!</h2>
+<p>注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo
+4.2.1应该使用node 12.18.3</p>
+<p>降低版本方法参考：https://blog.csdn.net/weixin_46316234/article/details/121475363</p>
+<ol type="1">
+<li><p>安装node版本管理模块 n</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo npm install n -g</span><br></pre></td></tr></table></figure></li>
+<li><p>可以根据自己的需要选择安装版本[可选] 2.1 安装稳定版</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure>
+<p>2.2 安装最新版</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n latest</span><br></pre></td></tr></table></figure>
+<p>2.3 版本降级/升级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n 版本号   &#x2F;&#x2F; 8.16.0   &#x2F;   12.8.0</span><br></pre></td></tr></table></figure></li>
+</ol>
 <hr />
-<p>以下搬运自我的博客 <a
+<p>以下搬运自我的CSDN博客 <a
 href="https://blog.csdn.net/xiaojiajia007/article/details/104105250">hexo实用技巧随记</a></p>
 <h1 id="关于hexo">关于hexo</h1>
 <h2 id="安装hexo及主题">安装hexo及主题</h2>
@@ -3439,8 +3456,8 @@ inputs.</p>
         <category>科研</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>pytorch</tag>
+        <tag>机器学习</tag>
         <tag>深度学习</tag>
       </tags>
   </entry>

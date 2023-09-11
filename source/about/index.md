@@ -3,53 +3,63 @@ title: About
 date: 2020-01-28 20:11:18
 ---
 
- Home page is [here](http://home.ustc.edu.cn/~jialee/)
+## **Hello World!**
 
-Jia Lee (Chinese name: 李佳 Li Jia)
+-- sent by Dr. **Jia Li** (Chinese name: 李佳)
 
-Ph.D. Student at USTC
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" style="zoom:40%;" />
 
-<img src="http://home.ustc.edu.cn/~jialee//photos/WechatIMG2.jpeg" alt="img" style="zoom: 25%;" />
+[<font size=5>Here</font>](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page
 
-## Biography
+E-mail:  <lijia@hfut.edu.cn> (for work) or  <hellojialee@gmail.com> (only in case)
 
-Jia Li was born in 1993. He received his B.E. degree in automation from Hefei University of Technology (HFUT), Hefei, China in 2016. He is currently pursuing his Ph.D. degree with the Department of Automation, University of Science and Technology of China (USTC). His research interests include computer vision and machine learning. 
 
-E-mail: <hellojialee@gmail.com>
+## **Self-introduction**
 
-## Publications:
+Jia Li is currently a faculty with Hefei University of Technology (HFUT), Hefei, China. He received his Ph.D. degree from the School of Information Science and Technology, University of Science and Technology of China (USTC), Hefei, China, in 2021. Before that, he received his B.E. degree in automation from Hefei University of Technology, China in 2016. His current research interests are in computer vision and multimodal emotion recognition . He has published several papers in refereed journals and conferences such as TCSVT, TMM, AAAI, and ACM MM. He has obtained championships in two international challenges  (5th ABAW and 3rd MuSe) in the field of affective computing hosted by CVPR 2023 and MM 2022. 
 
-[1] **J. Li** and Z. Wang, “Real-Time Traffic Sign Recognition Based on Efficient CNNs in the Wild,” IEEE Transactions on Intelligent Transportation Systems, vol. PP, no. 99, pp. 1–10, Jun. 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Traffic_Sign_Recognition_Efficient_CNNs)
 
-[2] **J. Li** and Z. Wang, “Local Regression Based Hourglass Network for Hand Pose Estimation from a Single Depth Image.,” ICPR, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Hand-Pose-Estimation)
+## **Some Publications**
 
-[3] W. Su, H. Zhang, **J. Li**, W. Yang, and Z. Wang, “Monocular Depth Estimation as Regression of Classification using Piled Residual Networks.,” ACM Multimedia, 2019.
+[1] **J. Li**, W. Su, and Z. Wang, “Simple Pose: Rethinking and Improving a Bottom-up Approach for Multi-Person Pose Estimation.”, AAAI, 2020. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Improved-Body-Parts)
 
-[4] **J. Li**, W. Su, and Z. Wang, “Simple Pose: Rethinking and Improving a Bottom-up Approach for Multi-Person Pose Estimation.,” AAAI, 2020. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Improved-Body-Parts)
+[2] W. Su, H. Zhang, **J. Li**, W. Yang, and Z. Wang, “Monocular Depth Estimation as Regression of Classification using Piled Residual Networks.”, ACM Multimedia, 2019.
 
-## **Earlier Awards**
+[3] **J. Li** and Z. Wang, “Local Regression Based Hourglass Network for Hand Pose Estimation from a Single Depth Image.,” ICPR, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Hand-Pose-Estimation)
 
-### **Undergraduate Education**
+... ...
 
-2012~2016 在合肥工业大学（HFUT）信息工程系自动化专业学习，学业成绩本科四年专业第一，全院系第一（**GPA 92, rank first** in his school），获得本科阶段全部学年国家奖学金（**National Scholarship**），合肥工业大学数学竞赛第一名，美国数学建模竞赛（MCM）二等奖，全国大学生英语竞赛二等奖等奖项。
+[4] Zhenhua Tang, **Jia Li,** Yanbin Hao, Richang Hong, "MLP-JCG: Multi-Layer Perceptron with Joint-Coordinate Gating for Efficient 3D Human Pose Estimation.", IEEE Transactions on Multimedia, 2023.
 
-### **Postgraduate Education**
+[5] **Jia Li,** Meng Wang, "Multi-Person Pose Estimation with Accurate Heatmap Regression and Greedy Association.," IEEE Transactions on Circuits and Systems for Video Technology.", 2022. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/OffsetGuided)
 
-2016～ 在中国科学技术大学（USTC）自动化系学习，获得硕士研究生国家奖学金（**National Scholarship for Postgraduates**），中科大首届唐立新奖学金（**Tang Lixin Scholarship**）等奖项。
+[6] **J. Li** and Z. Wang, “Real-Time Traffic Sign Recognition Based on Efficient CNNs in the Wild.”, IEEE Transactions on Intelligent Transportation Systems, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Traffic_Sign_Recognition_Efficient_CNNs)
+
+For more published papers, please refer to my [Google Scholar](https://scholar.google.com/citations?user=LVAnDxwAAAAJ).
+
+
+## **Study Awards**
+
+### **Postgraduate Education** @USTC, 2016～2021
+
+在中国科学技术大学（USTC）自动化系学习，获得研究生国家奖学金（**National Scholarship for Postgraduates**），中科大首届唐立新奖学金（**Tang Lixin Scholarship**），中科大华瑜基金奖学金（**Huayu Fund Scholarship**）等奖项。
+
+### **Undergraduate Education** @HFUT, 2012~2016
+
+在合肥工业大学（HFUT）信息工程系自动化专业学习，学业成绩本科四年专业第一，全院系第一（**GPA 92, rank first** in his school），获得本科阶段全部学年国家奖学金（**National Scholarship**），合肥工业大学数学竞赛第一名，美国数学建模竞赛（MCM）二等奖，全国大学生英语竞赛二等奖等奖项。
+
 
 ## Hometown
 
-![River](http://home.ustc.edu.cn/~jialee//photos//WechatIMG9.jpeg)
+![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg)
 
 ## Love Traveling
 
-![HuangshanSnow](http://home.ustc.edu.cn/~jialee//photos/IMG_20200117_103530.jpeg)
+![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg)
 
-![Huangshan](http://home.ustc.edu.cn/~jialee//photos/IMG_20200117_123041.jpeg)
+![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg)
 
-## Have a Nice Day :)
+## May you have a nice day :)
 
-![Beijing](http://home.ustc.edu.cn/~jialee//photos/IMG_20180824_150824.jpg)
-
-![Qingdao](http://home.ustc.edu.cn/~jialee//photos/IMG_20180812_150222.jpg)
+![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg)
 

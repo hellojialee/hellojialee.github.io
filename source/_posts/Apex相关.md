@@ -33,7 +33,7 @@ at the top of your script, which enables pytorch‘s autotuner. Each time pytorc
 
 ## FP16半精度带来的精度误差
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190911164622328.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111211505.jpeg)
 
 ## Install Nvidia Apex 
 
@@ -100,4 +100,4 @@ python -m torch.distributed.launch --nproc_per_node=4 train_distributed.py
 
 #### 不使用命令行运行，而是使用Pycharm启动同步夸卡训练的配置
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200212185619928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111126656.png)

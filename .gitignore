@@ -1,3 +1,4 @@
+# 将本地的md源文件、站点配置文件等推送到hexo source分支。 因为我们只需要保留博客源码，其他无关的文件并不希望推送
 .DS_Store
 Thumbs.db
 db.json

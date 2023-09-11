@@ -211,7 +211,7 @@ hiddenlayer: [https://github.com/waleedka/hiddenlayer/blob/master/demos/pytorch\
 
 ## １. Tensor.view和Tensor.permute (permute:变换)
 
-torch中的view类似与numpy中的reshape，但不同的是前者会与变换后的tensor共享内存，而后者不共享不会影响原始数组。
+torch中的view类似与numpy中的reshape，但不同的是前者会与变换后的tensor共享内存，而后者不共享不会影响原始数组。PyTorch在0.4版本以后提供了**`reshape`**方法，实现了类似于 `tensor.contigous().view(*args)`的功能，如果不关心底层数据是否使用了新的内存，则使用**`reshape`**方法更方便。
 
 torch中的permute类似与numpy中的transpose. **注意：**view只能用在contiguous的variable上。如果在view之前用了transpose, permute等，需要用contiguous()来返回一个contiguous copy。
 
@@ -394,6 +394,74 @@ SrcX=(dstX+0.5)\* (srcWidth/dstWidth) -0.5
  t = (hmps1==hmps2).all() >>> 将输出一个为True的Tensor
 ```
 
+## 12. Tensor的contiguous、storage、stride
+
+[PyTorch中的contiguous](https://zhuanlan.zhihu.com/p/64551412)
+
+[Pytorch中的Size, storage offset, stride概念](https://zhuanlan.zhihu.com/p/101434655)
+
+**`contiguous`**直观的解释是**Tensor底层一维数组元素的存储顺序与Tensor按<font color="#dddd00">行优先</font>一维展开的元素顺序是否一致**。pytorch中的storage指的是连续的内存块，而tensor则是映射到storage的视图，他把单条的内存区域映射成了n维的空间视图。size是tensor的维度，storage offset是数据在storage中的开头索引，stride是storage中对应于tensor的相邻维度间第一个索引的跨度。示例详情见链接。
+
+## 如何判断索引或者切片是对原始Tensor的view（共享内存）还是copy?
+
+[umpy array 以及pytorch tensor 的索引（切片索引，整型索引）](https://blog.csdn.net/xiaojiajia007/article/details/81352299)
+
+### 简而言之
+
+基本的切片索引（slice）是对原始数组的一个view，会影响原始数组的。而后者情况比较复杂，不过是basic indexing，则依然是原始数组的一个view，如果是advanced indexig，会用原始数组创建一个新的数组，不会影响原始数据。
+
+x[1, 3:8], x[2:5, 6:9]是基本slice索引，是view共享内存的；而x[1,2]是基本integer索引, x[[1,2], [1,4]]是高级integer索引。
+
+### 针对pytorch tensor可以通过data_ptr()查看第一个元素地址是否相同来判断
+
+full list of view ops in PyTorch
+
+> - [`as_strided()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.as_strided)
+> - [`detach()`](https://pytorch.org/docs/stable/autograd.html#torch.Tensor.detach)
+> - [`diagonal()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.diagonal)
+> - [`expand()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.expand)
+> - [`expand_as()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.expand_as)
+> - [`movedim()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.movedim)
+> - [`narrow()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.narrow)
+> - [`permute()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.permute)
+> - [`select()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.select)
+> - [`squeeze()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.squeeze)
+> - [`transpose()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.transpose)
+> - [`t()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.t)
+> - [`T`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.T)
+> - [`real`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.real)
+> - [`imag`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.imag)
+> - `view_as_real()`
+> - `view_as_imag()`
+> - [`unflatten()`](https://pytorch.org/docs/stable/named_tensor.html#torch.Tensor.unflatten)
+> - [`unfold()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.unfold)
+> - [`unsqueeze()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.unsqueeze)
+> - [`view()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.view)
+> - [`view_as()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.view_as)
+> - [`unbind()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.unbind)
+> - [`split()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.split)
+> - `split_with_sizes()`
+> - [`chunk()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.chunk)
+> - [`indices()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.indices) (sparse tensor only)
+> - [`values()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.values) (sparse tensor only)
+>
+> It’s also worth mentioning a few ops with special behaviors:
+>
+> - [`reshape()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.reshape), [`reshape_as()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.reshape_as) and [`flatten()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.flatten) can return either a view or new tensor, user code shouldn’t rely on whether it’s view or not.
+> - [`contiguous()`](https://pytorch.org/docs/stable/tensors.html#torch.Tensor.contiguous) returns **itself** if input tensor is already contiguous, otherwise it returns a new contiguous tensor by copying data.
+
+### Numpy中的判断准则
+
+Pytorch的行为是模仿Numpy的，numpy提供了详细的说明，什么时候是view，什么时候是copy:
+
+https://numpy.org/doc/stable/reference/arrays.indexing.html
+
+> Advanced indexing is triggered when the selection object, *obj*, is a non-tuple sequence object, an [`ndarray`](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray) (of data type integer or bool), or a tuple with at least one sequence object or ndarray (of data type integer or bool). There are two types of advanced indexing: integer and Boolean.
+>
+> Advanced indexing always returns a *copy* of the data (contrast with basic slicing that returns a [view](https://numpy.org/doc/stable/glossary.html#term-view)).
+>
+> 具体说明参加上面链接
+
 # pytorch训练数据准备
 
 ## 1\. DataLoader 类
@@ -511,6 +579,19 @@ Then you should be good. Open up a python terminal and test if you can use SWMR 
     end = time.time()
 
 在pytorch里面，程序的执行都是异步的。如果没有torch.cuda.synchronize() ，测试的时间会很短，因为执行完end=time.time()程序就退出了，后台的cu也因为python的退出退出了，如果采用torch.cuda.synchronize() ，代码会同步cu的操作，等待gpu上的操作都完成了再继续成形end = time.time() 
+
+如果将代码改为 
+
+```
+start = time.time()
+result = model(input)
+print(result)
+end = time.time()
+1234
+```
+
+这时候会发祥第三段代码和第二段代码的时间是类似的，因为第三段代码会等待gpu上的结果执行完传给print函数，所以真个的时间就和第二段同步的操作的时间基本上是一致的了，将print(result)换成result.cpu()结果是一致的惹。
+
  原文：https://blog.csdn.net/u013548568/article/details/81368019 
 
 ## 2\. 训练，测试两个阶段需要注意设置不同状态 [参考](https://discuss.pytorch.org/t/model-eval-vs-with-torch-no-grad/19615/10)
@@ -665,7 +746,7 @@ Instead of deleting the “module.” string from all the state\_dict keys, you 
 
 如下图所示：
 
-![](https://img-blog.csdnimg.cn/20200108114844390.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70)
+![](https://raw.githubusercontent.com/hellojialee/PictureBed/master/img2bolg/20201215222559.png)
 
 这个行为挺诡异，按照正常的设计逻辑，本来CPU的模型直接载入GPU预训练权值应该会因为device不同而报错（cpu, cuda0)但结果并没有，可以成功载入，并且载入之后CPU下的模型network的device也变成cuda0了。甚至我们可以仅仅载入某一layer的权值，那么这一layer的weight.data将变到cuda0上，而其没有载入更改的layer的weight.data仍然在cpu上！
 
@@ -707,7 +788,7 @@ inplace只是可以节省存储tensor的内存，但是PYTORCH中的自动微分
 
 ## 5\. 尝试Nvidia Apex 16位浮点数扩展
 
-温馨提示：我的另一篇博客[pip install, python setup.py, egg-info的说明--以Nvidia Apex安装为例](https://mp.csdn.net/console/editor/html/84784982)
+温馨提示：我的另一篇博客[pip install, python setup.py, egg-info的说明--以Nvidia Apex安装为例](https://blog.csdn.net/xiaojiajia007/article/details/84784982)
 
 ### Clean the old install before rebuilding:
 
@@ -864,7 +945,7 @@ total\_loss+=float(loss)
 
 <https://blog.csdn.net/xiaojiajia007/article/details/104045066>
 
-![](https://img-blog.csdnimg.cn/20200119205411821.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaWFqaWEwMDc=,size_16,color_FFFFFF,t_70)
+![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111126481.png)
 
 在Pytorch中，对于SGD优化器，两者是等效的，但是对于Adam优化器，两者作用有差别，对于Adam会有耦合的错误。
 

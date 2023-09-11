@@ -6,7 +6,7 @@ tags:
 description: hexo简单入门配置和next主题使用
 categories: 软件工具
 ---
-# Welcome to [Hexo](https://hexo.io/)! 
+#  [Hexo](https://hexo.io/)简单使用
 
 This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -45,7 +45,9 @@ $ hexo deploy
 # or hexo d
 ```
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)， https://zhuanlan.zhihu.com/p/71544809
+
+逻辑：新建hexo分支，保存hexo博客源码到github的hexo 分支，然后默认待渲染的HTML项目放到master分支
 
 ### Generate and deploy in one command
 
@@ -53,13 +55,51 @@ More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 $ hexo g -d
 ```
 
+## Attention!
+
+注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo 4.2.1应该使用node 12.18.3
+
+降低版本方法参考：https://blog.csdn.net/weixin_46316234/article/details/121475363
+
+1. 安装node版本管理模块 n
+
+   ```
+   sudo npm install n -g
+   ```
+
+2. 可以根据自己的需要选择安装版本[可选]
+   2.1 安装稳定版
+
+   ```
+   sudo n stable
+   ```
+
+   2.2 安装最新版
+
+   ```
+   sudo n latest
+   ```
+
+   2.3 版本降级/升级
+
+   ```
+   sudo n 版本号   // 8.16.0   /   12.8.0
+   ```
+
 ---
 
-以下搬运自我的博客 [hexo实用技巧随记](https://blog.csdn.net/xiaojiajia007/article/details/104105250)
+
+
+以下搬运自我的CSDN博客 [hexo实用技巧随记](https://blog.csdn.net/xiaojiajia007/article/details/104105250)
 
 # 关于hexo
 
+## 默认起始页定制
+
+hexo默认起始页是发表的博客罗列，我懒得整了。想要自定义起始页可以参考这个博文：https://qingchen1995.gitee.io/2021/10/20/2110-Change-Blog-Index/
+
 ## 安装hexo及主题
+
 安装hexo，可以参考：[用 Hexo 和 GitHub Pages 搭建博客](https://ryanluoxu.github.io/2017/11/24/%E7%94%A8-Hexo-%E5%92%8C-GitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/)
 
 解决latex公式渲染的问题
@@ -85,12 +125,14 @@ math:
 ```
 ## 行内数学公式显示异常
 
-未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200528154750912.png)
+未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png)
 **暂时的接近办法**：
+
 - 通过尝试发现，对于有些显示不正常的行内公式$X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)$我们只需要在前面或者后面一个$符号插入一个空格, 或者在前后都插入一个空格，公式渲染显示就正常了。 
 
 - ~~而且有时例如需要\left( x_{1} 在\left(后插入一个空格。~~ 
+
+- 有可能是node版本和hexo不兼容出现的编译问题
 
 ## 更改markdown信息头模板
 默认的信息头不全，我们把markdown模板 /Users/lijia/科研&学习/github博客/scaffolds/post.md 里面最开始的信息更改如下：
@@ -150,8 +192,8 @@ $font-size-base           = (hexo-config('font.enable') and hexo-config('font.gl
 
 ###  网址缩略图
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200203182511137.png)
-如果我们想要更改网址栏左侧的缩略图标，我们先制作好图标，放入对应的 `/Users/lijia/科研&学习/github博客/themes/next/source/images` 文件夹下，然后更改主题（我们用的是next）下的配置文件如下：
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124411.png)
+如果我们想要更改网址栏左侧的缩略图标，我们先制作好图标，放入对应的 `/Users/lijia/科研&学习/github博客/themes/next/source/images` 文件夹下，然后更改主题（我们用的是next)下的配置文件如下：
 
 ```
 favicon:
@@ -187,7 +229,7 @@ valine:
   visitor: true # Article reading statistic # 这里控制显示文章阅读次数
 ```
 设置完成后文章的开头就会显示如下：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200203203817826.png)
+![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124192.png)
 增加了 Views 和 Valine，而博客文章下面就有了留言板。
 
 ### Side bar添加访问者ip地区地图

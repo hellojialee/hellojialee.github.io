@@ -97,6 +97,7 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+## 使用git分支保存hexo博客源码到github：https://zhuanlan.zhihu.com/p/71544809
 deploy:
   type: 'git'
   repository: https://github.com/hellojialee/hellojialee.github.io.git  
@@ -116,3 +117,5 @@ baidusitemap:
   path: baidusitemap.xml
 sitemap:
   path: sitemap.xml
+
+

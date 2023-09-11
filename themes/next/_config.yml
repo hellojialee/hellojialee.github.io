@@ -104,10 +104,10 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-#scheme: Mist
-scheme: Pisces
-#scheme: Gemini
+# scheme: Muse
+scheme: Mist
+# scheme: Pisces
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -120,8 +120,8 @@ scheme: Pisces
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || home
-  about: /about/ || user
+  About Me: /about/ || user
+  Blogs: / || home
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
@@ -142,8 +142,8 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  position: left
-  #position: right
+  # position: left
+  position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -155,7 +155,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
+  display: always
 
   # Sidebar padding in pixels.
   padding: 18
@@ -182,7 +182,9 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/hellojialee || github
+  Scholar: https://scholar.google.com/citations?user=LVAnDxwAAAAJ  || google
   E-Mail: mailto:hellojialee@gmail.com || envelope
+  SchoolPage: http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm || crosshairs
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -191,10 +193,9 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  #RSS: /atom.xml || rss
+  # RSS: /atom.xml || rss
   CSDN: https://blog.csdn.net/xiaojiajia007 || codiepie
-  ZhiHu: https://www.zhihu.com/people/wu-ming-27-88-90 || globe
-  #SchoolPage: http://home.ustc.edu.cn/~jialee/ || crosshairs
+  ZhiHu: https://www.zhihu.com/people/lijia.ustc || globe
 
   
 

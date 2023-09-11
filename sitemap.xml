@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hellojialee.github.io/about/index.html</loc>
+    
+    <lastmod>2023-09-11T04:24:49.308Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hellojialee.github.io/2023/03/14/hello-world/</loc>
     
     <lastmod>2023-09-11T04:18:15.882Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://hellojialee.github.io/2020/02/12/Apex%E7%9B%B8%E5%85%B3/</loc>
     
     <lastmod>2023-09-11T04:11:30.439Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/about/index.html</loc>
-    
-    <lastmod>2023-09-11T03:43:05.798Z</lastmod>
     
   </url>
   

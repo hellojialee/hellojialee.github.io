@@ -248,7 +248,7 @@ valine:
 使用clustrmaps，选择插件风格，拷贝网站出现的脚本 javascript代码
 
 ```javascript
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY'></script>
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=fff&w=a&t=n&d=QL- 巴拉巴拉省略号 -xB3pA6RxWIY'></script>
 ```
 
 粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件`/***jlee.github.io/themes/next/layout/_macro/sidebar.swig `粘贴代码，插入如下：
@@ -264,9 +264,9 @@ valine:
       {%- endif %}
 
       <!-- Insert clustrmaps.com, the following single line is inserted by jialee-->
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY'></script>
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=fff&w=a&t=n&d=QL- 巴拉巴拉省略号 -xB3pA6RxWIY'></script>
 ```
 
 最后我们来看一下效果
 
-![](https://www.yanlongwang.net/downloads/images/blog/visitor_traffic_demo.png)
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309121038585.png" alt="image-20230912上午103806357" style="zoom:50%;" />

@@ -8,7 +8,9 @@ categories: 软件工具
 ---
 #  [Hexo](https://hexo.io/)简单使用
 
-This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues). 
+
+注意⚠️：需要在博客项目文件夹路径下执行hexo命令！命令行export代理后，部署到github更快
 
 ## Quick Start
 
@@ -57,7 +59,7 @@ $ hexo g -d
 
 ## Attention!
 
-注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo 4.2.1应该使用node 12.18.3
+注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题（例如[ERR_INVALID_ARG_TYPE](https://evestorm.github.io/posts/430/)）。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo 4.2.1应该使用Node 12.18.3，这样可以快速修复或者继续使用之前的hexo项目。
 
 降低版本方法参考：https://blog.csdn.net/weixin_46316234/article/details/121475363
 
@@ -83,8 +85,14 @@ $ hexo g -d
    2.3 版本降级/升级
 
    ```
-   sudo n 版本号   // 8.16.0   /   12.8.0
+   sudo n 版本号   // 8.16.0   /   12.8.3
    ```
+   
+   在主题文件夹-->package.json-->搜索“version"，得知当前我使用的Next主题版本号为"version": "7.7.0"
+   
+   Hexo版本和官方最新落后情况可以使用命令 `npm outdate` 查询：
+   
+   <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309120950382.png" alt="image-20230912上午94927638" style="zoom: 67%;" />
 
 ---
 
@@ -126,7 +134,10 @@ math:
 ## 行内数学公式显示异常
 
 未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况![在这里插入图片描述](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png)
-**暂时的接近办法**：
+
+
+
+**暂时的解决办法**：
 
 - 通过尝试发现，对于有些显示不正常的行内公式$X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)$我们只需要在前面或者后面一个$符号插入一个空格, 或者在前后都插入一个空格，公式渲染显示就正常了。 
 
@@ -240,7 +251,7 @@ valine:
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY'></script>
 ```
 
-粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件`/***lee.github.io/themes/next/layout/_macro/sidebar.swig `粘贴代码，插入如下：
+粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件`/***jlee.github.io/themes/next/layout/_macro/sidebar.swig `粘贴代码，插入如下：
 
 ```
 <aside class="sidebar">

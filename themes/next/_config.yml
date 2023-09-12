@@ -121,7 +121,7 @@ scheme: Mist
 # External url should start with http:// or https://
 menu:
   About Me: /about/ || user
-  Blogs: / || home
+  home: / || home
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
@@ -182,7 +182,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/hellojialee || github
-  Scholar: https://scholar.google.com/citations?user=LVAnDxwAAAAJ  || google
+  Scholar: https://scholar.google.com/citations?user=LVAnDxwAAAAJ || google
   E-Mail: mailto:hellojialee@gmail.com || envelope
   SchoolPage: http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm || crosshairs
   #Weibo: https://weibo.com/yourname || weibo
@@ -623,7 +623,7 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: true
+  enable: false
   appid: hcHrBNtFBdqhBMIhjL67LT0t-gzGzoHsz # Your leancloud application appid
   appkey: Pe1HEgFp3AUcNCQ7dpQ3HRE4 # Your leancloud application appkey
   notify: false # Mail notifier

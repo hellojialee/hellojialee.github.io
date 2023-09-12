@@ -47,7 +47,12 @@ href="https://evestorm.github.io/posts/430/">ERR_INVALID_ARG_TYPE</a>）。升�
 <p>2.2 安装最新版</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n latest</span><br></pre></td></tr></table></figure>
 <p>2.3 版本降级/升级</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n 版本号   &#x2F;&#x2F; 8.16.0   &#x2F;   12.8.3</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo n 版本号   &#x2F;&#x2F; 8.16.0   &#x2F;   12.8.3</span><br></pre></td></tr></table></figure>
+<p>在主题文件夹--&gt;package.json--&gt;搜索“version"，得知当前我使用的Next主题版本号为"version":
+"7.7.0"</p>
+<p>Hexo版本和官方最新落后情况可以使用命令 <code>npm outdate</code>
+查询：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309120950382.png" alt="image-20230912上午94927638" style="zoom: 67%;" /></p></li>
 </ol>
 <hr />
 <p>以下搬运自我的CSDN博客 <a

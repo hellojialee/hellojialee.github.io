@@ -1533,8 +1533,8 @@ torch.sqrt((x1 - t1)**2 + (x2 - t2)**2)</p>
       </categories>
       <tags>
         <tag>pytorch</tag>
-        <tag>深度学习</tag>
         <tag>python</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>

@@ -28,7 +28,7 @@ My current research interests include 🔬<font color="#ddd00">**computer vision
 - [5] **Jia Li,** Meng Wang, "Multi-Person Pose Estimation with Accurate Heatmap Regression and Greedy Association.," IEEE Transactions on Circuits and Systems for Video Technology.", 2022. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/OffsetGuided)
 - [6] **J. Li** and Z. Wang, “Real-Time Traffic Sign Recognition Based on Efficient CNNs in the Wild.”, IEEE Transactions on Intelligent Transportation Systems, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Traffic_Sign_Recognition_Efficient_CNNs)
 
-For <font size=4> more </font> published papers, please refer to my 👉 [<font color="#0000dd"> Google Scholar</font>](https://scholar.google.com/citations?user=LVAnDxwAAAAJ).
+​	For <font size=4> more </font> published papers, please refer to my 👉 [<font color="#0000dd"> Google Scholar</font>](https://scholar.google.com/citations?user=LVAnDxwAAAAJ).
 
 ## 🥇 **Study & Awards**
 

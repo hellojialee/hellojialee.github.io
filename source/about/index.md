@@ -10,14 +10,17 @@ date: 2020-01-28 20:11:18
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" style="zoom:40%;" />
 
 - [<font size=4 color="#dd00dd">Here🎯</font>](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm)  is Jia's officail school page
+- My current research interests include 
+  - 🔬<font color="#ddd00">**computer vision**</font>,  
+  - 🔬<font color="#ddd00">**multimodal emotion recognition**</font>,
+  - 🔬<font color="#ddd00">**vision-and-language navigation**</font>...
+
 - I am looking for self-motivated students to join us and welcome to contact🔥
-- *E-mail*📧 :  <lijia@hfut.edu.cn> (for work) or  <hellojialee@gmail.com> (only in case)
+- E-mail📧 :  <lijia@hfut.edu.cn> (for work) or  <hellojialee@gmail.com> (only in case)
 
 ## 🐔 **Self-Introduction**
 
-I'm currently a faculty🧑‍🏫 with Hefei University of Technology (HFUT)🏫, Hefei, China. I received my Ph.D. degree from the School of Information Science and Technology, University of Science and Technology of China (USTC), Hefei, China, in 2021. Before that, I received my B.E. degree in automation from Hefei University of Technology, China, in 2016. 
-
-My current research interests include 🔬<font color="#ddd00">**computer vision**</font>,  🔬<font color="#ddd00">**multimodal emotion recognition**</font>, and 🔬<font color="#ddd00">**vision-and-language navigation**</font>. I have published papers📑 in refereed journals and conferences such as TCSVT, TMM, AAAI, and ACM MM. I have obtained championships🏆🏆 in two international challenges  (5th ABAW and 3rd MuSe) in the field of affective computing hosted by CVPR 2023 and MM 2022. 
+I'm currently a faculty🧑‍🏫 with Hefei University of Technology (HFUT)🏫, Hefei, China. I received my Ph.D. degree from the School of Information Science and Technology, University of Science and Technology of China (USTC), Hefei, China, in 2021. Before that, I received my B.E. degree in automation from Hefei University of Technology, China, in 2016. I have published papers📑 in refereed journals and conferences such as TCSVT, TMM, AAAI, and ACM MM. I have obtained championships🏆🏆 in two international challenges  (5th ABAW and 3rd MuSe) in the field of affective computing hosted by CVPR 2023 and MM 2022. 
 
 ## 🧐 **Some Publications**
 

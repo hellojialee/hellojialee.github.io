@@ -11,8 +11,8 @@ date: 2020-01-28 20:11:18
 
 - [<font size=4 color="#dd00dd">Here🎯</font>](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm)  is Jia's officail school page
 - My current research interests include 
-  - 🔬<font color="#ddd00">**computer vision**</font>,  
-  - 🔬<font color="#ddd00">**multimodal emotion recognition**</font>,
+  - 🔬<font color="#ddd00">**computer vision**</font>
+  - 🔬<font color="#ddd00">**multimodal emotion recognition**</font>
   - 🔬<font color="#ddd00">**vision-and-language navigation**</font>...
 
 - I am looking for self-motivated students to join us and welcome to contact🔥

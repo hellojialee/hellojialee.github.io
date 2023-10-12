@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>招生贴--CV和DL菜鸟自学建议</title>
+    <url>/2023/10/12/%E7%BB%99CV%E5%92%8CDL%E7%BA%AF%E5%B0%8F%E7%99%BD%E8%BF%9B%E7%BB%84%E5%89%8D%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/</url>
+    <content><![CDATA[<h2 id="入门篇">入门篇</h2>
+<h3 id="说在前面">说在前面</h3>
+<p>选跟一个优质的公开课或简明教程有助于学科入门。学会提问是开始研究的第一步，若大脑没有一定的信息输入和内化积累，很可能迷茫到“连自己的问题是什么都不知道”的地步，更别提下一步应该学什么、研究什么。老师和学生仅仅是“闻道有先后”的区别，每个人都有可能成为领域小专家并获得大家的尊重，成长为靠谱的合作伙伴。</p>
+<p>学习科研本就是一场艰难且孤独的修行。趁年轻，更应充满热情和动力，不轻易放弃，相信大神也是肉体凡胎。时间充裕时，坚持发扬遍历精神，从品味基本概念描述和代码里每一个字符开始。</p>
+<h3 id="推荐资源">推荐资源</h3>
+<p>在海量网络资源和AI问答式工具触手可及的今天，只要有兴趣和毅力，纯小白也能完成从“面向谷歌/百度的学习编程”到“跟踪学术最前沿，站在浪潮之巅”的转变。下面简单推荐几个学习资源，也是本组成员人均刷过，交流探讨起来比较熟练。</p>
+<ul>
+<li><a href="http://cs231n.stanford.edu" target="_blank" rel="noopener"><strong>CS231n: Deep Learning
+for Computer
+Vision</strong></a>。逐字逐句研读课程的英文Notes，积累和熟悉基础概念和英文术语表达，琢磨课后代码作业，也可以观看课程视频或PPT等材料。该公开课最初由AI领域网红博士生<strong>Andrej
+Karpathy</strong>完善，
+让很多人受益，汉化翻译版很容易获得。课后作业基本用Python和Numpy包实现，简直就是实现了一个简单的深度学习框架。学习之后相信能对计算机视觉和深度学习常见问题有一定认识，并且积累不少关于自动微分和数值优化的具体代码经验。以此课程为出发点，对这个领域的认识和进一步学习方法会清晰很多。</li>
+<li>机器学习主题的<a
+href="https://www.youtube.com/@statquest/about"><strong>StatQuest|Youtube</strong></a>可视化讲解视频。一图胜千言，个人很喜欢图解，如果能把抽象的东西用作图的手段阐明，那肯定有了很深入的直观理解。</li>
+<li><strong>其他优质中英文博客</strong>。一门课程或一本专著难以解决自己的所有疑惑，对于关键问题完全可以自行“觅食”，<strong>变被动的信息接收为主动的信息获取</strong>。丰富的信息推送看似有营养，其实大部分都是会被抛之脑后的垃圾，严格筛选或查找最有针对性的资料是一项基本技能。针对完全小白的同学，也可以参考当年纯小白的我，面向浏览器摘录或撰写的<a
+href="https://blog.csdn.net/xiaojiajia007">我的博客专栏|CSDN</a>，仅仅抛砖引玉，看看各种深度学习、ubuntu工作环境、python、git实用技能和其他扫盲笔记是否对自己有启发价值。</li>
+<li><strong>MIT线性代数</strong> by Gilbert
+Strang。无需多言，线性代数是被国内高校严重低估的基础课程。考虑到已有线性代数基础，推荐阅读网上流传的douTintin撰写的上中下笔记，短小精悍。</li>
+<li><a
+href="https://github.com/TingsongYu/PyTorch_Tutoria"><strong>Pytorch模型训练实用教程</strong></a>。用好成熟的深度学习框架，有扎实的基本功后对特别细枝末节的东西即便没有亲自实现过也大概知道包括什么，用别人的工具和代码均是建立在信任的基础上。在成为调包侠之前，再推荐两个优质博文阅读<a
+href="https://towardsdatascience.com/understanding-pytorch-with-an-example-a-step-by-step-tutorial-81fc5f8c4e8e">Understanding
+PyTorch with an example: a step-by-step tutorial</a>，<a
+href="https://tushar.lol/post/builtins/">Understanding all of Python,
+through its builtins</a>。</li>
+</ul>
+<h3 id="待补充">待补充</h3>
+<p>黑盒模型时代有些东西乍看如天外来物，其实了解它的前世今生后就没那么难以接受了，例如一个讲解一阶、二阶优化算法的博文<a
+href="https://zhuanlan.zhihu.com/p/32230623">一个框架看懂优化算法之异同
+SGD-AdaGrad-Adam|知乎</a>，技术优化的背后演变很可能也是源自朴素的动机。再比如<a
+href="https://github.com/wangshusen/DeepLearning#cs583-deep-learning">CS583:
+Deep Learning</a>课程中的Recurrent neural
+networks章节，从最原始的RNN开始，一路讲到如何催生出LSTM、Attention、Transformer。工科技术研究不同于纯理论，一个纯理论证明的完成意味着终结某个难题。而技术研究虽然不少在本质上也是做优化问题，但现实生活中的变量太多，很难通过得到解析解形式而一劳永逸。</p>
+<h3 id="仅供组内分享的资源">仅供组内分享的资源</h3>
+<p>略。</p>
+<h2 id="技能篇">技能篇</h2>
+<p>工欲善其事必先利其器，无论是资讯跟踪、文献收集整理、工作环境搭建、远程解释器工具、代码版本维护等，都找一个趁手的家伙，能够极大提升自己的效率。建议优先挑选开源（免费且第三方插件丰富）或学生免费的软件，这里罗列自己经常使用的文字软件，具体如何配置打造成自己喜欢的样子，请自行搜索和动手。</p>
+<p>文献管理工具 Zotero</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121646102.png" alt="WechatIMG288" style="zoom:67%;" /></p>
+<h3 id="基于markdown语法的双链笔记-obsidian">基于Markdown语法的双链笔记
+Obsidian</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121649295.png" alt="WechatIMG289" style="zoom:67%;" /></p>
+<h3 id="谷歌快讯-推送至邮箱">谷歌快讯 推送至邮箱</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121653140.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
+<h3 id="chatgpt很有必要充分利用起来">ChatGPT很有必要充分利用起来</h3>
+<p>这里顺便说一句，新东方<strong>《考研英语经典必背500句》</strong>也可以看看，里面有不少长难句分析，素材来自于各种从句嵌套的科技论文，读一读有助于提高对语法结构和复杂表达的理解水平。</p>
+<h3 id="其他工具">其他工具</h3>
+<p>除此之外，日常使用的还有Pycharm专业版、VSCode、Transmit（FTP工具）、Dash（API文档聚合管理）、MathPix（Latex公式识别）等都非常推荐尝试。</p>
+<h2 id="进阶篇">进阶篇</h2>
+<p>互为师生，和导师或课题组其他同学交流非常有意义，团队的良好风气也会让成员耳濡目染，感受熏陶并在不知不觉中成长。人生的追求本来就是多元化的，可以放弃自己的学术道路，但是不要霍霍他人，保持阳光的心态看这个世界，对他人要有基本的人格尊重。本组只欢迎具有自我驱动力的新成员，认可“work
+hard, play hard”的理念，工作打卡只对机器有意义，对人类没多少意义。</p>
+<p>每个人都有自己的节奏，工作的一天抓住一次deep
+work的状态就听好了，提高执行效率鼓励自己keep
+going，别总盯着别人不挺忙活而焦虑。只要用功，积累一段时间即便暂时没有成功但肯定也有许多收获。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121710818.png" alt="WechatIMG293" style="zoom:80%;" /></p>
+<p>学术品位是有门槛的，导师也需要不断学习和跟学生请教。研究生阶段要尽快从工程师思维转变到科学研究思维，哪些是本课题的本质问题，哪些研究具有意义、创新性或普适性，学术论文应该怎么写，这部分一时半会说不完，姑且交给“线下面基”环节，以便尽快结束本文吧
+:)</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客站点重建说明</title>
+    <url>/2023/10/12/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<p>空空如也，</p>
+<p>未曾忘记，</p>
+<p>只是还未想起</p>
+]]></content>
+      <categories>
+        <category>杂物间</category>
+      </categories>
+      <tags>
+        <tag>测试专用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo实用技巧随记</title>
     <url>/2023/03/14/hello-world/</url>
     <content><![CDATA[<h1 id="hexo简单使用"><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>简单使用</h1>
@@ -3467,7 +3548,7 @@ inputs.</p>
       <tags>
         <tag>pytorch</tag>
         <tag>机器学习</tag>
-        <tag>深度学习</tag>
+        <tag>深度学习 - 易错点</tag>
       </tags>
   </entry>
   <entry>
@@ -3691,7 +3772,7 @@ href="https://link.zhihu.com/?target=https%253A//arxiv.org/abs/1911.10529">https
         <category>科研</category>
       </categories>
       <tags>
-        <tag>pytorch</tag>
+        <tag>pytorch - python</tag>
       </tags>
   </entry>
 </search>

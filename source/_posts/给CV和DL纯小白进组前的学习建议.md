@@ -23,7 +23,7 @@ categories: 学习
 - 机器学习主题的[**StatQuest|Youtube**](https://www.youtube.com/@statquest/about)可视化讲解视频【可选】。一图胜千言，个人很喜欢图解，如果能把抽象的东西用作图的手段阐明，那肯定有了很深入的直观理解。
 - **其他优质中英文博客**。一门课程或一本专著难以解决自己的所有疑惑，对于关键问题完全可以自行“觅食”，**变被动的信息接收为主动的信息获取**。丰富的信息推送看似有营养，其实大部分都是会被抛之脑后的垃圾，严格筛选或查找最有针对性的资料是一项基本技能。针对完全小白的同学，也可以参考当年纯小白的我，面向浏览器摘录或撰写的[<font color="#ddd00"> 我的博客专栏|CSDN</font>](https://blog.csdn.net/xiaojiajia007)，仅仅抛砖引玉，看看各种*深度学习、ubuntu工作环境、python、git实用技能*和其他扫盲笔记是否对自己有启发价值。
 - **MIT线性代数** by Gilbert Strang【可选】。无需多言，线性代数是被国内高校严重低估的基础课程。考虑到已有线性代数基础，推荐阅读网上流传的douTintin撰写的上中下笔记，短小精悍。
-- [**Pytorch模型训练实用教程**](https://github.com/TingsongYu/PyTorch_Tutoria) 【可选】。用好成熟的深度学习框架，有扎实的基本功后对特别细枝末节的东西即便没有亲自实现过也大概知道包括什么，用别人的工具和代码均是建立在信任的基础上。在成为调包侠之前，再推荐两个优质博文阅读[Understanding PyTorch with an example: a step-by-step tutorial](https://towardsdatascience.com/understanding-pytorch-with-an-example-a-step-by-step-tutorial-81fc5f8c4e8e)，[Understanding all of Python, through its builtins](https://tushar.lol/post/builtins/)。
+- [**Pytorch模型训练实用教程**](https://github.com/TingsongYu/PyTorch_Tutorial) 【可选】。用好成熟的深度学习框架，有扎实的基本功后对特别细枝末节的东西即便没有亲自实现过也大概知道包括什么，用别人的工具和代码均是建立在信任的基础上。在成为调包侠之前，再推荐两个优质博文阅读[Understanding PyTorch with an example: a step-by-step tutorial](https://towardsdatascience.com/understanding-pytorch-with-an-example-a-step-by-step-tutorial-81fc5f8c4e8e)，[Understanding all of Python, through its builtins](https://tushar.lol/post/builtins/)。
 
 ### 待补充
 

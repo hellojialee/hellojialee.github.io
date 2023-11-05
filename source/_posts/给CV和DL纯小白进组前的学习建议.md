@@ -33,7 +33,9 @@ categories: 学习
 
 此处略。。。
 
-但是提出一个小要求，鉴于还没入驻实验室且自学课程可能枯燥和孤单，建议每周发送一次周报（引入外部监督，坚持打卡），简述知识点所学情况，例如下面一个组内同学的某次周报截图，当然也不需要详细。这么做的目的是服务于自己对领域知识体系的构建（好记性不如烂笔头），坚持积累就有了属于个人的知识图谱，借此机会能够反思一周过去了有没有收获，最后利于导师掌握学习进度并帮忙查缺补漏。
+申请加入师兄师姐自发组织的研讨，小分队在这里 [<font color="#ddd00"> ReadingPapers|GitHub</font>](https://github.com/ReadingPapers)
+
+另外提出一个小要求，鉴于还没入驻实验室且自学课程可能枯燥和孤单，建议每周发送一次周报（引入外部监督，坚持打卡），简述知识点所学情况，例如下面一个组内同学的某次周报截图，当然也不需要详细。这么做的目的是服务于自己对领域知识体系的构建（好记性不如烂笔头），坚持积累就有了属于个人的知识图谱，借此机会能够反思一周过去了有没有收获，最后利于导师掌握学习进度并帮忙查缺补漏。
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310170841600.png" alt="image-20231017上午84131388" style="zoom:80%;" />
 
@@ -51,11 +53,19 @@ categories: 学习
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121649295.png" alt="WechatIMG289" style="zoom:67%;" />
 
+这里荐个好看的Heatmap Calendar插件，功能如同github上显示活跃度的热图。安装插件之后把定制如何显示的dataviewjs代码块插入到想展示的markdown文件位置（例如HomePage）即可，效果如下
+
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310281102449.jpeg" alt="WechatIMG1039" style="zoom:40%;" />
+
 ### 谷歌快讯 推送至邮箱
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121653140.png" alt="WechatIMG291" style="zoom: 50%;" />
 
 ### ChatGPT很有必要充分利用起来
+
+<font color="#0000dd"> **ChatGPT is absolutely a game changer！**</font> 
+
+不论是对英文表达、领域知识基本概念、或是各种命令行工具、网络模型、代码编程上存在问题，你都可以尝试向它提问，通过多轮交互对话，一步步人机相互引导找到可能的解决办法。一定要用好AI工具，这是继计算机信息网络发明后的又一划时代工具，是人类可能走向更高级文明的标志（石器时代的小故事无需我多言，人最大的本领就是发明和利用各种工具）。不过，如果你已经是一名专家，就能感觉到目前ChatGPT还不如自己的理解深刻和可靠，但它可以作为面向小白的耐心导师。
 
 这里顺便说一句，新东方**《考研英语经典必背500句》**也可以看看，里面有不少长难句分析，素材来自于各种从句嵌套的科技论文，读一读有助于提高对语法结构和复杂表达的理解水平。
 

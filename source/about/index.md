@@ -5,7 +5,7 @@ date: 2020-01-28 20:11:18
 
 ## 👋 **Hello World!**
 
--- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (Chinese name: 李佳) 👇
+-- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**) 👇
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" style="zoom:40%;" />
 

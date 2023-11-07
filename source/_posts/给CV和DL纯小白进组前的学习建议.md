@@ -90,7 +90,15 @@ categories: 学习
 
 #### 深度学习环境搭建
 
-[conda ](https://blog.csdn.net/SARACH_WONG/article/details/89328307)[环境创建｜博客](https://blog.csdn.net/SARACH_WONG/article/details/89328307) & pytorch [安装（官网）,](https://pytorch.org/get-started/previous-versions/) 或者[docker｜博客](https://cyinen.github.io/wiki/00-思维碎片/docker使用/)
+[conda ](https://blog.csdn.net/SARACH_WONG/article/details/89328307)[环境创建｜博客](https://blog.csdn.net/SARACH_WONG/article/details/89328307) & pytorch [安装（官网）,](https://pytorch.org/get-started/previous-versions/)  [docker｜博客](https://cyinen.github.io/wiki/00-思维碎片/docker使用/) 或者 [virtualenvwrapper｜我的博客](https://blog.csdn.net/xiaojiajia007/article/details/85054798)
+
+⚠️注：如果远程服务器因为网络问题没法安装某些开发包或者访问某些网站，可以在局域网内共享本地端的流量代理服务，例如在远程服务器上生命代理的局域网地址和端口
+
+```
+export https_proxy=http://局域网代理本机地址:http监听端口号 http_proxy=http://局域网代理本机地址:http监听端口号all_proxy=socks5://局域网代理本机地址:socket监听端口号
+```
+
+长期挂载远程服务器需要给路由器端口设置固定IP地址，否则机器重启之后IP地址可能被重新分配。如果不会设置，请咨询师兄师姐，暂时分享一下他们的代理服务器完成开发环境的各种工具安装。自己长时间解决不掉的问题，很可能别人一句话就能帮忙解决，因此小白前期不要羞耻于提问，要有一颗发烧的心和不怕失败的坚韧。
 
 #### 文件传输
 
@@ -117,11 +125,11 @@ zsh【可选】:[ Ubuntu下安装ZSH - 知乎](https://zhuanlan.zhihu.com/p/5146
 
 ### 研究生的核心--短暂而宝贵的研究生涯
 
-每个人都有自己的节奏，工作的一天里抓住一次deep work的状态（沉浸地工作满4小时）就挺好了，提高执行效率鼓励自己keep going，别总盯着别人不停忙活而焦虑内耗。只要用功，积累一段时间即便暂时没有成功但肯定也有许多收获。理性面对麻烦，遇到困难意味着找到了问题关键，尝试解决它则离成功更进一步。别忘了，你的背后还有一群小伙伴会支持你，你在这里不是一个人在战斗。
+每个人都有自己的节奏，工作的一天里抓住一次deep work的状态（沉浸地工作满4小时）就挺好了，提高执行效率鼓励自己keep going，别总盯着别人不停忙活而焦虑内耗。与其焦虑不如想办法从最简单的事情开始干起。只要用功，积累一段时间即便暂时没有成功但肯定也有许多收获。理性面对麻烦，遇到困难意味着找到了问题关键，尝试解决它则离成功更进一步，很可能走的弯路是通往成功的必经之路。别忘了，你的背后还有一群小伙伴会支持你，你在这里不是一个人在战斗。
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121710818.png" alt="WechatIMG293" style="zoom:80%;" />
 
-学术品位是有门槛的，导师和学生需要一起提升。研究生阶段要尽快从工程师思维转变到科学研究思维，哪些是本课题的本质问题，哪些研究具有意义、创新性或普适性，学术论文应该怎么写，这部分一时半会说不完，姑且交给“线下面基”环节，以便尽快结束本文吧 :)
+学术品位是有门槛的，导师和学生需要一起提升，去回答“做什么研究”这个最难的问题。研究生阶段要尽快从工程师思维转变到科学研究思维，哪些是本领域的本质问题，哪些研究具有意义、创新性或普适性，学术论文应该怎么写，这部分一时半会说不完，姑且交给“线下面基”环节，以便尽快结束本文吧 :)
 
 
 

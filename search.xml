@@ -83,9 +83,9 @@ href="https://pytorch.org/get-started/previous-versions/">安装（官网）,</a
 href="https://cyinen.github.io/wiki/00-思维碎片/docker使用/">docker｜博客</a>
 或者 <a
 href="https://blog.csdn.net/xiaojiajia007/article/details/85054798">virtualenvwrapper｜我的博客</a></p>
-<p>⚠️注：如果远程服务器因为网络问题没法安装某些开发包或者访问某些网站，可以在局域网内共享本地端的流量代理服务，例如在远程服务器上生命代理的局域网地址和端口</p>
+<p>⚠️注：如果远程服务器因为网络问题没法安装某些开发包或者访问某些网站，可以在局域网内共享本地端的流量代理服务，例如在远程服务器上用环境变量声明提供代理服务的本地机的局域网地址和端口</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export https_proxy&#x3D;http:&#x2F;&#x2F;局域网代理本机地址:http监听端口号 http_proxy&#x3D;http:&#x2F;&#x2F;局域网代理本机地址:http监听端口号all_proxy&#x3D;socks5:&#x2F;&#x2F;局域网代理本机地址:socket监听端口号</span><br></pre></td></tr></table></figure>
-<p>长期挂载远程服务器需要给路由器端口设置固定IP地址，否则机器重启之后IP地址可能被重新分配。如果不会设置，请咨询师兄师姐，暂时分享一下他们的代理服务器完成开发环境的各种工具安装。自己长时间解决不掉的问题，很可能别人一句话就能帮忙解决，因此小白前期不要羞耻于提问，要有一颗发烧的心和不怕失败的坚韧。</p>
+<p>长期挂载远程服务器需要给路由器端口设置固定IP地址，否则机器重启之后IP地址可能被重新分配。如果不会设置，请咨询师兄师姐，<strong>暂时分享一下他们的代理服务器完成开发环境的各种工具安装</strong>。自己长时间解决不掉的问题，很可能别人一句话就能帮忙解决，因此小白前期不要羞耻于提问，要有一颗发烧的心和不怕失败的坚韧。</p>
 <h4 id="文件传输">文件传输</h4>
 <ul>
 <li><p>linux 常用命令: scp, mv, cd , rm, ssh</p></li>

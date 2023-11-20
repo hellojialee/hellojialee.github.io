@@ -27,9 +27,10 @@ I'm currently a faculty🧑‍🏫 with Hefei University of Technology (HFUT)�
 - [1] **J. Li**, W. Su, and Z. Wang, “Simple Pose: Rethinking and Improving a Bottom-up Approach for Multi-Person Pose Estimation.”, AAAI, 2020. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Improved-Body-Parts)
 - [2] W. Su, H. Zhang, **J. Li**, W. Yang, and Z. Wang, “Monocular Depth Estimation as Regression of Classification using Piled Residual Networks.”, ACM Multimedia, 2019.
 - [3] **J. Li** and Z. Wang, “Local Regression Based Hourglass Network for Hand Pose Estimation from a Single Depth Image.,” ICPR, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Hand-Pose-Estimation)
-- [4] Zhenhua Tang, **Jia Li,** Yanbin Hao, Richang Hong, "MLP-JCG: Multi-Layer Perceptron with Joint-Coordinate Gating for Efficient 3D Human Pose Estimation.", IEEE Transactions on Multimedia, 2023.
-- [5] **Jia Li,** Meng Wang, "Multi-Person Pose Estimation with Accurate Heatmap Regression and Greedy Association.," IEEE Transactions on Circuits and Systems for Video Technology.", 2022. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/OffsetGuided)
-- [6] **J. Li** and Z. Wang, “Real-Time Traffic Sign Recognition Based on Efficient CNNs in the Wild.”, IEEE Transactions on Intelligent Transportation Systems, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Traffic_Sign_Recognition_Efficient_CNNs)
+- [4] **J. Li** , et al.,  "Multimodal Feature Extraction and Fusion for Emotional Reaction Intensity Estimation and Expression Classification in Videos with Transformers.", CVPR W, 2023. [<font color="#0000dd"> Github</font>](https://github.com/cyinen/CVPR2023-ABAW5-ERI)
+- [5] Zhenhua Tang, **Jia Li,** Yanbin Hao, Richang Hong, "MLP-JCG: Multi-Layer Perceptron with Joint-Coordinate Gating for Efficient 3D Human Pose Estimation.", IEEE Transactions on Multimedia, 2023.
+- [6] **Jia Li,** Meng Wang, "Multi-Person Pose Estimation with Accurate Heatmap Regression and Greedy Association.," IEEE Transactions on Circuits and Systems for Video Technology.", 2022. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/OffsetGuided)
+- [7] **J. Li** and Z. Wang, “Real-Time Traffic Sign Recognition Based on Efficient CNNs in the Wild.”, IEEE Transactions on Intelligent Transportation Systems, 2018. [<font color="#0000dd"> Github</font>](https://github.com/hellojialee/Traffic_Sign_Recognition_Efficient_CNNs)
 
 ​	For <font size=4> more </font> published papers, please refer to my 👉 [<font color="#0000dd"> Google Scholar</font>](https://scholar.google.com/citations?user=LVAnDxwAAAAJ).
 

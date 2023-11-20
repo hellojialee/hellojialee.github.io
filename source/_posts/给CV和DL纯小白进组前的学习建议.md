@@ -92,13 +92,13 @@ categories: 学习
 
 [conda ](https://blog.csdn.net/SARACH_WONG/article/details/89328307)[环境创建｜博客](https://blog.csdn.net/SARACH_WONG/article/details/89328307) & pytorch [安装（官网）,](https://pytorch.org/get-started/previous-versions/)  [docker｜博客](https://cyinen.github.io/wiki/00-思维碎片/docker使用/) 或者 [virtualenvwrapper｜我的博客](https://blog.csdn.net/xiaojiajia007/article/details/85054798)
 
-⚠️注：如果远程服务器因为网络问题没法安装某些开发包或者访问某些网站，可以在局域网内共享本地端的流量代理服务，例如在远程服务器上生命代理的局域网地址和端口
+⚠️注：如果远程服务器因为网络问题没法安装某些开发包或者访问某些网站，可以在局域网内共享本地端的流量代理服务，例如在远程服务器上用环境变量声明提供代理服务的本地机的局域网地址和端口
 
 ```
 export https_proxy=http://局域网代理本机地址:http监听端口号 http_proxy=http://局域网代理本机地址:http监听端口号all_proxy=socks5://局域网代理本机地址:socket监听端口号
 ```
 
-长期挂载远程服务器需要给路由器端口设置固定IP地址，否则机器重启之后IP地址可能被重新分配。如果不会设置，请咨询师兄师姐，暂时分享一下他们的代理服务器完成开发环境的各种工具安装。自己长时间解决不掉的问题，很可能别人一句话就能帮忙解决，因此小白前期不要羞耻于提问，要有一颗发烧的心和不怕失败的坚韧。
+长期挂载远程服务器需要给路由器端口设置固定IP地址，否则机器重启之后IP地址可能被重新分配。如果不会设置，请咨询师兄师姐，**暂时分享一下他们的代理服务器完成开发环境的各种工具安装**。自己长时间解决不掉的问题，很可能别人一句话就能帮忙解决，因此小白前期不要羞耻于提问，要有一颗发烧的心和不怕失败的坚韧。
 
 #### 文件传输
 

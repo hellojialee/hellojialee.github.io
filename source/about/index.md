@@ -9,7 +9,7 @@ date: 2020-01-28 20:11:18
 
 <div style="text-align:center;">
   <a href="https://hellojialee.github.io/about/">
-    <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" alt="图片描述" style="width:500px;">
+    <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" alt="图片描述" style="width:450px;">
   </a>
 </div>
 
@@ -50,15 +50,15 @@ From 2012 to 2016, I majored in Automation at the Department of Information Engi
 
 ##  Hometown
 
-![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg)
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg" style="zoom:80%;" />
 
 ##  Love Traveling
 
-![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg)
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
 
-![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg)
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:20%;" />
 
 ##  May you have a nice day :)
 
-![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg)
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:20%;" />
 

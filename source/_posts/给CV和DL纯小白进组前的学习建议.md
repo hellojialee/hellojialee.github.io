@@ -69,9 +69,14 @@ categories: 学习
 
 这里顺便说一句，新东方**《考研英语经典必背500句》**也可以看看，里面有不少长难句分析，素材来自于各种从句嵌套的科技论文，读一读有助于提高对语法结构和复杂表达的理解水平。
 
-### 其他工具
+### 其他工具和插件
 
 除此之外，日常使用的还有Pycharm专业版、VSCode、Transmit（Mac端FTP工具，其实Pycharm和VSCode也能以GUI方式做到）、Dash（API文档聚合管理）、MathPix（Latex公式识别）等都非常推荐尝试。
+这里点一下个人很喜欢的pycharm（或vscode插件TODO Tree）支持的TODO高亮和全局聚合管理功能，建议用不同的关键字和颜色高亮管理不同的TODO项，例如
+
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202401121108226.jpeg" alt="WechatIMG1402" style="zoom: 45%;" />
+
+
 
 ### 学长推荐必备工具
 
@@ -116,6 +121,8 @@ zsh【可选】:[ Ubuntu下安装ZSH - 知乎](https://zhuanlan.zhihu.com/p/5146
 学习使用AI代码助手：Copilot或ChatGPT
 
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310170904466.png" alt="image-20231017上午90421965" style="zoom:65%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202401121113933.png" alt="WechatIMG1444" style="zoom:65%;" />
 
 ## 进阶篇
 

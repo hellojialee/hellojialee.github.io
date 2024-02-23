@@ -5,22 +5,20 @@ date: 2020-01-28 20:11:18
 
 ## **Hello World!**
 
--- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**)     👇
+-- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**)      👇
 
 <div style="text-align:center;">
   <a href="https://hellojialee.github.io/about/">
     <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" alt="图片描述" style="width:450px;">
   </a>
 </div>
-
-- [<font size=4 color="#ddd00">Here🎯</font>](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm)  is Jia's officail school page
+- [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page
 - My current research interests include:
-  - computer vision
-  - multimodal emotion recognition
-  - embodied intelligence...
-
+    - computer vision
+    - multimodal emotion recognition
+    - embodied intelligence...
 - I am looking for self-motivated students to join us and welcome to contact!!
-- E-mail📧 :  <lijia@hfut.edu.cn> (for work) or  <hellojialee@gmail.com> (only in case)
+- E-mail📧 : [lijia@hfut.edu.cn](mailto:lijia@hfut.edu.cn) (for work) or [hellojialee@gmail.com](mailto:hellojialee@gmail.com) (only in case)
 
 ##  **Self-Introduction**
 
@@ -48,17 +46,14 @@ From 2016 to 2021, I studied at the Department of Automation, School of Informat
 
 From 2012 to 2016, I majored in Automation at the Department of Information Engineering, Hefei University of Technology (HFUT). I consistently ranked top in my major as well as the whole Department with a GPA of 92%, earning the National Scholarship (国家奖学金) each year. I achieved the first place🥇 in the HFUT Mathematics Competition.
 
-##  Hometown
+## May you have a nice day :)
 
+{% gp 5-3 %}
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg" style="zoom:80%;" />
-
-##  Love Traveling
-
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
-
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202402231353632.jpg" style="zoom:90%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:20%;" />
-
-##  May you have a nice day :)
-
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:20%;" />
+{% endgp %}
+
 

@@ -109,8 +109,12 @@ zsh-syntax-highlighting。祖传配置文件： zsh_history &amp; .zshrc &amp;
 oh-my-zsh</p>
 <h4 id="代码助手">代码助手</h4>
 <p>学习使用AI代码助手：Copilot或ChatGPT</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310170904466.png" alt="image-20231017上午90421965" style="zoom:65%;" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202401121113933.png" alt="WechatIMG1444" style="zoom:65%;" /></p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310170904466.png" alt="image-20231017上午90421965" style="zoom:65%;" /></div><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202401121113933.png" alt="WechatIMG1444" style="zoom:65%;" /></div></div></div></div>
+<p>多说两句，Copilot
+Chat功能已经上线，这是对原有Copilot代码辅助功能的重要补充，虽然Copilot
+Chat的通用知识没有chatgpt
+3.5丰富和深刻，但是它分析本地项目的（或者打开的多个窗口文档中的）代码结构和运行逻辑的功能挺实用，特别是可以加快理解别人的代码。例如下面的简单提问：</p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202403022152972.png" alt="WechatIMG1444" style="zoom:50%;" /></div><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202403022158621.png" alt="WechatIMG1444" style="zoom:50%;" /></div></div></div></div>
 <h2 id="进阶篇">进阶篇</h2>
 <h3 id="研究经验">研究经验</h3>
 <p>内部分享，此处略。。。</p>

@@ -9,20 +9,22 @@ date: 2020-01-28 20:11:18
 
 <div style="text-align:center;">
   <a href="https://hellojialee.github.io/about/">
-    <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309110946262.jpg" alt="图片描述" style="width:450px;">
+    <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202403120942769.jpeg" alt="图片描述" style="width:400px;">
   </a>
 </div>
+
+
 - [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page
 - My current research interests include:
     - computer vision
-    - multimodal emotion recognition
+    - multimodal affective computing
     - embodied intelligence...
 - I am looking for self-motivated students to join us and welcome to contact!!
 - E-mail📧 : [lijia@hfut.edu.cn](mailto:lijia@hfut.edu.cn) (for work) or [hellojialee@gmail.com](mailto:hellojialee@gmail.com) (only in case)
 
 ##  **Self-Introduction**
 
-I'm currently a faculty with Hefei University of Technology (HFUT), Hefei, China. I received my Ph.D. degree from the School of Information Science and Technology, University of Science and Technology of China (USTC), Hefei, China, in 2021. Before that, I received my B.E. degree in automation from Hefei University of Technology, China, in 2016. I have published papers in refereed journals and conferences such as TCSVT, TMM, AAAI, and ACM MM. I have obtained championships in two international challenges  (5th ABAW and 3rd MuSe) in the field of affective computing hosted by CVPR 2023 and MM 2022. 
+I'm currently a faculty member with Hefei University of Technology (HFUT), Hefei, China. I received my Ph.D. degree from the School of Information Science and Technology, University of Science and Technology of China (USTC), Hefei, China, in 2021. Before that, I received my B.E. degree from Hefei University of Technology, China, in 2016. I have published papers in refereed journals and conferences such as TCSVT, TMM, AAAI, and ACM MM. I have obtained championships in two international challenges  (5th ABAW and 3rd MuSe) in the field of affective computing hosted by CVPR 2023 and MM 2022. 
 
 ##  **Some Publications**
 
@@ -40,7 +42,7 @@ I'm currently a faculty with Hefei University of Technology (HFUT), Hefei, China
 
 ###  **Postgraduate Education** @USTC
 
-From 2016 to 2021, I studied at the Department of Automation, School of Information Science and Technology,  University of Science and Technology of China (USTC), where I was awarded the National Scholarship for Postgraduates (研究生国家奖学金), the inaugural Tang Lixin Scholarship (唐立新奖学金), and the Huayu Fund Scholarship (华瑜基金奖学金).
+From 2016 to 2021, I studied at the [School of Information Science and Technology](https://sist.ustc.edu.cn/main.htm) and also the [National Engineering Research Center of Speech and Language Information Processing](http://nercslip.ustc.edu.cn/main.htm),  affiliated with University of Science and Technology of China (USTC), where I was awarded the National Scholarship for Postgraduates (研究生国家奖学金), the inaugural Tang Lixin Scholarship (唐立新奖学金), and the Huayu Fund Scholarship (华瑜基金奖学金).
 
 ###  **Undergraduate Education** @HFUT
 
@@ -48,12 +50,11 @@ From 2012 to 2016, I majored in Automation at the Department of Information Engi
 
 ## May you have a nice day :)
 
-{% gp 5-3 %}
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg" style="zoom:80%;" />
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202402231353632.jpg" style="zoom:90%;" />
+{% gp 5-4 %}
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:20%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:20%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202402231353632.jpg" style="zoom:90%;" />
 {% endgp %}
-
 

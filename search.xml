@@ -43,7 +43,7 @@ networks章节，从最原始的RNN开始，一路讲到如何催生出LSTM、At
 <p>申请加入师兄师姐自发组织的研讨，小分队在这里 <a
 href="https://github.com/ReadingPapers"><font color="#ddd00">
 ReadingPapers|GitHub</font></a>，研讨小组每周精选的论文分享笔记也将同步到<a
-href="https://www.zhihu.com/column/c_1737122861716979712"><font color="#ddd00">ReadingPapers分享精选|知乎</font>&gt;</a>。</p>
+href="https://www.zhihu.com/column/c_1737122861716979712"><font color="#ddd00">ReadingPapers分享精选|知乎</font></a>。</p>
 <p>另外提出一个小要求，鉴于还没入驻实验室且自学课程可能枯燥和孤单，建议每周发送一次周报（借助外在约束，坚持打卡），简述知识点所学情况，例如下面一个组内同学的某次周报截图，当然也不需要详细。这么做的目的是服务于自己对领域知识体系的构建（好记性不如烂笔头），坚持积累就有了属于个人的知识图谱，借此机会能够反思一周过去了有没有收获，最后利于导师掌握学习进度并帮忙查缺补漏。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310170841600.png" alt="image-20231017上午84131388" style="zoom:80%;" /></p>
 <h2 id="工具技能篇">工具技能篇</h2>
@@ -143,7 +143,7 @@ hard”的理念，需要大家一起维护自我驱动的、弹性的工作作�
         <category>学习</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
+        <tag>深度学习 - 机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1692,9 +1692,9 @@ torch.sqrt((x1 - t1)**2 + (x2 - t2)**2)</p>
         <category>科研</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>pytorch</tag>
         <tag>python</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3851,7 +3851,8 @@ href="https://link.zhihu.com/?target=https%253A//arxiv.org/abs/1911.10529">https
         <category>科研</category>
       </categories>
       <tags>
-        <tag>pytorch - python</tag>
+        <tag>pytorch</tag>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>

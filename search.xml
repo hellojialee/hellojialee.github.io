@@ -53,7 +53,10 @@ href="https://www.zhihu.com/column/c_1737122861716979712"><font color="#ddd00">R
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121646102.png" alt="WechatIMG288" style="zoom:67%;" /></p>
 <p>PDF预览、Tag、翻译等功能需要通过第三方插件实现。如果你是Alfred软件爱好者，不怕折腾甚至还能配置其Zotero的Workflow，具体可参考
 <a href="https://zhuanlan.zhihu.com/p/598001777" target="_blank" rel="noopener">ZotHero，Alfred
-Workflow for Zotero｜知乎</a>。</p>
+Workflow for
+Zotero｜知乎</a>。额外提醒一句，默认只提供200M的文献PDF同步空间，我们自己可以设置Zotero文件夹中storage的软连接（ln
+-s），把实际的文献库存储目录storage托管到自己的云盘中，从而实现免费无限制的多平台同步。至于Zotero的meta
+info和notes，则可以通过官方同步，因为这两种文件是无空间限制的。</p>
 <h3 id="基于markdown语法的双链笔记-obsidian">基于Markdown语法的双链笔记
 Obsidian</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121649295.png" alt="WechatIMG289" style="zoom:67%;" /></p>
@@ -1700,8 +1703,8 @@ torch.sqrt((x1 - t1)**2 + (x2 - t2)**2)</p>
       </categories>
       <tags>
         <tag>pytorch</tag>
-        <tag>深度学习</tag>
         <tag>python</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3632,8 +3635,8 @@ inputs.</p>
         <category>科研</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>pytorch</tag>
+        <tag>机器学习</tag>
         <tag>深度学习 - 易错点</tag>
       </tags>
   </entry>

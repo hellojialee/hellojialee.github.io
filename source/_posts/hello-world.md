@@ -145,6 +145,8 @@ math:
 
 - 有可能是node版本和hexo不兼容出现的编译问题
 
+- 不知道原因的情况：查看本地部署时，虽然Safari浏览器里无法正常渲染，但是Chrome里正常，推送到github网页端也正常
+
 ## 更改markdown信息头模板
 默认的信息头不全，我们把markdown模板 /Users/lijia/科研&学习/github博客/scaffolds/post.md 里面最开始的信息更改如下：
 

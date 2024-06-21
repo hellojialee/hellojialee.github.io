@@ -16,8 +16,8 @@ date: 2020-01-28 20:11:18
 
 - [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page
 - My current research interests include:
-    - computer vision
     - multimodal affective computing
+    - computer vision
     - embodied intelligence...
 - I am looking for self-motivated students to join us and welcome to contact!!
 - E-mail📧 : [lijia@hfut.edu.cn](mailto:lijia@hfut.edu.cn) (for work) or [hellojialee@gmail.com](mailto:hellojialee@gmail.com) (only in case)
@@ -46,7 +46,7 @@ From 2016 to 2021, I studied at the [School of Information Science and Technolog
 
 ###  **Undergraduate Education** @HFUT
 
-From 2012 to 2016, I majored in Automation at the Department of Information Engineering, Hefei University of Technology (HFUT). I consistently ranked top in my major as well as the whole Department with a GPA of 92%, earning the National Scholarship (国家奖学金) each year. I achieved the first place🥇 in the HFUT Mathematics Competition.
+From 2012 to 2016, I majored in Automation at the Department of Information Engineering, Hefei University of Technology (HFUT). I consistently ranked first in my major with a GPA of 92%, as well as in the whole Department (1/800), earning the National Scholarship (国家奖学金) each year. I achieved the first place🥇 in the HFUT Mathematics Competition.
 
 ## May you have a nice day :)
 
@@ -54,7 +54,7 @@ From 2012 to 2016, I majored in Automation at the Department of Information Engi
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:20%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:20%;" />
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193705.jpg" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202406211436821.jpg" style="zoom:80%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202402231353632.jpg" style="zoom:90%;" />
 {% endgp %}
 

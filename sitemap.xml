@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hellojialee.github.io/about/index.html</loc>
+    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
     
-    <lastmod>2024-06-21T06:36:56.826Z</lastmod>
+    <lastmod>2024-09-07T09:31:19.417Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hellojialee.github.io/2023/10/12/AI%E5%9F%BA%E7%A1%80%E5%92%8C%E7%A7%91%E7%A0%94%E8%8F%9C%E9%B8%9F%E4%BF%AE%E7%82%BC%E8%B7%AF%E5%BE%84%E5%BB%BA%E8%AE%AE/</loc>
+    <loc>https://hellojialee.github.io/2023/03/14/hexo-hello-world/</loc>
     
-    <lastmod>2024-06-18T14:20:57.000Z</lastmod>
+    <lastmod>2024-06-21T07:07:48.545Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellojialee.github.io/about/index.html</loc>
+    
+    <lastmod>2024-06-21T06:36:56.826Z</lastmod>
     
   </url>
   
@@ -51,14 +58,7 @@
   </url>
   
   <url>
-    <loc>https://hellojialee.github.io/2023/03/14/hello-world/</loc>
-    
-    <lastmod>2023-09-12T02:38:34.447Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/2020/01/28/L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    <loc>https://hellojialee.github.io/2020/01/28/UnderstandingL1&L2regularization/</loc>
     
     <lastmod>2023-09-11T03:30:36.434Z</lastmod>
     

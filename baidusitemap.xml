@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hellojialee.github.io/2023/10/12/AI%E5%9F%BA%E7%A1%80%E5%92%8C%E7%A7%91%E7%A0%94%E8%8F%9C%E9%B8%9F%E4%BF%AE%E7%82%BC%E8%B7%AF%E5%BE%84%E5%BB%BA%E8%AE%AE/</loc>
-    <lastmod>2024-06-18</lastmod>
+    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
+    <lastmod>2024-09-07</lastmod>
+  </url>  <url>
+    <loc>https://hellojialee.github.io/2023/03/14/hexo-hello-world/</loc>
+    <lastmod>2024-06-21</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/02/12/Apex%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2024-03-25</lastmod>
@@ -19,10 +22,7 @@
     <loc>https://hellojialee.github.io/2020/02/03/Pytorch%E4%B8%AD%E7%9A%84Batch-Normalization-layer%E8%B8%A9%E5%9D%91/</loc>
     <lastmod>2023-10-12</lastmod>
   </url>  <url>
-    <loc>https://hellojialee.github.io/2023/03/14/hello-world/</loc>
-    <lastmod>2023-09-12</lastmod>
-  </url>  <url>
-    <loc>https://hellojialee.github.io/2020/01/28/L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    <loc>https://hellojialee.github.io/2020/01/28/UnderstandingL1&L2regularization/</loc>
     <lastmod>2023-09-11</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>

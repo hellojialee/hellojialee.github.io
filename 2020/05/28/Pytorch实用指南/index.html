@@ -54,7 +54,7 @@
 <meta property="og:description" content="经常使用的Pytorch代码片段技巧，以及环境搭建和使用易错点">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-28T08:07:51.000Z">
-<meta property="article:modified_time" content="2023-09-11T03:26:41.546Z">
+<meta property="article:modified_time" content="2024-10-11T01:24:16.578Z">
 <meta property="article:author" content="Jia Li">
 <meta property="article:tag" content="pytorch">
 <meta property="article:tag" content="python">
@@ -243,7 +243,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-11 11:26:41" itemprop="dateModified" datetime="2023-09-11T11:26:41+08:00">2023-09-11</time>
+                <time title="Modified: 2024-10-11 09:24:16" itemprop="dateModified" datetime="2024-10-11T09:24:16+08:00">2024-10-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,14 +263,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>30k</span>
+              <span>31k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>27 mins.</span>
+              <span>28 mins.</span>
             </span>
             <div class="post-description">经常使用的Pytorch代码片段技巧，以及环境搭建和使用易错点</div>
 
@@ -505,15 +505,38 @@ class="uri">https://blog.csdn.net/u013548568/article/details/81532605</a></p>
 <p>以及 <a href="https://zhuanlan.zhihu.com/p/91485607"
 class="uri">https://zhuanlan.zhihu.com/p/91485607</a></p>
 <p>size_average是说是不是对一个batch里面的所有的数据求均值</p>
-<hr />
-<p><strong>Reduce </strong> <strong>size_average </strong> * 意义* True
-True 对batch里面的数据取均值loss.mean() True False
-对batch里面的数据求和loss.sum() False – returns a loss per batch element
-instead, 这个时候忽略size_average参数</p>
-<hr />
-<p>reduction : 可选的参数有：‘none’ | ‘elementwise_mean’ | ‘sum’,
-正如参数的字面意思</p>
-<hr />
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 15%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Reduce</th>
+<th style="text-align: center;">size_average</th>
+<th style="text-align: center;">result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">对batch里面的数据取均值</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">False</td>
+<td style="text-align: center;">对batch里面的数据求和</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">False</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">returns a loss per batch element
+instead,这个时候忽略size_average参数</td>
+</tr>
+</tbody>
+</table>
 <p>假设输入和target的大小分别是NxCxWxH，那么一旦reduce设置为False，loss的大小为NxCxWxH，返回每一个元素的loss</p>
 <p><strong>reduction代表了上面的reduce和size_average双重含义，这也是文档里为什么说reduce和size_average要被Deprecated
 的原因</strong></p>
@@ -827,6 +850,10 @@ PyTorch中在反向传播前为什么要手动将梯度清零？ - Pascal的回�
 forward()阶段更新的，这样积累梯度并没有增大BN layers的实际batch
 size。可以通过减少BN层的 momentum
 值，让BN层动态更新统计参数时能够记住更长。</p>
+<h2 id="pytorchapextensorboarddistributed-training例子">3.
+Pytorch+Apex+tensorboard+distributed training例子</h2>
+<p><a
+href="https://github.com/richardkxu/distributed-pytorch/blob/master/imagenet_ddp_apex.py">综合使用的代码模板</a>，原文仓库还包括如何同时显示多个实验的曲线，使用多节点分布式训练等等</p>
 <h1 id="pytorch-测试阶段">Pytorch 测试阶段</h1>
 <h2 id="正确的测试预测时间计时代码">1.
 正确的测试（预测）时间计时代码</h2>
@@ -1151,6 +1178,22 @@ opt_level (<a href="https://github.com/NVIDIA/apex/pull/351"
 class="uri">https://github.com/NVIDIA/apex/pull/351</a>). I recommend
 waiting until this is merged then trying it.</p>
 </blockquote>
+<h2
+id="torch.compile或openai的trition甚至手写extension都是-pytorch-中提高代码性能的有效工具">10.
+torch.compile或OpenAI的Trition，甚至手写extension都是 PyTorch
+中提高代码性能的有效工具</h2>
+<p>参考：<a
+href="https://www.zhihu.com/question/649283251/answer/3436976418">如何利用torch.compile和手写extension提高代码性能？
+- 知乎回答</a></p>
+<p>Pytorch 2.0新增的torch.compile 通过 JIT 将 PyTorch
+代码编译成优化的内核，使 PyTorch
+代码运行得更快，特点是使用方便简单，大部分过程仅需修改一行代码。不过这个方法需要首次运行时对模型进行编译会费时一点。</p>
+<p>除了torch.compile之外，OpenAI发布的Trition也能够为Pytorch加速，可以直接使用Python编写算子，不需要C++，比手写CUDA算子要相对简单，但比torch.compile要复杂一些。</p>
+<p>手写CUDA算子，需要掌握CUDA并行编程和Pytorch拓展规则，但是灵活度和提升上限也最高。</p>
+<h2 id="其他可参考资源">11. 其他可参考资源</h2>
+<p><a
+href="https://zhuanlan.zhihu.com/p/673671771">PyTorch高性能编程（持续更新）
+- 知乎</a></p>
 <h1 id="pytorch-使用陷阱易错点"><strong>Pytorch
 使用陷阱，易错点</strong></h1>
 <h2
@@ -1250,6 +1293,18 @@ torch.sqrt()在0处的左导数没有定义，会返回nan，换用 torch.norm()
 <p>例如： # https://github.com/pytorch/pytorch/issues/2421 # norm =
 torch.sqrt((x1 - t1)**2 + (x2 - t2)**2)</p>
 <p><code>norm = (torch.stack((x1, x2)) - torch.stack((t1, t2))).norm(dim=0)</code></p>
+<h2 id="pytorch微分数值异常自动检测或debug">8.
+PyTorch微分数值异常自动检测或debug</h2>
+<p>参考 <a
+href="https://zhuanlan.zhihu.com/p/461202163">torch.autograd.detect_anomaly()
+- 知乎</a>
+可以作为函数调用，也可作为contextmanager，该功能完成两件事：</p>
+<ol type="1">
+<li>运行前向时开启异常检测功能，则在反向时会打印引起反向失败的前向操作堆栈</li>
+<li>反向计算出现“nan”时引发异常</li>
+</ol>
+<p>在深度学习中，自动微分是训练神经网络的关键技术之一。PyTorch作为一个广泛使用的深度学习框架田，提供了强大的自动微分功能。然而，在处理复杂的模型或计算图时，可能会出现梯度计算错误（例如计算图释放错误）或其他异常（例如nan数值异常）。为了帮助调试这些问题，PyTorch提供了<code>torch.autograd.set_detect_anomaly(True)</code>函数，用于启用自动微分异常检测。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="comment"># 正向传播时: 开启自动求导的异常侦测</span></span><br><span class="line">torch.autograd.set_detect_anomaly(<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 反向传播时: 在求导时开启侦测</span></span><br><span class="line"><span class="keyword">with</span> torch.autograd.detect_anomaly() :</span><br><span class="line">    loss backward ()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -1396,7 +1451,8 @@ tensor可以通过data_ptr()查看第一个元素地址是否相同来判断</sp
 多进程准备数据随机种子seed的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何加速训练数据准备并载入gpu训练"><span class="nav-number">4.4.</span> <span class="nav-text">4.
 如何加速训练数据准备并载入GPU训练</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch训练阶段"><span class="nav-number">5.</span> <span class="nav-text">Pytorch训练阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stochastic-weight-averaging-in-pytorch"><span class="nav-number">5.1.</span> <span class="nav-text">1. Stochastic Weight
 Averaging in PyTorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过梯度积累变相增大batch-size"><span class="nav-number">5.2.</span> <span class="nav-text">2. 通过梯度积累变相增大batch
-size</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-测试阶段"><span class="nav-number">6.</span> <span class="nav-text">Pytorch 测试阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正确的测试预测时间计时代码"><span class="nav-number">6.1.</span> <span class="nav-text">1.
+size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorchapextensorboarddistributed-training例子"><span class="nav-number">5.3.</span> <span class="nav-text">3.
+Pytorch+Apex+tensorboard+distributed training例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-测试阶段"><span class="nav-number">6.</span> <span class="nav-text">Pytorch 测试阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正确的测试预测时间计时代码"><span class="nav-number">6.1.</span> <span class="nav-text">1.
 正确的测试（预测）时间计时代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练测试两个阶段需要注意设置不同状态-参考"><span class="nav-number">6.2.</span> <span class="nav-text">2.
 训练，测试两个阶段需要注意设置不同状态 参考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a.-model.train和model.val"><span class="nav-number">6.2.1.</span> <span class="nav-text">a. model.train()和model.val()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b.-测试val时不光要设置model.eval-为了防止内存爆炸应该追加torch.no_grad"><span class="nav-number">6.2.2.</span> <span class="nav-text">b.
 测试（val)时不光要设置model.eval()
@@ -1414,7 +1470,9 @@ before rebuilding:</span></a></li><li class="nav-item nav-level-3"><a class="nav
 Pytorch内存泄露（僵尸进程）解决办法 原文链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关的进程和内存管理bash-cmd-命令行命令"><span class="nav-number">7.7.</span> <span class="nav-text">7.
 相关的进程和内存管理bash cmd (命令行命令）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何才能使用-tensor-core"><span class="nav-number">7.8.</span> <span class="nav-text">8. 如何才能使用 Tensor Core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apex的fused-adam的特点是模型参数更新迭代得比pytorch中原生的adam快"><span class="nav-number">7.9.</span> <span class="nav-text">9.
 Apex的Fused
-Adam的特点是模型参数更新迭代得比Pytorch中原生的Adam快</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-使用陷阱易错点"><span class="nav-number">8.</span> <span class="nav-text">Pytorch
+Adam的特点是模型参数更新迭代得比Pytorch中原生的Adam快</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#torch.compile或openai的trition甚至手写extension都是-pytorch-中提高代码性能的有效工具"><span class="nav-number">7.10.</span> <span class="nav-text">10.
+torch.compile或OpenAI的Trition，甚至手写extension都是 PyTorch
+中提高代码性能的有效工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他可参考资源"><span class="nav-number">7.11.</span> <span class="nav-text">11. 其他可参考资源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-使用陷阱易错点"><span class="nav-number">8.</span> <span class="nav-text">Pytorch
 使用陷阱，易错点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tensor.expand-expand_as是共享内存的只是原始数据的一个视图-view并没有在扩展的axis上有新的数据复制牵一发动全身"><span class="nav-number">8.1.</span> <span class="nav-text">1.
 Tensor.expand, expand_as是共享内存的，只是原始数据的一个视图
 view，并没有在扩展的axis上有新的数据复制，牵一发动全身！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失计算图因为pytorch的动态机制越来越大直到耗尽内存"><span class="nav-number">8.2.</span> <span class="nav-text">2.
@@ -1422,7 +1480,8 @@ view，并没有在扩展的axis上有新的数据复制，牵一发动全身！
 Normalization layer踩坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化器的权值衰减weight_decay项导致的隐蔽bug即是的网络的权值不断减少至0"><span class="nav-number">8.4.</span> <span class="nav-text">4.
 优化器的权值衰减weight_decay项导致的隐蔽bug，即是的网络的权值不断减少至0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#l2正则不等于权值衰减"><span class="nav-number">8.5.</span> <span class="nav-text">5. L2正则不等于权值衰减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch中的优化器weight-decay默认对bias偏置也起作用不合理"><span class="nav-number">8.6.</span> <span class="nav-text">6.
 Pytorch中的优化器weight decay默认对bias(偏置)也起作用，不合理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#torch.sqrt在0处的左导数没有定义会返回nan换用-torch.norm"><span class="nav-number">8.7.</span> <span class="nav-text">7.
-torch.sqrt()在0处的左导数没有定义，会返回nan，换用 torch.norm()</span></a></li></ol></li></ol></div>
+torch.sqrt()在0处的左导数没有定义，会返回nan，换用 torch.norm()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch微分数值异常自动检测或debug"><span class="nav-number">8.8.</span> <span class="nav-text">8.
+PyTorch微分数值异常自动检测或debug</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1505,12 +1564,12 @@ torch.sqrt()在0处的左导数没有定义，会返回nan，换用 torch.norm()
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">152k</span>
+    <span title="Symbols count total">153k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:18</span>
+    <span title="Reading time total">2:19</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

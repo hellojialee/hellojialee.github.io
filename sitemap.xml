@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hellojialee.github.io/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/</loc>
+    
+    <lastmod>2024-10-11T01:55:22.764Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
+    
+    <lastmod>2024-10-11T01:27:23.320Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    
+    <lastmod>2024-10-11T01:24:16.578Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hellojialee.github.io/about/index.html</loc>
     
     <lastmod>2024-09-14T01:42:29.276Z</lastmod>
@@ -16,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
-    
-    <lastmod>2024-09-09T03:06:29.876Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hellojialee.github.io/2023/03/14/hexo-hello-world/</loc>
     
     <lastmod>2024-06-21T07:07:48.545Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>https://hellojialee.github.io/2020/02/12/Apex%E7%9B%B8%E5%85%B3/</loc>
     
     <lastmod>2024-03-25T11:26:32.009Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/</loc>
-    
-    <lastmod>2024-03-25T11:26:28.065Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://hellojialee.github.io/2020/01/28/UnderstandingL1&L2regularization/</loc>
     
     <lastmod>2023-09-11T03:30:36.434Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    
-    <lastmod>2023-09-11T03:26:41.546Z</lastmod>
     
   </url>
   

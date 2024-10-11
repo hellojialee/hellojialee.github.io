@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hellojialee.github.io/2020/05/15/Checklist4WritingErrors/</loc>
-    <lastmod>2024-09-10</lastmod>
+    <loc>https://hellojialee.github.io/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/</loc>
+    <lastmod>2024-10-11</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
-    <lastmod>2024-09-09</lastmod>
+    <lastmod>2024-10-11</lastmod>
+  </url>  <url>
+    <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2024-10-11</lastmod>
+  </url>  <url>
+    <loc>https://hellojialee.github.io/2020/05/15/Checklist4WritingErrors/</loc>
+    <lastmod>2024-09-10</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2023/03/14/hexo-hello-world/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/02/12/Apex%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2024-03-25</lastmod>
-  </url>  <url>
-    <loc>https://hellojialee.github.io/2020/01/28/%E4%B8%80%E4%B8%AA%20Pytorch%20%E8%AE%AD%E7%BB%83%E5%AE%9E%E8%B7%B5%20%EF%BC%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%20+%20%E5%8D%8A%E7%B2%BE%E5%BA%A6_%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83%EF%BC%89/</loc>
     <lastmod>2024-03-25</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2023/10/12/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/</loc>
@@ -23,9 +26,6 @@
     <lastmod>2023-10-12</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/01/28/UnderstandingL1&L2regularization/</loc>
-    <lastmod>2023-09-11</lastmod>
-  </url>  <url>
-    <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2023-09-11</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/08/25/%E7%BC%96%E7%A8%8B%E5%88%B7%E9%A2%98/</loc>

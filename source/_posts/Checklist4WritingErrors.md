@@ -12,43 +12,46 @@ categories: 学习
 
 ## 1\. and, but作连词 什么时候加逗号
 
-**1). and连接两个以上的单词、词组或子句；连接两个相同的单词或短语,以强调某事物的程度、暗示某事继续发生或在一段时间内不断增加；连接两件相继发生的事件；连接两个从句,表示因果关系时不加.**
+并列连词 coordinating conjunctions有很多，还有、"or"、"for"、"nor"、"so" 和 "yet"等。
+连接副词如 "therefore"、"however"、"moreover"、"consequently"、"nevertheless"等
+
+###  and, but作连词 什么时候加逗号
+
+如果并列连词连接的是两个独立子句，通常需要在连接词前后加逗号，以分隔这些子句。如果它们连接的是并列元素或短语，通常不需要逗号
+
+**1). and连接两个以上的单词、词组或子句；连接两个相同的单词或短语,以强调某事物的程度、暗示某事继续发生或在一段时间内不断增加；连接两件相继发生的事件；连接两个从句,表示因果关系时不加。也就是前后关系很紧密**
 
 He lay on his back and looked up at the sky. 他仰卧着观看天空。
-
 I'm going to write good jokes and become a good comedian.
-
-**三个以上的词（短语）并列的场合，通常只在最后一个词（短语）前加and，这种情形，and之前加不加逗号都可以。如：**
-
-I visited London, Paris**(,)** and Rome.我游览过伦敦、巴黎和罗马。《英汉多功能词典 》
-
-In that room there were a chair, a table**(,)** and a bed. 在那房间里面有一张椅子、一张桌子和一张床。《21世纪英汉汉英双向词典》
-
-▲**但省略and之前的逗号的情况较多。如**：
-
-Joan was rich, beautiful and proud. 琼非常有钱, 漂亮且庄重。《简明英汉词典》
-
-one woman, two men and three children 一个女人﹑ 两个男人及三个孩子 《牛津高阶英汉双解学习词典》
-
-He was tall, dark and handsome. 他身材高大、皮肤黝黑、长相帅气。《朗文当代英语词典》
+I finished my work **then** I went for a walk.
+She studied hard **then** she aced the exam.
 
 **2). 连接两句话,第二句话的意思是第一句的延伸时加逗号,**
 
 如：You could only really tell the effects of the disease in the long term, and five years wasn't long enough.
 
-### **另外一个解释：**
-
-**and, but 连接两个独立句子的时候,需要逗号,如果是两个词组或是短语或是各种从句不用逗号.**
-
 **当有多个并列成分时，最后的并列连词and 或 or 之前一般是不加逗号的。不过近年来，越来越多的作者在表达时出现and 前加逗号的情况，特别是在美国。**
+
+Joan was rich, beautiful and proud. 琼非常有钱, 漂亮且庄重。《简明英汉词典》
+one woman, two men and three children 一个女人﹑ 两个男人及三个孩子 《牛津高阶英汉双解学习词典》
+He was tall, dark and handsome. 他身材高大、皮肤黝黑、长相帅气。《朗文当代英语词典》
+
+I visited London, Paris,  and Rome.我游览过伦敦、巴黎和罗马。《英汉多功能词典 》
+In that room there were a chair, a table**(,)** and a bed. 在那房间里面有一张椅子、一张桌子和一张床。《21世纪英汉汉英双向词典》
 
 **另外，当书写长而复杂的句子，特别是有多个并列结构嵌套时，作者往往可在and前加逗号来帮助读者理清句子。**
 
-例如：there will be television chat shows hosted by robots, **and cars **with polllution monitors that will disable them when they offend. 加上and之后，句子变得更加清晰了。
+例如：there will be television chat shows hosted by robots, **and cars** with polllution monitors that will disable them when they offend. 加上and之后，句子变得更加清晰了。
 
-For hit to be re-elected, what is essential is not that his policy works**, but that **the public believe that it does. (并列表语从句）
+For hit to be re-elected, what is essential is not that his policy works **, but** that **the public believe that it does. (并列表语从句）
 
-### As well as 不等同于and. A as well as B侧重在于A,他们地位不平等。另外谓语动词单复数由A决定。
+### then
+搞不清楚，是否加逗号的都看到过
+I finished my work then I went for a walk.  时间顺序
+I finished my work, then I went for a walk.  逻辑顺序
+
+
+### As well as 不等同于and. A as well as B侧重在于A，他们地位不平等。另外谓语动词单复数由A决定。
 
 具体可参考： <https://www.jianshu.com/p/6e9e11a784c2>
 
@@ -58,7 +61,7 @@ For hit to be re-elected, what is essential is not that his policy works**, but 
 
 ### And, But是否能够置于居首
 
-如果前后有关系的，可以大些并且置于句首。但是建议不要太多，适量换成moreover,additionally (in addition), however.
+如果前后有关系的，可以大写并且置于句首。但是建议不要太多，适量换成moreover,additionally (in addition), however.
 
 ![](https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111125853.png)
 
@@ -1815,10 +1818,6 @@ e.g.  Addressing the intricacies of this question opens up an array of possibili
 
 e.g.  A number of contributions are asserted in the Introduction Section.
 
-
-
-
-
 ## 35. 连字符的使用，复合词
 
 https://cn.chem-station.com/化学杂记/化学与英语/2017/03/hyphen（-）连字符的使用方法.html
@@ -1853,7 +1852,7 @@ because of 通常只用来引导状语，若引导表语，主语通常应为代
 
 It is all because of what you said. 那完全是因为你说的话。
 
-## 英语中数学单位的单复数形式
+## 37. 英语中数学单位的单复数形式
 
 作者：Vicky
 链接：https://www.zhihu.com/question/393503086/answer/1217842790
@@ -1881,3 +1880,210 @@ It is all because of what you said. 那完全是因为你说的话。
 - *I [bought](https://link.zhihu.com/?target=https%3A//dictionary.cambridge.org/dictionary/english/bought) three kilograms of [plums](https://link.zhihu.com/?target=https%3A//dictionary.cambridge.org/dictionary/english/plum).* (中间隔了介词)
 
 5 单位符号（unit symbol）永远不变复数。比如kg，m，cm
+
+## 38. 动名词应该用形容词还是副词修饰
+
+摘录自： https://www.zhihu.com/question/305764364/answer/553895527
+
+1.修饰单个的动名词用形容词还是副词视具体情况而定，主要看是静态还是动态，其实很多时候都可以。
+
+2.修饰动名词短语，常用副词。
+
+''为了降低死亡风险''这样表达to reduce the risk of death，介词of后面跟名词所以用death无疑了。而若要表达''为了降低夭折的风险''，那便是酱紫了to reduce the risk of dying early用die的纯粹名词形式death肯定不对了，这就是二者比较显著的区别之一了。。''死得早''是一个意群，这里的'死'是动态的，只需满足语法正确用动名词dying，而''[死亡的风险](https://www.zhihu.com/search?q=死亡的风险&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A553895527})''里面的'死'为静态，用真正的名词death。
+
+动名词兼具名词和动词的属性
+
+## 39. 强调句式
+
+### It is/was.... that/who... 固定句型不管it后面是单数还是复数名词，谓语动词只用单数形式
+
+It **is** <u>Tom and Mary</u> who will be fined.   **强调句型，谓语动词is用单数**
+
+It is the students that make me sad.
+
+另外有些it is 后面接了复数名词其实是缩略的强调句式，并不是语法错误，例如
+What is that noise?
+It is my annoying neighbors upstairs. (缩略了 It is my annoying neighbors upstairs who always have parties this time of a day.）
+
+### 用助动词do强调构成强调举行
+摘录自：[do 的强调句怎么用！_百度知道](https://zhidao.baidu.com/question/313618158.html)
+
+将do添加在想要强调的谓语前面，<mark style="background: #FF5582A6;">且仅限于现在时或过去式(即只有do, does, did这样的形式)，不能用于进行时、完成时等形式(如不用于is doing, has done等)</mark>。
+You do look nice today.你今天看起来真的很漂亮
+
+<mark style="background: #FFB8EBA6;">注意区分祈使句：Do be</mark> careful with that vase!务必小心那个花瓶!  Please do sit down.务请坐下 Do tell me all about it.I'll keep it a dead secret.请告诉我吧，我一定严守秘密。
+
+在带 be 动词的陈述句中需要强调的时候，如果是书面文字，可以把 is, are 等写成斜体或加下划线； 如果是口头说，那就把 is, are 等说得重一些。
+
+## 40. is后面可以接名词复数，此时充当系动词
+
+动词 is 是系词 （英语叫 linking verb），<mark style="background: #D2B3FFA6;">系词的规则是要和前面的名词一致，因此在有些情况下后面可接复数单词</mark>, 比如：
+Joe's favorite dessert is blueberry muffins. 这是一个普通的主语-谓语结构。尽管“blueberry muffins”是复数，**动词“is”与主语“Joe’s favorite dessert”一致**，因为句子描述的是单一的喜欢的甜点是什么。
+(句子和 Blueberry muffins are Joe's favorite dessert.一样)
+
+> [!NOTE] 注意和倒装句中的is, are区分
+> On the left are two illustration figures. 这里用的是倒装句，动词“are”紧跟在介词短语“on the left”之后，目的是为了强调位置。**动词“are”与后面的复数名词“two illustration figures”一致。**
+
+Beijing's biggest traffic problem is cars that do not obey traffic rules.
+(= Cars that do not obey traffic rules are Beijing's biggest traffic problem.)
+
+My favorite food is dumplings.
+主语 My favorite food 为不可数名词与谓语 is 搭配一致，表语为复数并不影响前面的 is。
+
+>**系动词，也称连系动词（Linking verb），是用来辅助主语的动词。 它本身有词义，但不能单独用作谓语**，其后必须跟表语，构成系表结构说明主语的状况、性质、特征等情况。 在英语中，系动词的功能主要是把表语（名词、形容词、某些副词、非谓词、介词短语、从句）和它的主语联系在一起，说明主语的性质、特征、品性或状态。
+
+## 41. so tha和such that的区别
+- so是副词，后面接形容词
+  - e.g., he runs so fast that nobody can catch him.
+- such是形容词，后面接名次
+   - e.g., he is such a fast runner that nobody can catch him.
+
+
+ ## 42. it seems adj vs it seems to be adj 两者都对
+ 摘录自 Qura
+ **Seems is a linking verb** （系动词） that is most often followed by an adjective, like “It seems nice.”Moreover, you can add a noun clause after it, “It seems that we will have to walk home.”
+- “It seems to be” is almost the same thing with the addition of an infinitive “to be”, and they can both be used in the same manner.
+- Meaning-wise, <u>“it seems to be” implies that you are guessing or forming an idea about something, while “it seems” has a more direct sense to it.</u>
+
+## 43. 英语疑问句词序
+摘录自 [英语疑问句：5 种句型构建指南 | FluentU English Chinese](https://www.fluentu.com/blog/english-chi/英语-疑问句/)
+介绍了一般疑问句、特殊疑问句、礼貌性的间接疑问句、反义疑问句、 用于确认的否定疑问句。
+
+### 间接疑问句
+
+（直接）特殊疑问句：Where is the bookstore?（书店在哪？）
+改写**成间接疑问句**：**Could you please tell me** where the bookstore **is**?
+注意：<mark style="background: #FFB8EBA6;"> 直接疑问句中的系动词“is”放在“bookstore”前面，但在间接疑问句中，系动词要放到后面。</mark>
+
+### 否定疑问句
+
+基本构成为 [动词否定形式的缩写] + [主语] + [主动词] + [其他信息]?
+Wouldn’t （didn’t等） you like another cup of coffee? 
+
+在比较正式的语境或场合，可以用完整的动词否定形式来代替缩写。
+[助动词] + [主语] + not + [主动词] + [其他信息]?  e.g., Has she not handed in her assignment?
+
+## 44. of和for的区别
+摘录自： https://www.zhihu.com/question/359932822/answer/1091411349  
+
+*of是自身的属性，for是外部的影响*。所以很多时候，是从不同角度表示大致相同的同一目的。
+silly of you 是你傻   *VS*   silly for you 是你在做傻事。
+
+**of 表示所属性**，就是说 of 前面的东西属于of 后面，
+例如：the Windows of the classroom 表示教室的窗户  
+所以the market of stocks '则表示股票的市场 简称股市  
+
+**for表示目的**，那么 market for stocks 意思则表示此 market的存在是为了股票交易 所以也简称股市   
+
+**"to" 常用于表示方向、目的或所属关系，而 "for" 则更常用于表示目的、利益或代替**。在不同的语境下，它们的用法可能有所重叠。
+- it is important **to me**
+- I'm going **to** the store.（我去商店。）
+- He gave the book **to** her.（他把书给了她。）
+
+- This gift is **for** you.（这个礼物是给你的。）
+- He did it **for** his family.（他为了家人这样做。）
+
+## 45. to和for的区别
+摘自：[to和for的用法区别是什么 - 简书](https://www.jianshu.com/p/bb233a29dd17)
+
+一般情况下, to后面常接对象; 
+to sb.表示对某人**有直接影响**比如，食物对某人好或者不好就用to;
+
+for后面表示原因与目的为多，
+for表示从意义、价值**等间接角度**来说，例如对某人而言是重要的，就用for。
+
+## 46.  多个形容词一起修饰的排序问题和逗号分隔规则
+[多个形容词修饰名词的顺序规则和逗号的使用 - 知乎](https://zhuanlan.zhihu.com/p/103819507)
+
+### 形容词排序规则
+多个形容词排序记忆口诀是“先行色国材”
+对应限定词(冠词/数词) -- 性质特征(观点看法) -- 描绘词(大小，长短，形状，新旧，颜色) --出处 -- 材料
+不过一般没人这么写。另一个原则是：简单形容词一般放在前面。
+
+另外形容词修饰名词可以分为并列修饰和累积修饰
+
+### 逗号分割规则
+#### 并列修饰
+即两个或多个形容词<mark style="background: #BBFABBA6;">分别单独修饰</mark>这个名词，这种情况必须在形容词之间加上逗号。e.g.：”a heavy, bulky box” “a long, frustrating day”。判断标准是如果形容词的位置可以交换，意思不改变，则它们为coordinate adjectives。而且在只有两个形容词的时候，中间的逗号可以使用and替换， a heavy and bulky box
+
+#### 累积修饰
+形容词修饰名词的效果是累加的，每个形容词<mark style="background: #BBFABBA6;">将其右边的部分作为一个整体</mark>进行修饰，这种情况下形容词顺序不能调换，且不能加逗号。e.g.：“exquisite custom houseboat”
+
+## 47.  除...之外 apart from，except，except for，but，besides的区别
+摘录自：ChatGPT, [除……之外”有哪些？ - 知乎](https://zhuanlan.zhihu.com/p/143396902)
+重点："apart from"既可以表示包括也可以表示排除，需要考虑上下文、语境指示词、逻辑关系和常见用法等因素，并根据具体情况进行综合判断。
+
+例如：
+
+1. Apart from the rainy days, we had a great vacation. (包括，除了雨天以外，我们度过了愉快的假期。)
+2. Everyone attended the meeting, apart from John. (排除，除了约翰以外，每个人都参加了会议。)
+3. The package includes all the necessary items, apart from batteries. (包括，这个包裹包含了所有必要的物品，除了电池。)
+4. She enjoys various outdoor activities, apart from skiing. (排除，除了滑雪，她喜欢各种户外活动。)
+
+except for意为“除了；只是”，用来引出理由或细节以修正前面概括性的说法，即先整体肯定或否定，再后用except for修正。被论述物与被排除物不属于同类事物，有主次或从属关系。
+eg. Except for an old lady,the bus was empty.
+
+but作介词时，意为“除……之外；除了”，表示从整体中除去部分，且不包括除去的部分，常用于anything， nobody，everybody，none，all等复合词后。
+I have no choice but to listen to him.
+
+but后可接动词不定式，如果but前有实义动词do的某种形式，其后的不定式须省略to。
+He could do nothing but help her.
+I have no choice but to listen to him.
+but后可接动词不定式，如果but前有实义动词do的某种形式，其后的不定式须省略to。
+He could do nothing but help her.
+
+## 48.  拉丁语缩写读法（发音），例如"i.e."、"e.g." 、 "etc."、"et al."
+- **"etc."** 来自拉丁词组 "et cetera"，意为“等等”或“诸如此类”。在英语中，它主要用于列举一系列事物或例子，并表示还有其他类似的东西未列出。因此，**它的读法保留了拉丁词组的发音，即 /ɛt ˈkɛtərə/**。
+- **"i.e."** 来自拉丁词组 "id est"，意为“也就是说”。在英语中，它用于进一步解释或澄清前面提到的内容。为了更准确地传达这个意思，**它的读法被转换成了英语中相应的表达，即在口语中，通常念作 "that is"**。
+- **"e.g." 的英文读法是 "for example"**。在拉丁语中，它是 "exempli gratia" 的缩写，意为“举例”。在句子中使用 "e.g." 时，它用于引入一个或多个具体的例子，以帮助阐释前面提到的概念。因此，它的读法被转换成了英语中相应的表达，即 "for example"。
+- **"et al."（et alia 或 et alii）：发音：/ɛt ˈæl/** ，用途： 用于引用一组作者或人名，表示还有其他作者未列出。
+- **"vs."（versus）：发音：/ˈvɜrsəs/**，用途： 用于表示两者之间的对比，通常在竞争或对抗情境中使用。**也可以将其写成 "VS"**，这是常见的写法，尤其在标题、标语、广告等地方。
+
+这些缩写的读法规则在英语中确实可能看起来有些不一致，这些词汇读法规则之所以不同，是因为它们来自不同的拉丁词汇，并且在英语中使用时有不同的用途。
+
+## 49.  struggle 有可能表达了“努力做某事但遇到困难”的否定意味
+struggle 这个词既可以表示积极的努力和奋斗，也可以表示消极的困难和挣扎。具体含义取决于上下文。
+
+-  **"struggle" 表示困难、挣扎的消极用法，它表达了一种否定的意味**
+	- He struggles to understand the concept.
+	    - 翻译：他很难理解这个概念。
+	    - 这里的 "struggle" 表达的是他理解这个概念时遇到了困难，即他不能很好地理解这个概念。
+	- They struggle to meet the deadline.
+	    - 翻译：他们很难按时完成。
+	    - 这里的 "struggle" 表达的是他们在按时完成任务时遇到困难，即他们可能无法按时完成。
+
+-  **"struggle" 表示努力、奋斗的积极用法，强调努力和奋斗的过程，通常带有正面的意义，即使结果未必成功**
+      - She struggled to climb the mountain, but eventually she succeeded.（她努力攀登这座山，最终成功了。）
+	    - 这里“struggle”是积极的，表示尽力去做，并且有可能成功。
+	- The company is struggling to stay afloat in the competitive market.
+		- 翻译：公司在竞争激烈的市场中挣扎求生。
+		- 解释：这里的“struggle”表示公司在维持生存方面遇到了困难，暗示情况不容乐观
+
+## 50. both 什么时候需要加of或the
+
+[both后面究竟加不加of？英语四级阅读真题长难句解析（九）\_The](https://www.sohu.com/a/366211455_120438034)
+
+### 当 **both和名词或代词连用**时，会产生一个困扰我们很久的问题， **什么时候要加of**，什么时候不用加of?
+
+- *当 both后面跟着一个名词的时候，是不加of的*，比如
+	- Both women were French.  两名妇女都是法国人。
+	- 例句中的“women”可以和both直接连用
+	
+- 而*当both后面跟的是一个代词时，就要在中间加of了，比如
+	- Both of us were tired. 咱俩都累了。
+	- 因为us是代词，需要加of
+	
+- 有趣的是*当both后面接着the的时候， of加不加都可以*，比如
+	- 第一个句子可以变成“ **Both the** women were French. ”  ✅
+	- 或者“ **Both of** the women were French.   ✅
+	- bird 有the的时候，both后面加不加of都可以
+	  
+
+### both除了可以名词和代词连用以外， **both也可以和动词连用**，充当了副词的作用
+
+- 首先 *both一般用于系动词后面，比如
+	- We are both lovely.
+	- 上面这句both就放在了系动词“are”的后面
+- 但如果是**和谓语动词连用**的话，那么 *both就要放在动词的前面，比如
+	- We both study hard. 我们学习都很努力。
+	-  both就位于动词study前方

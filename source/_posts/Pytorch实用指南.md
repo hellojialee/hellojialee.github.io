@@ -281,18 +281,16 @@ x= [(1,2,3,4), [5,6,7,8]] \# x[0]是tuple而x[1]是list
 
 size\_average是说是不是对一个batch里面的所有的数据求均值
 
----------------------------------------------------------------------------------
 
-**Reduce ** **size\_average ** * 意义*
- True True 对batch里面的数据取均值loss.mean()
- True False 对batch里面的数据求和loss.sum()
- False – returns a loss per batch element instead, 这个时候忽略size\_average参数
 
----------------------------------------------------------------------------------
+| Reduce | size_average |                            result                            |
+| :----: | :----------: | :----------------------------------------------------------: |
+|  True  |     True     |                   对batch里面的数据取均值                    |
+|  True  |    False     |                    对batch里面的数据求和                     |
+| False  |      -       | returns a loss per batch element instead,这个时候忽略size_average参数 |
 
-reduction : 可选的参数有：‘none’ | ‘elementwise\_mean’ | ‘sum’, 正如参数的字面意思
 
----------------------------------------------------------------------------------
+
  假设输入和target的大小分别是NxCxWxH，那么一旦reduce设置为False，loss的大小为NxCxWxH，返回每一个元素的loss
 
 **reduction代表了上面的reduce和size\_average双重含义，这也是文档里为什么说reduce和size\_average要被Deprecated 的原因**
@@ -330,6 +328,8 @@ reduction : 可选的参数有：‘none’ | ‘elementwise\_mean’ | ‘sum�
     size_average=True，	求平均:	0.25
     
     size_average=False，	求和:	1.0
+
+
 
 ## 8\. 将tensor以及model迁移至cuda上
 
@@ -567,6 +567,10 @@ Then you should be good. Open up a python terminal and test if you can use SWMR 
 
 [详情请见 PyTorch中在反向传播前为什么要手动将梯度清零？ - Pascal的回答 - 知乎](https://www.zhihu.com/question/303070254/answer/573037166)
  但是需要注意的是，因为BN层的参数是在 forward()阶段更新的，这样积累梯度并没有增大BN layers的实际batch size。可以通过减少BN层的 momentum 值，让BN层动态更新统计参数时能够记住更长。
+
+## 3. Pytorch+Apex+tensorboard+distributed training例子
+
+[综合使用的代码模板](https://github.com/richardkxu/distributed-pytorch/blob/master/imagenet_ddp_apex.py)，原文仓库还包括如何同时显示多个实验的曲线，使用多节点分布式训练等等
 
 # Pytorch 测试阶段
 
@@ -873,6 +877,23 @@ What is the difference between FusedAdam optimizer in Nvidia AMP package with th
 >
 > The current implementation (in Apex master) is brittle and only works with Amp opt\_level O2. I’ve got a WIP branch to make it work for any opt\_level (<https://github.com/NVIDIA/apex/pull/351>). I recommend waiting until this is merged then trying it.
 
+## 10. torch.compile或OpenAI的Trition，甚至手写extension都是 PyTorch 中提高代码性能的有效工具
+
+参考：[如何利用torch.compile和手写extension提高代码性能？ - 知乎回答](https://www.zhihu.com/question/649283251/answer/3436976418)
+
+Pytorch 2.0新增的torch.compile 通过 JIT 将 PyTorch 代码编译成优化的内核，使 PyTorch 代码运行得更快，特点是使用方便简单，大部分过程仅需修改一行代码。不过这个方法需要首次运行时对模型进行编译会费时一点。
+
+除了torch.compile之外，OpenAI发布的Trition也能够为Pytorch加速，可以直接使用Python编写算子，不需要C++，比手写CUDA算子要相对简单，但比torch.compile要复杂一些。
+
+手写CUDA算子，需要掌握CUDA并行编程和Pytorch拓展规则，但是灵活度和提升上限也最高。
+
+
+
+11\. 其他可参考资源
+-----------------------------------------------------
+
+[PyTorch高性能编程（持续更新） - 知乎](https://zhuanlan.zhihu.com/p/673671771)
+
 # **Pytorch 使用陷阱，易错点**
 
 ## **1\. Tensor.expand, expand\_as是共享内存的，只是原始数据的一个视图 view，并没有在扩展的axis上有新的数据复制，牵一发动全身！**
@@ -994,3 +1015,27 @@ self.opti = optim.SGD(
  \# norm = torch.sqrt((x1 - t1)\*\*2 + (x2 - t2)\*\*2)
 
 `norm = (torch.stack((x1, x2)) - torch.stack((t1, t2))).norm(dim=0)`
+
+
+
+## 8. PyTorch微分数值异常自动检测或debug
+
+参考 [torch.autograd.detect\_anomaly() - 知乎](https://zhuanlan.zhihu.com/p/461202163)
+可以作为函数调用，也可作为contextmanager，该功能完成两件事：
+
+1. 运行前向时开启异常检测功能，则在反向时会打印引起反向失败的前向操作堆栈
+2. 反向计算出现“nan”时引发异常
+
+在深度学习中，自动微分是训练神经网络的关键技术之一。PyTorch作为一个广泛使用的深度学习框架田，提供了强大的自动微分功能。然而，在处理复杂的模型或计算图时，可能会出现梯度计算错误（例如计算图释放错误）或其他异常（例如nan数值异常）。为了帮助调试这些问题，PyTorch提供了`torch.autograd.set_detect_anomaly(True)`函数，用于启用自动微分异常检测。
+
+```Python
+import torch
+# 正向传播时: 开启自动求导的异常侦测
+torch.autograd.set_detect_anomaly(True)
+# 反向传播时: 在求导时开启侦测
+with torch.autograd.detect_anomaly() :
+    loss backward ()
+```
+
+
+

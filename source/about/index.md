@@ -5,20 +5,25 @@ date: 2020-01-28 20:11:18
 
 ## **Hello World!**
 
--- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**)      👇
+-- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**)  👇
+{% raw %}
+<div style="display: flex; align-items: flex-start; text-align: left;">
+  <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202412270957850.JPG" alt="profile" style="width: 180px; margin-right: 30px;">
+  <div>
+    <ul style="margin: 0; padding: 0; list-style: disc;">
+      <li>My current research interests include:
+        <ul style="margin: 0; padding-left: 50px; list-style: circle;">
+          <li>multimodal affective computing</li>
+          <li>computer vision</li>
+          <li>embodied intelligence...</li>
+        </ul>
+      </li>
+      <li>Looking for self-motivated students to join us and welcome to contact🔥🔥</li>
+    </ul>
+  </div>
+</div>{% endraw %}
 
-<div style="text-align:center;">
-  <a href="https://hellojialee.github.io/about/">
-    <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202411241652824.jpeg" alt="图片描述" style="width:400px;">
-  </a>
-</div>
-
-- [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page
-- My current research interests include:
-    - multimodal affective computing
-    - computer vision
-    - embodied intelligence...
-- I am looking for self-motivated students to join us and welcome to contact!!
+- [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page 
 - E-mail📧 : [lijia@hfut.edu.cn](mailto:lijia@hfut.edu.cn) (for work) or [hellojialee@gmail.com](mailto:hellojialee@gmail.com) (only in case)
 
 ## **Self-Introduction**
@@ -50,9 +55,9 @@ From 2012 to 2016, I majored in Automation at the Department of Information Engi
 ## May you have a nice day :)
 
 {% gp 5-4 %}
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:20%;" />
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 20%;" />
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:20%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514193424.jpg" style="zoom:40%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200127194624.jpeg" style="zoom: 40%;" />
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/20200514194910.jpg" style="zoom:40%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202406211436821.jpg" style="zoom:80%;" />
 <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202402231353632.jpg" style="zoom:90%;" />
 {% endgp %}

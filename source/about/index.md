@@ -7,9 +7,10 @@ date: 2020-01-28 20:11:18
 
 -- sent by Dr. <font color="#0000dd"> **Jia Li**</font>  (**李佳**)  👇
 {% raw %}
-<div style="display: flex; align-items: flex-start; text-align: left;">
+
+<div style="display: flex; align-items: flex-start; text-align: left; justify-content: flex-start; width: 100%; margin: 0;">
   <img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202412270957850.JPG" alt="profile" style="width: 180px; margin-right: 30px;">
-  <div>
+  <div style="flex-grow: 1;">
     <ul style="margin: 0; padding: 0; list-style: disc;">
       <li>My current research interests include:
         <ul style="margin: 0; padding-left: 50px; list-style: circle;">
@@ -18,10 +19,12 @@ date: 2020-01-28 20:11:18
           <li>embodied intelligence...</li>
         </ul>
       </li>
-      <li>Looking for self-motivated students to join us and welcome to contact🔥🔥</li>
+      <li> Looking for self-motivated students to join us and welcome to contact🔥🔥</li>
     </ul>
   </div>
 </div>{% endraw %}
+
+
 
 - [Here🎯](http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm) is Jia's officail school page 
 - E-mail📧 : [lijia@hfut.edu.cn](mailto:lijia@hfut.edu.cn) (for work) or [hellojialee@gmail.com](mailto:hellojialee@gmail.com) (only in case)

@@ -62,7 +62,9 @@ info和notes，则可以通过官方同步，因为这两种文件是无空间�
 <h3 id="基于markdown语法的双链笔记-obsidian">基于Markdown语法的双链笔记
 Obsidian</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121649295.png" alt="WechatIMG289" style="zoom:67%;" /></p>
-<p>这里荐个好看的Heatmap
+<p>第三方插件非常多，推荐安装Github
+Copilot，配合教育认证获得免费的Pro账号，可以无限畅玩GPT-4o等Chat模型。还有一个Copilot插件，可以配置DeepSeek等API，但终究没有教育免费的Github
+Copilot好用。对于颜值党，荐个好看的Heatmap
 Calendar插件，功能如同github上显示活跃度的热图。安装插件之后把定制如何显示的dataviewjs代码块插入到想展示的markdown文件位置（例如HomePage）即可，效果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310281102449.jpeg" alt="WechatIMG1039" style="zoom:40%;" /></p>
 <p>还有一个时间进度条的展示，能用行内dataview实现，将下面代码复制到markdown文档里即可。</p>
@@ -70,7 +72,7 @@ Calendar插件，功能如同github上显示活跃度的热图。安装插件之
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 周期             | 已过去                                                                                      | 总间隔                                                                                                          | 进度条                                                                                                                                                                                                                                                      | 百分比                                                                                                                                                                                                                             | 当前时间                                      | </span><br><span class="line">|:---------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |</span><br><span class="line">| Day     (今天)   | <span class="code">`= dateformat(date(now), "HH")`</span>                                                             | 24 小时                                                                                                         | <span class="code">`= "&lt;progress max=" + 24 + "  value=" + number(dateformat(date(now), "HH")) + "&gt; &lt;/progress&gt;"`</span>                                                                                                                                                              | <span class="code">`= round((number(dateformat(date(now), "HH")) / 24)*100) + " %"`</span>                                                                                                                                                                   | <span class="code">`= dateformat(date(now), "EEEE, dd-MM-yyyy")`</span> |</span><br><span class="line">| Week   （本周）  | <span class="code">`= dateformat(date(now), "E")`</span>                                                              | 7 天                                                                                                            | <span class="code">`= "&lt;progress max=" + 7 + "  value=" + number(dateformat(date(now), "E")) + "&gt; &lt;/progress&gt;" `</span>                                                                                                                                                               | <span class="code">`= round((number(dateformat(date(now), "E")) / 7)*100) + " %"`</span>                                                                                                                                                                     | <span class="code">`= dateformat(date(now), "kkkk-'W'WW")`</span> 周    |</span><br><span class="line">| Month   (本月)   | <span class="code">`= dateformat(date(now), "dd")`</span>                                                             | <span class="code">`= dateformat(date(eom), "dd")`</span> 天                                                                              | <span class="code">`= "&lt;progress max=" + dateformat(date(eom), "dd") + "  value=" + number(dateformat(date(now), "dd")) + "&gt; &lt;/progress&gt;"`</span>                                                                                                                                     | <span class="code">`=round((number(dateformat(date(now), "dd")) / number(dateformat(date(eom), "dd")))*100) + " %"`</span>                                                                                                                                   | <span class="code">`= dateformat(date(now), "kkkk-MM")`</span> 月       |</span><br><span class="line">| Quarter (本季度) | <span class="code">`$= dv.date("now").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1`</span> | <span class="code">`$= dv.date("now").endOf("quarter").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1`</span> 天 | <span class="code">`$= "&lt;progress max=" + (dv.date("now").endOf("quarter").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1) + "  value=" + (dv.date("now").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1) + "&gt; &lt;/progress&gt;"`</span> | <span class="code">`$= Math.round(((dv.date("now").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1) / (dv.date("now").endOf("quarter").toFormat("ooo") - dv.date("now").startOf("quarter").toFormat("ooo") + 1))*100) + " %"`</span> | <span class="code">`= dateformat(date(now), "kkkk-'Q'q")`</span> 季     |</span><br><span class="line">| Year    (今年)   | <span class="code">`= dateformat(date(now), "ooo")`</span>                                                            | <span class="code">`= dateformat(date(eoy), "ooo")`</span> 天                                                                             | <span class="code">`= "&lt;progress max=" + dateformat(date(eoy), "ooo") + "  value=" + number(dateformat(date(now), "ooo")) + "&gt; &lt;/progress&gt;"`</span>                                                                                                                                   | <span class="code">`=round((number(dateformat(date(now), "ooo")) / number(dateformat(date(eoy), "ooo")))*100) + " %"`</span>                                                                                                                                 | <span class="code">`= dateformat(date(now), "kkkk")`</span>  年         |</span><br></pre></td></tr></table></figure>
 <h3 id="谷歌快讯-推送至邮箱">谷歌快讯 推送至邮箱</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202310121653140.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
-<p>建议缩小推送范围，邮箱塞入太多论文推送估计被动阅读的日常活动反而不会执行了。</p>
+<p>建议通过关键词和查询语法缩小推送范围，邮箱塞入太多论文推送估计被动阅读的日常活动反而不会执行了。另外更加推荐直接订阅大牛或者自己感兴趣的研究者的最新论文，推送的质量更有保证。</p>
 <h3 id="chatgpt很有必要充分利用起来">ChatGPT很有必要充分利用起来</h3>
 <p><font color="#0000dd"> <strong>ChatGPT is absolutely a game
 changer！</strong></font></p>
@@ -127,17 +129,25 @@ oh-my-zsh</p>
 <p>多说两句，Copilot
 Chat功能已经上线，这是对原有Copilot代码辅助功能的重要补充，虽然Copilot
 Chat的通用知识没有chatgpt
-3.5丰富和深刻，但是它把本地项目的（或者打开的多个窗口文档中的）代码当作上下文，给出更具体和有针对性的回答，可以加快理解别人的代码。例如下面的简单提问：</p>
+3.5丰富和深刻（更新：对于Pro用户Copilot目前已经可以无限制使用GPT-4o等主流对话模型），但是它把本地项目的（或者打开的多个窗口文档中的）代码当作上下文，给出更具体和有针对性的回答，可以加快理解别人的代码。例如下面的简单提问：</p>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202403022152972.png" alt="WechatIMG1444" style="zoom:50%;" /></div><div class="group-picture-column" style="width: 50%;"><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202403022158621.png" alt="WechatIMG1444" style="zoom:50%;" /></div></div></div></div>
 <h2 id="科研进阶篇">科研进阶篇</h2>
 <h3 id="研究经验">研究经验</h3>
 <p>内部分享，此处略。。。</p>
 <h3 id="劝诫到抓狂">劝诫到抓狂</h3>
+<h4 id="关于idea构思和实现">关于idea构思和实现</h4>
 <p>有些同学实验失败的原因可谓匪夷所思，虽然总是强调使用深度学习技术的创新要从计算流开始验证，参与运算的tensor的维度要能前后匹配，有时换一种计算的顺序或对tensor的shape进行变换会意外得到新的结构，但这不代表自己意淫出来的结构就能训练成功。我曾见到往CNN模型中插入了巨大参数量的全连接层这种“逆天下之大不韪”，“开历史倒车”的“创新”。这种失败肯定要归因于自己没有脚踏实地学习基础知识或遍历过三四个优秀的开源论文。</p>
 <p>低年级的同学务必注意，科研工作其实也是先学习消化然后再输出的过程。“学而不思则罔，思而不学则殆”这句话我们念叨了很多很多年，但身边的一些同学依然领悟不到这句话的真谛！<font color="#ddd00">
 提idea、构思方法结构时，切勿凭空想象，不要你以为！而要理论以为，前人的经验以为！</font>“Talk
 is cheap, show me the
 code”，不断劝诫大家，要多看相关研究论文的源代码。至少对于新手来说，优秀的开源项目要尽量一行一行琢磨为什么是这样实现，为什么许多参数不是默认设置，不同代码模块前后有什么连锁效应。<strong>自己切不可想当然地构建一个模型后一通瞎训练，然后反馈说idea不work</strong>。自己开发的模块和写出来的代码一定<strong>要有可靠的参考或出处</strong>，关键代码经过了自己仔细调试和测试。记住咱们是工科研究生，是有行为能力的个体，再复杂的科研都是动手一点点<strong>做</strong>出来的。</p>
+<h4 id="关于数据处理和模型调参">关于数据处理和模型调参</h4>
+<p>认真核对预处理和后处理代码的各种细致条件，确保使用别人的模型做测试时，模型始终处于相同的<strong>最佳工作区间内</strong>，否则会造成推理精度降低（因为都是过拟合和内插值了上游任务数据集）。例如某人的图像模型对于200x200尺寸图片预测准确率最佳，那你也应该把相应图片center
+crop+resize到200x200，甚至中心物体边缘是否保留空白这种细节也要注意。</p>
+<p>自己训练模型前<strong>一定要先观察数据/特征/标签/分布</strong>，不要急着端到端跑代码，完全当作黑盒瞎搞。例如把预先提取好的训练集一部分的模态特征做个数值统计，是否有左右两段异常区间仍有分布的情况。若有，这大概率是操作不当带来的噪声或者离群点，可能会影响模型正常收敛速度，甚至影响最终精度，你应该考虑截断。</p>
+<p>自己的模型在训练阶段的参数，在测试阶段依然可以调节。例如训练阶段分类判别阈值设定&gt;0.5，但由于模型过拟合、过分自信，测试阶段判别阈值调整为&gt;0.85，可能会让效果变得更好！</p>
+<p>虽然现在提高模型训练稳定性的技术很多，但万不可把这些套餐当作万能的，深度模型依然无法智能对抗任何噪声和幅度差距非常大的不同模态数据。</p>
+<p>以上就是是炼丹手艺的冰山一角，have fun！</p>
 <h3 id="心得体会">心得体会</h3>
 <p>我们反复强调，不管是指导老师还是自己，在想到某个idea时不是第一时间迫不及待告知他人，而要经过大概的逻辑梳理和文献检索，<mark style="background: #D2B3FFA6;">idea必须具体化，接着所构思的每一个大模块都有可靠理论或者前人经验积累作为支持，到了这一步才适合正式拿出idea来讨论</mark>。不靠谱的异想天开只会浪费大家的宝贵时间。请记住，某个idea能work并不意味着这个idea能work
 well甚至very
@@ -969,24 +979,24 @@ class="uri">https://zhuanlan.zhihu.com/p/91485607</a></p>
 <col style="width: 76%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Reduce</th>
 <th style="text-align: center;">size_average</th>
 <th style="text-align: center;">result</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">对batch里面的数据取均值</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">False</td>
 <td style="text-align: center;">对batch里面的数据求和</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">False</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">returns a loss per batch element
@@ -3500,8 +3510,7 @@ https://www.zhihu.com/question/305764364/answer/553895527</p>
 <p>''为了降低死亡风险''这样表达to reduce the risk of
 death，介词of后面跟名词所以用death无疑了。而若要表达''为了降低夭折的风险''，那便是酱紫了to
 reduce the risk of dying
-early用die的纯粹名词形式death肯定不对了，这就是二者比较显著的区别之一了。。''死得早''是一个意群，这里的'死'是动态的，只需满足语法正确用动名词dying，而''<a
-href="https://www.zhihu.com/search?q=死亡的风险&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A553895527%7D">死亡的风险</a>''里面的'死'为静态，用真正的名词death。</p>
+early用die的纯粹名词形式death肯定不对了，这就是二者比较显著的区别之一了。。''死得早''是一个意群，这里的'死'是动态的，只需满足语法正确用动名词dying，而''[死亡的风险](https://www.zhihu.com/search?q=死亡的风险&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A553895527})''里面的'死'为静态，用真正的名词death。</p>
 <p>动名词兼具名词和动词的属性</p>
 <h2 id="强调句式">39. 强调句式</h2>
 <h3
@@ -4125,20 +4134,20 @@ class="math inline">\(w\)</span>
 class="math inline">\(w\)</span>
 的先验分布为高斯分布，由最大后验概率估计导出</li>
 </ul>
-<section class="footnotes footnotes-end-of-document"
+<section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><span class="math inline">\(\arg \max
-\sum_{i=1}^{n} \log P\left(x_{i} ;
+<li id="fn1"><p><span class="math inline">\(\arg \max \sum_{i=1}^{n}
+\log P\left(x_{i} ;
 \theta\right)\)</span>。对于离散的用分布律P，对于连续型的变量在数学中已知模型表达式则用概率密度函数f<a
 href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>辨析：MLP（Maximum A
+<li id="fn2"><p>辨析：MLP（Maximum A
 Posteriori）是最大后验概率估计（贝叶斯学派）； MAP（Maximum Likelihood
 Estimation）是最大似然估计（概率学派）。<a
 href="https://zhuanlan.zhihu.com/p/32480810">请参考</a><a href="#fnref2"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>这里应该是省略的写法，比如<span
+<li id="fn3"><p>这里应该是省略的写法，比如<span
 class="math inline">\(P(w|X,y)\)</span>，里面三个都是随机变量，实际上对于一个具体的训练样本完整的写法应该是<span
 class="math inline">\(P(w=a|X=x1,Y=y1)\)</span><a href="#fnref3"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>

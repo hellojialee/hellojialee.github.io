@@ -512,24 +512,24 @@ class="uri">https://zhuanlan.zhihu.com/p/91485607</a></p>
 <col style="width: 76%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Reduce</th>
 <th style="text-align: center;">size_average</th>
 <th style="text-align: center;">result</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">对batch里面的数据取均值</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">False</td>
 <td style="text-align: center;">对batch里面的数据求和</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">False</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">returns a loss per batch element
@@ -1564,12 +1564,12 @@ PyTorch微分数值异常自动检测或debug</span></a></li></ol></li></ol></di
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">153k</span>
+    <span title="Symbols count total">154k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:19</span>
+    <span title="Reading time total">2:20</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
@@ -1625,6 +1625,25 @@ PyTorch微分数值异常自动检测或debug</span></a></li></ol></li></ol></di
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
 

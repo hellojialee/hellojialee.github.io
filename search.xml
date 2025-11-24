@@ -249,11 +249,11 @@ verbal, text，language，lexical单词辨析</h3>
 <p>基本结构其实就是一个嵌入矩阵，且没有bias项。</p>
 <h3 id="word-embedding概念和原理">Word Embedding概念和原理</h3>
 <p>How to map word to vector?</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241659500.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241702407.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241706850.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241914887.jpg" style="zoom: 35%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241914761.jpg" style="zoom: 35%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241915070.jpg" style="zoom: 35%;" /></p>
 <p>==注意⚠️：P的参数是可以根据训练集学习的==</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241739881.jpg" alt="WechatIMG291" style="zoom: 30%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241915023.jpg" style="zoom: 35%;" /></p>
 <p>我们希望P对单词的映射是合理的，具有相同的感情色彩的词在嵌入空间中比较接近</p>
 <blockquote>
 <p>Let’s understand these points with a very famous analogy (you can now

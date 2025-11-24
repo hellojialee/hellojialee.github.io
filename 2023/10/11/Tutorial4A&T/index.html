@@ -48,7 +48,7 @@
 
   <meta name="description" content="输入深度网络模型前，文本及声音模态数据的常规预处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文本和音频数据预处理速通">
+<meta property="og:title" content="多模态数据预处理速通">
 <meta property="og:url" content="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/index.html">
 <meta property="og:site_name" content="佳の博客 Jia&#39;s Blog">
 <meta property="og:description" content="输入深度网络模型前，文本及声音模态数据的常规预处理">
@@ -68,7 +68,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241735496.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241736583.png">
 <meta property="article:published_time" content="2023-10-11T08:43:14.000Z">
-<meta property="article:modified_time" content="2025-11-24T09:41:40.176Z">
+<meta property="article:modified_time" content="2025-11-24T10:40:40.412Z">
 <meta property="article:author" content="Jia Li">
 <meta property="article:tag" content="深度学习 - 机器学习">
 <meta name="twitter:card" content="summary">
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title>文本和音频数据预处理速通 | 佳の博客 Jia's Blog</title>
+  <title>多模态数据预处理速通 | 佳の博客 Jia's Blog</title>
   
 
 
@@ -239,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          文本和音频数据预处理速通
+          多模态数据预处理速通
         </h1>
 
         <div class="post-meta">
@@ -256,7 +256,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-11-24 17:41:40" itemprop="dateModified" datetime="2025-11-24T17:41:40+08:00">2025-11-24</time>
+                <time title="Modified: 2025-11-24 18:40:40" itemprop="dateModified" datetime="2025-11-24T18:40:40+08:00">2025-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -296,7 +296,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>说在前面：在多模态项目中，只要把自然语言（即文本数据）和音频信号（即一维序列数据）预处理成深度模型能够接受为输入的数字格式后，剩下的技术部分（尤其是对于Transformer这种天生适用于多模态数据处理的深度模型）和CV项目遇到的内容几乎一样，大家很快便能上手。</p>
+        <p>说在前面：在多模态学习项目中，只要把自然语言（即文本数据）和音频信号（即一维时序数据，脑电、皮肤电等生理信号可类比处理）预处理成深度模型能够接受为输入的数字格式后，剩下的技术部分（尤其是对于Transformer这种天生适用于多模态数据处理的深度模型）和CV项目遇到的内容几乎一样，大家很快便能上手。</p>
 <h1 id="自然语言处理基础">自然语言处理基础</h1>
 <h2 id="术语辨析">术语辨析</h2>
 <h3
@@ -907,8 +907,8 @@ Features）， 二阶差分（Delta-Delta Features）
 静态频域特性：例如单一时刻的谱包络、谱质心，这些特性在短时间内是固定的。
 动态频域特性：通过分析这些特性随时间的连续变化（如轨迹、差分等），可以体现信号的动态属性。</p>
 <h2 id="对数梅尔频谱图如何计算">对数梅尔频谱图如何计算</h2>
-<p>--<em>GPT-4o回答</em> ### 简介
-<strong>对数梅尔频谱图</strong>（Log-Mel
+<p>--<em>GPT-4o回答</em> ### 简介</p>
+<p><strong>对数梅尔频谱图</strong>（Log-Mel
 Spectrogram）是将音频信号表示为随时间变化的频率能量图的图像表示。其英文术语是
 <strong>Log-Mel
 Spectrogram</strong>。Log-Mel频谱图是声音信号处理中常用的特征表示方法，广泛应用于语音识别、音乐信息检索等领域。它是通过短时傅立叶变换（STFT）和
@@ -922,14 +922,15 @@ banks）</strong> 的数量，通常为 40、64 或
 1000。</p>
 <h3 id="处理步骤">处理步骤</h3>
 <ol type="1">
-<li><strong>加载音频文件</strong>：使用 <code>librosa</code>
-库加载音频文件并进行重采样。</li>
-<li><strong>短时傅立叶变换 (STFT)</strong>：对音频信号进行
-STFT，得到频域表示。</li>
-<li><strong>Mel 滤波</strong>：将频域表示映射到 Mel 频率尺度。</li>
-<li><strong>对数变换</strong>：对 Mel 频谱进行对数变换，得到 Log-Mel
-频谱图。 ### 计算公式描述过程</li>
-<li><strong>短时傅立叶变换 (STFT)</strong></li>
+<li><p><strong>加载音频文件</strong>：使用 <code>librosa</code>
+库加载音频文件并进行重采样。</p></li>
+<li><p><strong>短时傅立叶变换 (STFT)</strong>：对音频信号进行
+STFT，得到频域表示。</p></li>
+<li><p><strong>Mel 滤波</strong>：将频域表示映射到 Mel
+频率尺度。</p></li>
+<li><p><strong>对数变换</strong>：对 Mel 频谱进行对数变换，得到 Log-Mel
+频谱图。 ### 计算公式描述过程</p></li>
+<li><p><strong>短时傅立叶变换 (STFT)</strong></p></li>
 </ol>
 <p><span class="math display">\[
 X(t, f) = \sum_{n=0}^{N-1} x[n] \cdot w[n-t] \cdot e^{-j2\pi fn/N}
@@ -1010,12 +1011,16 @@ Mel 频带。</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pad_spectrogram</span><span class="params">(spectrogram, target_shape)</span>:</span></span><br><span class="line">    padded_spectrogram = np.zeros(target_shape)</span><br><span class="line">    padded_spectrogram[:spectrogram.shape[<span class="number">0</span>], :spectrogram.shape[<span class="number">1</span>]] = spectrogram</span><br><span class="line">    <span class="keyword">return</span> padded_spectrogram</span><br><span class="line"></span><br><span class="line">target_shape = (<span class="number">128</span>, <span class="number">216</span>)  <span class="comment"># Example shape</span></span><br><span class="line">log_mel_spectrogram_padded = pad_spectrogram(log_mel_spectrogram_normalized, target_shape)</span><br></pre></td></tr></table></figure></p></li>
 <li><p><strong>添加通道维度</strong>：如果使用的深度学习框架期望输入具有通道维度（如
 CNN），需要增加此维度。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log_mel_spectrogram_padded = np.expand_dims(log_mel_spectrogram_padded, axis=<span class="number">-1</span>)</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>批量处理</strong>：处理多个音频文件，并将它们存储在批量数据集中，以便于模型的训练和验证。
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_audio_files</span><span class="params">(file_paths)</span>:</span></span><br><span class="line">    spectrograms = []</span><br><span class="line">    <span class="keyword">for</span> file_path <span class="keyword">in</span> file_paths:</span><br><span class="line">        audio, sr = librosa.load(file_path, sr=<span class="number">22050</span>)</span><br><span class="line">        stft = librosa.stft(audio, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line">        mel_spectrogram = librosa.feature.melspectrogram(S=np.abs(stft)**<span class="number">2</span>, sr=sr, n_mels=<span class="number">128</span>)</span><br><span class="line">        log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_normalized = scaler.fit_transform(log_mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_padded = pad_spectrogram(log_mel_spectrogram_normalized, target_shape)</span><br><span class="line">        log_mel_spectrogram_padded = np.expand_dims(log_mel_spectrogram_padded, axis=<span class="number">-1</span>)</span><br><span class="line">        spectrograms.append(log_mel_spectrogram_padded)</span><br><span class="line">    <span class="keyword">return</span> np.array(spectrograms)</span><br><span class="line"></span><br><span class="line">file_paths = [<span class="string">"/path/to/audio1.wav"</span>, <span class="string">"/path/to/audio2.wav"</span>]  <span class="comment"># Example file paths</span></span><br><span class="line">dataset = process_audio_files(file_paths)</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>批量处理</strong>：处理多个音频文件，并将它们存储在批量数据集中，以便于模型的训练和验证。</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_audio_files</span><span class="params">(file_paths)</span>:</span></span><br><span class="line">    spectrograms = []</span><br><span class="line">    <span class="keyword">for</span> file_path <span class="keyword">in</span> file_paths:</span><br><span class="line">        audio, sr = librosa.load(file_path, sr=<span class="number">22050</span>)</span><br><span class="line">        stft = librosa.stft(audio, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line">        mel_spectrogram = librosa.feature.melspectrogram(S=np.abs(stft)**<span class="number">2</span>, sr=sr, n_mels=<span class="number">128</span>)</span><br><span class="line">        log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_normalized = scaler.fit_transform(log_mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_padded = pad_spectrogram(log_mel_spectrogram_normalized, target_shape)</span><br><span class="line">        log_mel_spectrogram_padded = np.expand_dims(log_mel_spectrogram_padded, axis=<span class="number">-1</span>)</span><br><span class="line">        spectrograms.append(log_mel_spectrogram_padded)</span><br><span class="line">    <span class="keyword">return</span> np.array(spectrograms)</span><br><span class="line"></span><br><span class="line">file_paths = [<span class="string">"/path/to/audio1.wav"</span>, <span class="string">"/path/to/audio2.wav"</span>]  <span class="comment"># Example file paths</span></span><br><span class="line">dataset = process_audio_files(file_paths)</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h3 id="总结">总结</h3>
 <p>对数梅尔频谱图（Log-Mel
 Spectrogram）是通过短时傅立叶变换（STFT）将音频信号在时间和频率两个维度上进行表示，展示了随时间变化的不同频率信号的能量分布。在输入给深度网络之前，需要进行归一化、调整维度、添加通道维度等数据预处理操作。通过这些步骤，可以将音频信号转换为适合深度学习模型处理的输入格式，从而进行声音分类等任务。</p>
+<h1 id="多模态数据融合">多模态数据融合</h1>
+<p>对不同来源的模态数据单独处理好后，便可以选择在早/中/晚期做数据融合。这是另外一个话题了，不在展开。实际项目中也经常用别人现成的各种模态Encoder直接得到token
+sequences，然后每个模态接一个Projection
+Layer映射到多模态统一语义空间。这方面的做法繁多，但看到这里你已经有动手处理多模态问题的基础！感谢前人的伟大贡献，让我们能够如此快速轻松地入门。</p>
 
     </div>
 
@@ -1049,7 +1054,7 @@ Spectrogram）是通过短时傅立叶变换（STFT）将音频信号在时间�
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/" title="文本和音频数据预处理速通">https://hellojialee.github.io/2023/10/11/Tutorial4A&T/</a>
+    <a href="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/" title="多模态数据预处理速通">https://hellojialee.github.io/2023/10/11/Tutorial4A&T/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -1152,7 +1157,7 @@ vs. 基频 (Fundamental Frequency, F0)</span></a></li><li class="nav-item nav-le
 (Amplitude Envelope) - 声音的动态轮廓</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声谱图-spectrogram-中的视觉特征解读"><span class="nav-number">2.2.4.6.</span> <span class="nav-text">6. 声谱图 (Spectrogram)
 中的视觉特征解读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声谱图中垂直和水平条纹的成因"><span class="nav-number">2.2.4.7.</span> <span class="nav-text">7.
 声谱图中垂直和水平条纹的成因</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平条纹的成因频率成分"><span class="nav-number">2.2.4.7.1.</span> <span class="nav-text">2). 水平条纹的成因：频率成分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在人类语音的声谱图中水平条纹通常是连续的而垂直条纹则经常是断裂的"><span class="nav-number">2.2.4.7.2.</span> <span class="nav-text">3).
-在人类语音的声谱图中，水平条纹通常是连续的，而垂直条纹则经常是断裂的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结与对比"><span class="nav-number">2.2.5.</span> <span class="nav-text">8. 总结与对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音频模态的主要特征"><span class="nav-number">2.2.6.</span> <span class="nav-text">音频模态的主要特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频域特性与动态特性的关系"><span class="nav-number">2.2.7.</span> <span class="nav-text">频域特性与动态特性的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数梅尔频谱图如何计算"><span class="nav-number">2.3.</span> <span class="nav-text">对数梅尔频谱图如何计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理步骤"><span class="nav-number">2.3.1.</span> <span class="nav-text">处理步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.3.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数具体解释"><span class="nav-number">2.3.3.</span> <span class="nav-text">参数具体解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.3.4.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.3.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+在人类语音的声谱图中，水平条纹通常是连续的，而垂直条纹则经常是断裂的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结与对比"><span class="nav-number">2.2.5.</span> <span class="nav-text">8. 总结与对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音频模态的主要特征"><span class="nav-number">2.2.6.</span> <span class="nav-text">音频模态的主要特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频域特性与动态特性的关系"><span class="nav-number">2.2.7.</span> <span class="nav-text">频域特性与动态特性的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数梅尔频谱图如何计算"><span class="nav-number">2.3.</span> <span class="nav-text">对数梅尔频谱图如何计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理步骤"><span class="nav-number">2.3.1.</span> <span class="nav-text">处理步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.3.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数具体解释"><span class="nav-number">2.3.3.</span> <span class="nav-text">参数具体解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.3.4.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.3.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多模态数据融合"><span class="nav-number">3.</span> <span class="nav-text">多模态数据融合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1235,12 +1240,12 @@ vs. 基频 (Fundamental Frequency, F0)</span></a></li><li class="nav-item nav-le
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">175k</span>
+    <span title="Symbols count total">176k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:39</span>
+    <span title="Reading time total">2:40</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>

@@ -1,6 +1,6 @@
 ---
 title: 一个 Pytorch 训练实践 (分布式训练+半精度or混合精度训练)
-date: 2020-1-28 12:11:44
+date: 2020-1-27 12:11:44
 tags: 
 	- pytorch
 	- python

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/flower.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/flower.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/flower-16x16.png">
+  <link rel="mask-icon" href="/images/flower.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hellojialee.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="输入深度网络模型前，文本及声音模态数据的常规预处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文本和音频数据预处理速通">
+<meta property="og:url" content="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/index.html">
+<meta property="og:site_name" content="佳の博客 Jia&#39;s Blog">
+<meta property="og:description" content="输入深度网络模型前，文本及声音模态数据的常规预处理">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241659500.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241702407.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241706850.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241739881.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241708194.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241708819.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241710032.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241722426.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241729038.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241730503.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241733147.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241734506.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241735496.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241736583.png">
+<meta property="article:published_time" content="2023-10-11T08:43:14.000Z">
+<meta property="article:modified_time" content="2025-11-24T09:41:40.176Z">
+<meta property="article:author" content="Jia Li">
+<meta property="article:tag" content="深度学习 - 机器学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241659500.png">
+
+<link rel="canonical" href="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>文本和音频数据预处理速通 | 佳の博客 Jia's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">佳の博客 Jia's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-about-me">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About Me</a>
+
+  </li>
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang1.jpg">
+      <meta itemprop="name" content="Jia Li">
+      <meta itemprop="description" content="Be happy, be healthy!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="佳の博客 Jia's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文本和音频数据预处理速通
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-10-11 16:43:14" itemprop="dateCreated datePublished" datetime="2023-10-11T16:43:14+08:00">2023-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-11-24 17:41:40" itemprop="dateModified" datetime="2025-11-24T17:41:40+08:00">2025-11-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>22k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>20 mins.</span>
+            </span>
+            <div class="post-description">输入深度网络模型前，文本及声音模态数据的常规预处理</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>说在前面：在多模态项目中，只要把自然语言（即文本数据）和音频信号（即一维序列数据）预处理成深度模型能够接受为输入的数字格式后，剩下的技术部分（尤其是对于Transformer这种天生适用于多模态数据处理的深度模型）和CV项目遇到的内容几乎一样，大家很快便能上手。</p>
+<h1 id="自然语言处理基础">自然语言处理基础</h1>
+<h2 id="术语辨析">术语辨析</h2>
+<h3
+id="text-embedding-word-embedding-sentence-embedding-linguistic-embedding概念辨析">text
+embedding, word embedding, sentence embedding, linguistic
+embedding概念辨析</h3>
+<p>-- <em>ChatGPT回答</em> -- 在描述BERT等语言模型时，应该使用"word
+embedding"（词嵌入）和"sentence
+embedding"（句子嵌入）这两个术语来准确地表达。这两个术语更符合描述BERT等模型输出的内容。
+1. <strong>Word Embedding（词嵌入）：</strong>
+BERT等模型的输出是每个单词的上下文相关的词嵌入。每个词都被嵌入到一个高维空间中，这个嵌入向量包含了单词的语义信息。这个过程被称为"word
+embedding"，因为它将单词映射到一个向量空间中。 2. <strong>Sentence
+Embedding（句子嵌入）：</strong>
+BERT等模型的输出也可以用于生成整个句子的嵌入向量，用于表示句子的语义信息。这个过程被称为"sentence
+embedding"，因为它将整个句子嵌入到一个向量空间中。 3. <strong>"Text
+embedding"（文本嵌入）</strong>
+是一个更广义的术语，可以包括词嵌入和句子嵌入，但在描述BERT等特定的语言模型时，使用"word
+embedding"和"sentence embedding"会更具体和准确。 4. <strong>"linguistic
+embedding"（语言嵌入）</strong>
+是一个相对较宽泛的术语，可能会包括不仅仅是词和句子，还可能包括更高级的语言单元，如短语、段落等。</p>
+<h3 id="linguistic-verbal-textlanguagelexical单词辨析">linguistic,
+verbal, text，language，lexical单词辨析</h3>
+<p>-- <em>ChatGPT回答</em> -- 1. <strong>Linguistic, adj:</strong> -
+<strong>一般使用场景：</strong>
+用于描述与语言学相关的特性，例如语法、语义等。 -
+<strong>多模态情感分析：</strong>
+在这个领域，主要用于分析文本中的语言学特征，如情感词汇、语法结构等。 2.
+<strong>Verbal, adj:</strong> - <strong>一般使用场景：</strong>
+强调与用言语表达的有关。 - <strong>多模态情感分析：</strong>
+主要用于描述通过口头言语传达的情感，注重言辞和措辞中的情感。 3.
+<strong>Text, n，形容词形式是 "textual":</strong> -
+<strong>一般使用场景：</strong> 指书面语言的形式。 -
+<strong>多模态情感分析：</strong>
+用于描述书面语言，强调在文本中表达的情感，适用于文本情感分析。 4.
+<strong>Language, n:</strong> - <strong>一般使用场景：</strong>
+指人类沟通的工具，包括口头和书面语言。 -
+<strong>多模态情感分析：</strong>
+作为泛指语言的术语，在机器学习领域中，术语 "language"
+通常指的是文本句子，即书面或书写形式的语言。当涉及到包括说话声音时，更常使用术语
+"speech" 或 "audio"
+来表示口头语言的形式。语音识别和语音处理是涉及声音信号的子领域，而自然语言处理（NLP）通常专注于处理文本数据。
+5. <strong>Lexical (词汇的), adj：</strong> -
+用于描述与词汇（单词和词组）相关的事物。例如，"lexical analysis"
+涉及对文本中的词汇进行分析，而 "lexical choice"
+可能指选择适当的词汇来表达思想。"lexical"
+更侧重于词汇层面，涉及到单词和其特性，而 "textual"
+更关注整个文本，包括其结构、语法、主题等</p>
+<h2 id="word-embedding">Word Embedding</h2>
+<p>基本结构其实就是一个嵌入矩阵，且没有bias项。</p>
+<h3 id="word-embedding概念和原理">Word Embedding概念和原理</h3>
+<p>How to map word to vector?</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241659500.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241702407.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241706850.png" alt="WechatIMG291" style="zoom: 50%;" /></p>
+<p>==注意⚠️：P的参数是可以根据训练集学习的==</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241739881.jpg" alt="WechatIMG291" style="zoom: 30%;" /></p>
+<p>我们希望P对单词的映射是合理的，具有相同的感情色彩的词在嵌入空间中比较接近</p>
+<blockquote>
+<p>Let’s understand these points with a very famous analogy (you can now
+refer the image below as you read)!</p>
+<p><strong>&gt; King : Queen :: Man : Woman</strong></p>
+<p>The word king might be close to the man because they're both male
+figures. Similarly, the queen might be close to the woman.</p>
+<p>But here's the magical part, let’s say we are in the embedding
+space.</p>
+<p>🔹And, if we know the direction and distance from the queen to the
+king (<strong>Gender vector</strong> in the image below), we can use the
+same direction and distance starting from the Woman to find where the
+Man should be in this embedding space.</p>
+<p>🔸Similarly if we know the direction &amp; distance from Man to King
+(<strong>Royalty vector</strong> in the image below), we can use the
+same direction and distance starting from the woman to find where the
+queen should be in this embedding space.</p>
+<p>🔹When we perform these vector arithmetic operations on properly
+trained embeddings, we get results that capture these relationships.</p>
+<p>This makes the embeddings truly magical &amp; powerful!✨</p>
+<p>Today we can convert a large corpus of text, documents, images &amp;
+audio into embeddings.</p>
+<p>We have sophisticated databases to store and index embeddings known
+as vector data bases.</p>
+<p>With these databases, we can efficiently perform various operations
+on the embeddings and build powerful systems on top of them.
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241708194.png" alt="WechatIMG291" style="zoom: 40%;" /></p>
+</blockquote>
+<p>下面这个例子中的Embedding层可学习的参数是10K*8=8万，这里限定了每句话最多20个单词。Embedding的作用就是把这v=10K个单词映射到d=8纬度</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241708819.jpg" alt="WechatIMG291" style="zoom: 35%;" /></p>
+<h3
+id="nn.embedding与nn.linear的计算区别">nn.Embedding与nn.Linear的计算区别</h3>
+<p><a
+href="https://zhuanlan.zhihu.com/p/683843585">nn.Embedding学习、理解与nn.Linear区别
+- 知乎</a></p>
+<p><code>nn.Embedding()</code>层其实是一个简单的<strong>查找表</strong>（Look-Up
+Table），将索引值映射到某个维度的权重矩阵。最常见的就是将某个单词映射成embedding向量。最常见的就是将某个单词映射成embedding向量。<code>nn.Embedding</code>()层是可训练的，随着模型训练让单词更好得进行embedding。代码层次，<code>nn.embedding</code>层输入并不需要one-hot
+vector格式，直接输入想得到权重的索引就ok。
+<code>nn.Linear</code>与<code>nn.embedding</code>
+在权重上是转置关系，操作上<code>nn.Linear</code>
+做张量运算，<code>nn.embedding</code> 做的索引</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241710032.png" alt="WechatIMG291" style="zoom: 70%;" /></p>
+<p>上图粘贴自<a
+href="https://x.com/adtygan/status/1858588572032659668">x.com/adtygan/status/1858588572032659668</a></p>
+<h3 id="word-embedding和token-embedding区别">Word Embedding和Token
+Embedding区别</h3>
+<ul>
+<li>词嵌入 (Word
+Embeddings)：是自然语言处理中的一种技术，它将词汇表中的每个单词或短语映射到一个高维空间，其中每个单词都被表示为一个向量。这些向量是根据单词的语境和使月来训练的,
+以便语义上相似的单词在向量空间中彼此靠近。</li>
+<li>Token嵌入 (Token Embeddings)
+：在一些模型中，文本首先被分割成更小的单位称为 tokens,
+这些可以是单词、子词单元 (subwords)
+或字符。Token嵌入是对这些更细粒度单位的嵌入表示。</li>
+</ul>
+<blockquote>
+<p>Word Embedding 是将单词映射到向量空间的过程，而 Token Embedding
+是表示模型输入中的 token
+的向量化表示，可以包含单词、子词或字符级别的信息。Word Embedding 是
+Token Embedding 的一种形式，它用于将单词表示为向量，而 Token Embedding
+则更通用，可以用于表示模型输入中的任何 token。 --ChatGPT</p>
+</blockquote>
+<ul>
+<li>实际例子 在 CLIP 模型内，<code>token_embedding</code>
+的形状（shape）为 (490408, 512) ，这个矩阵包含了所有可能的文本 token
+的嵌入表示，490408 是指 CLIP
+模型可以处理的文本标记的数量，这个数字可能包括不仅是完整的单词,
+还包括子词单元、特殊字符和可能的标记（如句子开始和结束标记）。具体的词汇表大小可能因模型而异，可以根据具体的实现和训练数据来确定。这使得模型能够处理它没有明确看到过的单词,
+通过组合已知的token来理解新词。在传统的自然语言处理中，word embedding
+通常对应于一个预定义的词汇表，只包含语料库中的常见词汇。
+之后，这些Token嵌入会结合位置嵌入输入到Transformer编码器，最终将文本信息编码成一个向量，以便与图像信息一起输入到
+CLIP
+模型进行多模态（文本和图像）学习任务。在和图像嵌入比较之前，还会进过一个text_projection映射。</li>
+</ul>
+<h2 id="tokenizer">Tokenizer</h2>
+<h3 id="tokenization定义">Tokenization定义</h3>
+<p>Tokenization：文本数据被分为单词、子词或其他标记（tokens）。这一步称为分词（tokenization），它将文本转换为模型可以理解的离散单位。做了这一步之后，才是把离散的tokens映射到固定维度的embedding。</p>
+<p>见上文[[#text embedding, word embedding, sentence embedding,
+linguistic embedding概念辨析 概念]]</p>
+<h3 id="特殊文本标记">特殊文本标记</h3>
+<h4 id="为什么需要特殊文本标记">为什么需要特殊文本标记</h4>
+<p>例如encoder将<code>&lt;bos&gt; I love you &lt;eos&gt;&lt;pad&gt;&lt;pad&gt;</code>编码成向量）</p>
+<p><strong>输入</strong>：该变量一般取名src。例如可以用0表示句子开始的特殊文本标记(<code>&lt;bos&gt;</code>)，1表示句子结束(<code>&lt;eos&gt;</code>)，2为填充(<code>&lt;pad&gt;</code>)。填充的目的是为了让不同长度的句子变为同一个长度，这样才可以组成一个batch。
+<strong>输出</strong>：输出这一步推理出的内容，并将此结果作为下一步的输入之一。例如上一轮输出“<code>&lt;bos&gt;</code>我”，通过推理这一轮输出
+“<code>&lt;bos&gt;</code>我爱”。输出变量一般取名tgt（target）。
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241722426.png" style="zoom: 75%;" /></p>
+<p>一个机器翻译的例子</p>
+<h4 id="bert中的殊文本标记">Bert中的殊文本标记</h4>
+<h4 id="special-tokens的作用">special tokens的作用</h4>
+<p><a href="https://zhuanlan.zhihu.com/p/361169990" target="_blank" rel="noopener">bert中的special
+token到底是怎么发挥作用的 - 知乎</a> Bert不使用
+<code>&lt;bos&gt;</code>（beginning of sequence）和
+<code>&lt;eos&gt;</code>（end of sequence）这种特殊标记，Bert中的special
+token有
+[cls],[sep],[unk],[pad],[mask]。（ChatGPT说对于未登录词（out-of-vocabulary
+words），它使用了词汇表中的 <code>[MASK]</code>
+标记，通过将这些未登录词替换为 <code>[MASK]</code> 来进行预测。）
+注意，<mark style="background: #ABF7F7A6;">
+<code>[CLS]</code>、<code>[SEP]</code>、<code>[PAD]</code>、<code>[MASK]</code>，都是固定的，不是可学习的参数。它们在模型的输入端被硬编码，并且在训练过程中不会被修改</mark>。这些标记的作用主要是为了在模型中引入句子级别的信息，以及在预训练时执行各种自监督任务。
+- <code>[CLS]</code> 通常用于表示整个输入句子的语义。 -
+<code>[SEP]</code> 用于分隔两个句子，对于单个句子的输入也会在句末添加
+<code>[SEP]</code>。 - <code>[PAD]</code>
+用于填充变长序列，使所有输入的长度相同，以便进行批处理。 -
+<code>[MASK]</code>
+用于在预训练时替代一些标记，让模型尝试预测这些被掩盖的标记。</p>
+<h4 id="关于用cls做句子的表示">关于用[CLS]做句子的表示</h4>
+<blockquote>
+<p>[!caution] 不可学习的[CLS]位本身没有语义，但是经过12层Transformer
+Layers，通过attention汇聚了所有词的信息。
+BERT在第一句前会加一个[CLS]标志，最后一层该位对应向量可以作为整句话的语义表示，从而用于下游的分类任务等。
+为什么选它呢，因为与文本中已有的其它词相比，这个无明显语义信息的符号会更“公平”地融合文本中各个词的语义信息，从而更好的表示整句话的语义。
+具体来说，self-attention是用文本中的其它词来增强目标词的语义表示，但是目标词本身的语义还是会占主要部分的，因此，经过BERT的12层，每次词的embedding融合了所有词的信息，可以去更好的表示自己的语义。
+而[CLS]位本身没有语义，经过12层，得到的是attention后所有词的加权平均，相比其他正常词，可以更好的表征句子语义。
+当然，也可以通过对最后一层所有词的embedding做pooling去表征句子语义。
+--<cite>https://zhuanlan.zhihu.com/p/360343071</cite></p>
+</blockquote>
+<h4
+id="用哪个特殊标记做下游任务影响不大">用哪个特殊标记做下游任务影响不大</h4>
+<p>还有一个观点，要用[cls]去做下游句子分类任务的fine-tune才有意义，反正最后根据下游任务finetune之后，bert的参数就会发生一定的变化使得[cls]处得到的hidden
+state包含句子的表征信息，<mark style="background: #ABF7F7A6;">换句话说，你用别的token的last
+hidden state来做finetune也没问题</mark>。在bert as
+service中也提到了这个问题以及作者的回答： &gt; <strong>Q:</strong> Why
+not use the hidden state of the first token as default strategy, i.e.
+the <code>[CLS]</code>?<br />
+&gt; <strong>A:</strong> Because a pre-trained model is not fine-tuned
+on any downstream tasks yet. In this case, the hidden state of
+<code>[CLS]</code> is not a good sentence representation. If later you
+fine-tune the model, you may use <code>[CLS]</code> as well.</p>
+<p>[cls]加不加没啥太大区别（从keras的mlm的官方的实现来看也可以看到，作者从头训练了一个MLM的bert
+model，压根就没有把[cls]这个special
+token加到词表里。）。无论是预训练mlm任务还是句子分类这样的下游任务，完全可以舍弃cls，只不过huggingface以及后续不少开源的model的语料训练的时候大家都模仿了最早的bert往里面加[cls]。</p>
+<p>而预训练的模型的输入本身已经将[cls]+句子，这样的输入形式学习到模型的权重中去了（<strong>导致[cls]这个token在训练的过程中也被编码了某些知识</strong>）。如果你后续finetune的时候不这么做，[cls]+句子A和直接使用句子A分别作为输入来finetune下游的文本分类任务之类的，<strong>可能舍弃了[cls]就浪费了一部分信息，效果和保持原始输入形式的效果就会有一些差别</strong>。</p>
+<p>总结：不是因为special token有特殊意义我们才要刻意地使用special
+token，而是==因为开源地预训练模型是在这样地输入形式上训练地，所以我们使用地时候也要尊崇其语料地形式==对新语料进行改造，换句话说，如果你有能力自己预训练一个新的model，special
+token，例如[pad]，[mask],[unk]想换成什么都行，而[cls],[seq]不加都可以，或者某些开源的预训练模型里也没有[cls]，[seq]之类的奇怪的token，那么就完全不需要加。</p>
+<h3 id="simpletokenizer">SimpleTokenizer</h3>
+<p>CLIP用的就是这个，byte pair
+encoding（BPE）分词器，阿里的千问（QWEN）大模型也用的这个</p>
+<h4 id="构建bpe分词">构建BPE分词</h4>
+<p><a href="https://github.com/karpathy/minbpe" target="_blank" rel="noopener">karpathy: minbpe Byte
+Pair Encoding (BPE) algorithm commonly used in LLM
+tokenization|GitHub和Youtube详细讲解</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241729038.png" style="zoom: 55%;" /></p>
+<p>对于多语种，实际使用的是BBPE（Byte-level BPE），略。</p>
+<h4 id="使用">使用</h4>
+<p>摘录自 <a
+href="https://www.cnblogs.com/pyclq/p/16148202.html">SimpleTokenizer -
+哈哈哈喽喽喽 - 博客园</a> -
+每个单词映射成一个整形，映射表的构成由256个Ascii码映射+bpe常见的<strong>字符组合统计包</strong>bpe_simple_vocab_16e6.txt.gz(是字符组合的列表，列表先后顺序表示字符组合的频次)，然后由总的list和位置构成dict
+-
+映射过程是，比如需要映射bicycle,先将bicycle拆成字符'b','i','c','y','c','l','e'，然后相邻字符组合'bi','ic','cy','yc','cl','le',然后找出这些个组合在bpe_simple_vocab_16e6.txt.gz出现位置最靠前的组合（越靠前则频次越高），比如'ic'最高，在字符列表变成'b','ic','y','c','l','e'，重复上述过程，直到组合在bpe_simple_vocab_16e6.txt.gz找不到，然后返回组合最终的位置标号，比如最终组合为'bicy',
+'cle'，即'bicycle'在bpe_simple_vocab_16e6.txt.gz不存在，则返回'bicy'和
+'cle'在步骤1中的位置作为最终的tokenizer的结果</p>
+<h3 id="一个分词例子">一个分词例子</h3>
+<p><a
+href="https://www.cnblogs.com/dogecheng/p/11617940.html">BERT实战——基于Keras
+- 那少年和狗 - 博客园</a> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras_bert <span class="keyword">import</span> Tokenizer</span><br><span class="line"><span class="comment">#字典</span></span><br><span class="line">token_dict = &#123;</span><br><span class="line">    <span class="string">'[CLS]'</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">'[SEP]'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'un'</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">'##aff'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'##able'</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">'[UNK]'</span>: <span class="number">5</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tokenizer = Tokenizer(token_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拆分单词实例</span></span><br><span class="line">print(tokenizer.tokenize(<span class="string">'unaffable'</span>)) </span><br><span class="line"><span class="comment"># ['[CLS]', 'un', '##aff', '##able', '[SEP]']</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># indices是字对应索引</span></span><br><span class="line"><span class="comment"># segments表示索引对应位置上的字属于第一句话还是第二句话</span></span><br><span class="line"><span class="comment"># 这里只有一句话 unaffable，所以segments都是0</span></span><br><span class="line">indices, segments = tokenizer.encode(<span class="string">'unaffable'</span>)</span><br><span class="line">print(indices)  </span><br><span class="line"><span class="comment"># [0, 2, 3, 4, 1]</span></span><br><span class="line">print(segments)  </span><br><span class="line"><span class="comment"># [0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="tokenizer-api-in-transformer">Tokenizer API in Transformer</h3>
+<p>摘录自<a href="https://zhuanlan.zhihu.com/p/390821442" target="_blank" rel="noopener">3-3
+Transformers Tokenizer API 的使用 - 知乎</a></p>
+<p>我们可以发现，tokenizer API帮我们处理了所有： -
+对文本进行特殊字符的添加，例如<code>[CLS]</code>、<code>[UNK]</code>和<code>[SEP]</code>
+- padding，batch内每个输入的 vector 都具有相同的长度，需要搭配attention
+mask使用，见另一笔记内容 [[Transformer/1 - Transformer基本结构#Masked
+Self-Attention|Masked Self-Attention]] -
+truncation，每个预训练的语言模型在模型定义的时候，都限定了最长的输入长度
+- encoding （tokenize，convert_tokens_to_ids） - 转化为tensor -
+输出model 需要的attention mask</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoTokenizer, AutoModelForSequenceClassification</span><br><span class="line"></span><br><span class="line">checkpoint = <span class="string">"distilbert-base-uncased-finetuned-sst-2-english"</span></span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(checkpoint)</span><br><span class="line">model = AutoModelForSequenceClassification.from_pretrained(checkpoint)</span><br><span class="line">sequences = [</span><br><span class="line">  <span class="string">"I've been waiting for a HuggingFace course my whole life."</span>,</span><br><span class="line">  <span class="string">"So have I!"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">tokens = tokenizer(sequences, padding=<span class="literal">True</span>, truncation=<span class="literal">True</span>, return_tensors=<span class="string">"pt"</span>)</span><br><span class="line">output = model(**tokens)</span><br></pre></td></tr></table></figure>
+<h3 id="tokenizer-api-in-hugging-face">Tokenizer API in Hugging
+Face</h3>
+<p>Hugging Face对其库中分词过程中涉及组件的描述：<a
+href="https://zhuanlan.zhihu.com/p/645409760">NLP之分词器——tokenizers()详解
+- 知乎</a>
+搭建自己的分词器。虽然现有的子词分词器已经非常好用，但是在某些特定的场景中，如法律和医学文本中，通常存在一些常用的==专业术语==，而且这些术语非常重要，值得拥有自己的词条。</p>
+<h3 id="openai的tokenizer">OpenAI的Tokenizer</h3>
+<p><a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener">OpenAI
+Platform</a>，对于英文大约4个字符一个token。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241730503.png" alt="image-20251124下午53050955" style="zoom:50%;" /></p>
+<h3 id="如何构建支持中文的tokenizer">如何构建支持中文的Tokenizer</h3>
+<p>以 LLaMA 的中文支持为例，其原始词表大小为
+32K，主要基于英文语料训练，仅包含不到 1000
+个中文字符。这导致其在处理中文文本时存在以下两个主要问题：</p>
+<ol type="1">
+<li>大量汉字未直接收录于词表中，需依赖多个字节级 token（通常为 2~3
+个）组合表示一个完整汉字。该回退机制显著增加了序列长度，降低了模型对中文的处理效率。</li>
+<li>字节级 token 并非专为表示汉字设计，它们在 UTF-8
+编码下同时用于表示其他字符，难以学习到稳定、有效的汉字语义表示。</li>
+</ol>
+<p>为提升模型的中文处理能力，可通过扩展 LLaMA 的 tokenizer
+来引入额外的中文词表。例如，先使用结巴分词（jieba）对中文文本进行分词，再将中文词表与原始英文词表合并，构建新的
+tokenizer，并对模型进行相应的适配或微调（例如新单词的Embedding）。</p>
+<h1 id="声音信号处理基础">声音信号处理基础</h1>
+<h2 id="术语辨析-1">术语辨析</h2>
+<h3 id="acoustic-vocal-acoustics-audiospeech单词辨析">acoustic, vocal,
+acoustics, audio，speech单词辨析</h3>
+<ol type="1">
+<li>Sound = 总体的“声音现象”。</li>
+<li>Acoustics = 声学/音效（研究 sound 的科学，或环境特性）。</li>
+<li>Audio = 工程角度的“音频信号/设备”。</li>
+<li>Voice = 个体的人声（嗓音，声音产物）。</li>
+<li>Vocal = 发声/唱歌（过程/属性）。</li>
+<li>Speech = 有语言内容的说话（语言层面）。</li>
+</ol>
+<p>类比记忆： - <strong>light</strong>（光） vs
+<strong>optics</strong>（光学） - <strong>sound</strong>（声音） vs
+<strong>acoustics</strong>（声学）</p>
+<p><strong>Sound (声音)
+是最大的集合</strong>。它包含了所有能被听到的现象，即通过介质（如空气）传播的振动。这包括了世界万物发出的声音：汽车喇叭声、狗叫声、小提琴声，以及所有人类发出的声音。
+<strong>人声 (Vocal Sound)
+这个范畴把范围缩小到仅由人类发声器官（喉、声带等）产生的声音</strong>。包括<strong>语言性</strong>的（说话）和<strong>非语言性的</strong>（笑、哭、尖叫、咳嗽、叹息）。
+<em>语音 (Speech) 是人声 (Vocal
+Sound)的一个子集</em>。这是这个链条中最具体的类别，它特指那些为了<strong>传递语言信息</strong>而按照特定语言规则组织起来的人声。</p>
+<p>声学 (Acoustics) 是研究所有 声音 (Sound) 的科学。 音频 (Audio) 是任何
+声音 (Sound) 的数字化/电子化格式，audio file 的内容可能是 speech、music
+(音乐) 或 environmental noise (环境噪声)。</p>
+<blockquote>
+<p>[!example] 一个词汇辨析综合应用例子 In the domain of Multimodal
+<strong>Speech</strong> Emotion Recognition, we process the
+<strong>audio</strong> signal capturing a speaker's
+<strong>voice</strong>. This involves performing
+<strong>acoustic</strong> analysis on the rich <strong>vocal</strong>
+expressions within the signal to extract features that characterize the
+emotional content. The entire methodology is grounded in the sciences of
+phonetics and <strong>acoustics</strong>.</p>
+</blockquote>
+<h3 id="pitch和tone的区别">pitch和tone的区别</h3>
+<ul>
+<li>Pitch（音高）：是声音的物理-/感知属性（高低）。</li>
+<li>Tone/Intonation（声调/语调）：语言系统中<strong>由 pitch
+形成的“功能单位”</strong>，把 pitch
+轨迹模式化**，用于区分词义或表达语气。</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 31%" />
+<col style="width: 17%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+<th>属性</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pitch（音高）</strong></td>
+<td>声带振动频率 F0 的感知结果（高低）</td>
+<td>物理 &amp; 听觉属性（连续变化）</td>
+<td>男声约 100Hz、女声约 200Hz；同一个人可以高声或低声说“啊”</td>
+</tr>
+<tr>
+<td><strong>Tone（声调）</strong></td>
+<td>语言系统中用 Pitch 高低变化来区别词义的模式</td>
+<td>离散化的音高模式，词汇功能</td>
+<td>汉语“四声”：mā（妈 --从高到高）、má（麻 --中到高）、mǎ（马
+--先中到低，再升高）、mà（骂 --高到低 ）</td>
+</tr>
+<tr>
+<td><strong>Intonation（语调）</strong></td>
+<td>在句子层面利用 Pitch 变化表达语气、情感、语法关系</td>
+<td>语用功能</td>
+<td>英语：陈述句结尾下降，疑问句结尾上扬</td>
+</tr>
+</tbody>
+</table>
+<h3 id="音素">音素</h3>
+<p>音素 =
+区分<mark style="background: #D2B3FFA6;">词义</mark>的最小发音单位</p>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 15%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>语言</strong></th>
+<th><strong>音素构成</strong></th>
+<th><strong>音高作用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中文</strong></td>
+<td>声母 + 韵母 + <strong>声调</strong></td>
+<td>声调是音素的一部分，用来区分词义（妈/马/骂）</td>
+</tr>
+<tr>
+<td><strong>英文</strong></td>
+<td>辅音 + 元音</td>
+<td>音高只用于语调，不影响词义（cat 升调只是问句，不是新词）</td>
+</tr>
+<tr>
+<td>注意：英语中的语调（音高变化）不是音素，例如表中的例子cat升调，但<mark style="background: #FFB86CA6;">不会改变词义</mark>。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="韵律音色音质">韵律、音色、音质</h3>
+<p>韵律 (Prosody)、音色 (Timbre) 和 音质 (Voice
+Quality)被视为三个<strong>正交（orthogonal）</strong>
+且相互独立的维度来描述声音特性。它们从不同的层面、在不同的时间尺度上刻画了声音的本质。</p>
+<p>为了更形象地理解，我们可以做一个类比：如果把一段话语比作一首音乐： -
+韵律
+(描述“说什么”的方式)就像是这首音乐的<strong>旋律和节奏</strong>。它决定了乐句的起伏、快慢和轻重缓急。<em>韵律是超音段
+(suprasegmental)
+的，它的作用范围超越了单个音素，延伸到音节、词语和整个句子</em>，承载了大量的语义和情感信息。
+- <strong>韵律的核心声学特征</strong>： - <strong>基频轮廓 (F0
+Contour)</strong>：构成语调 (Intonation)。 - <strong>音强轮廓 (Intensity
+Contour)</strong>：构成重音 (Stress)。 - <strong>音长和停顿 (Duration
+&amp; Pauses)</strong>：构成节奏 (Rhythm)。 - 音色 (描述“谁在说”的身份)
+就像是演奏这首音乐的<strong>乐器</strong>。是小提琴、钢琴还是萨克斯风？它们演奏相同的旋律，但听起来完全不同。音色是声音的“指纹”，它由发声体（如声带）和共鸣腔（如声道）的物理结构决定。
+- <strong>音色的核心声学特征</strong>： - <strong>频谱包络 (Spectral
+Envelope)</strong>：由<strong>共振峰 (Formants)</strong>
+决定，反映了声道的形状。 - <strong>谐波结构 (Harmonic
+Structure)</strong>：各次谐波的相对能量分布。 - 音质
+(描述“怎么说”的状态)
+就像是这件乐器的<strong>物理状态和演奏技巧</strong>。这把小提琴的琴弦是崭新的还是老旧的？演奏者的弓法是平滑流畅还是带有摩擦的沙哑感？音质描述了声带振动的具体模式和气流的控制方式，反映了声音的“质地”。
+- <strong>音质的核心声学特征</strong>： - <strong>抖动
+(Jitter)</strong>：基频的周期性扰动。 - <strong>颤动
+(Shimmer)</strong>：振幅的周期性扰动。 - <strong>谐波噪声比
+(HNR)</strong>：声音中周期性成分与噪声成分的比例。</p>
+<p>在理论上，这三个维度是独立的。例如，同一个人（音色固定）可以用不同的语调（韵律变化）说出清晰（音质好）或沙哑（音质差）的一句话。但在实际发声中，它们会相互影响。比如，当一个人激动地大喊时，他的韵律（音高和音强升高）、音色（共振峰可能变化）和音质（可能变得紧张或粗糙）都会发生改变。</p>
+<h2 id="声学知识">声学知识</h2>
+<h3 id="音频帧">音频帧</h3>
+<p>•
+在音频信号处理中，<mark style="background: #FFB86CA6;">音频“帧”</mark>通常指的是在<strong>特定时间窗</strong>内的音频数据。每一帧包含一定时长的连续音频信号。
+•
+举个例子，如果音频信号被切分成25毫秒长的帧，每一帧就包含该时间段内的音频数据。这些音频数据会被用来进行特征提取（如计算频谱、梅尔频谱图等），从而反映出该时段的频率特征。因为语音信号在这一时间范围内可以近似为平稳信号。
+•
+<strong>帧的大小</strong>通常是由时间窗的长度（如25ms、50ms等）决定的，而<strong>帧移</strong>（frame
+shift）决定了帧之间的重叠程度。例如，帧移为10ms时，相邻两帧有15ms的重叠部分，以避免切分导致的信息丢失，并确保相邻帧的平滑过渡。</p>
+<p><strong>那么为什么不用每个声音采样点直接作为最小单元</strong>？
+单独的采样点无法捕捉音频的频率信息，而频率信息对于语音理解是至关重要的。例如：
+•
+人的语音包含许多不同频率的振动（基频、共振峰等），这些频率分量是语音识别和建模的重要依据。
+•
+如果只用采样点，无法直接看到“哪些频率分量在什么时间出现”，因此难以提取有意义的语音特征。
+音频帧通过聚合多个采样点，提供了一段时间内的频率和振幅分布</p>
+<h3 id="分贝的计算">分贝的计算</h3>
+<p>分贝（dB）是对数单位，用于表示信号的强度或能量相对参考值的比值。对数变换使得信号的动态范围得到压缩，便于分析和可视化。负数dB表示信号的强度低于参考值，例如，当信号的幅度小于参考幅度时，计算出的分贝值为负数。在音频信号处理中，选择合适的参考值是计算分贝时非常重要的一步。通常会选择<strong>RMS（均方根）幅度</strong>或<strong>最大幅度</strong>作为参考值。
+计算分贝时，具体公式取决于信号的性质： 1. 对于功率信号，使用<strong>10
+log</strong>公式：<span class="math inline">\(\text{dB} = 10 \log_{10}
+\left( \frac{P}{P_{\text{ref}}}
+\right)\)</span>，其中P是信号的功率，P_ref是参考功率； 2.
+对于幅度信号，使用<strong>20 log</strong>公式：<span
+class="math inline">\(\text{dB} = 20 \log_{10} \left(
+\frac{A}{A_{\text{ref}}}
+\right)\)</span>，其中A是信号的幅度（如电压、振幅），A_ref是参考幅度。备注：<strong>由于功率与幅度的平方成正比</strong>（<span
+class="math inline">\(P \propto
+A^2\)</span>），因此在计算幅度的分贝时使用20倍的对数。
+在音频信号处理中，通常使用<strong>20
+log</strong>来表示信号的幅度分贝。分贝单位能够更好地适应人类对声音强度的感知，而不是线性的绝度振幅，特别是在处理动态范围很大的音频信号时。</p>
+<h3 id="声音信号分析核心概念">声音信号分析核心概念</h3>
+<p>--Gemini 2.5</p>
+<h3 id="语音信号分析核心概念总结-补充完善版">语音信号分析核心概念总结
+(补充完善版)</h3>
+<h4 id="声音信号的三个基本物理维度">1. 声音信号的三个基本物理维度</h4>
+<ul>
+<li><strong>幅度/振幅
+(Amplitude)</strong>：描述空气压力变化的强度，直接对应于我们主观感知的
+<strong>响度
+(Loudness)</strong>。振幅越大，声音听起来越响。对于单声道信号，一个时间点只有一个振幅值。</li>
+<li><strong>频率 (Frequency)</strong>：指声波振动的速度，单位是赫兹
+(Hz)。它是一个客观的物理量。频率决定了我们主观感知的 <strong>音高
+(Pitch)</strong>。</li>
+<li><strong>时长 (Duration)</strong>：指声音持续的时间。</li>
+</ul>
+<h4 id="音高-pitch-vs.-基频-fundamental-frequency-f0">2. 音高 (Pitch)
+vs. 基频 (Fundamental Frequency, F0)</h4>
+<ul>
+<li><strong>基频
+(F0)</strong>：对于周期性或准周期性声音（如元音），其波形重复出现的最慢频率，即最低频率成分。它是<em>由声带的振动频率决定</em>的物理量。</li>
+<li><strong>音高
+(Pitch)</strong>：人耳对声音高低的主观感知。<em>音高主要由基频决定</em>，但也会受到响度等其他因素的轻微影响。在语音分析中，我们通常将两者近似等同，通过计算F0来量化音高。</li>
+</ul>
+<h4 id="频谱-spectrum-与音色-timbre">3. 频谱 (Spectrum) 与音色
+(Timbre)</h4>
+<p>一个复杂的声音（如人声）并非由单一频率构成，而是由多个不同频率的正弦波叠加而成。将这些频率成分展开，就能得到声音的频谱。</p>
+<ul>
+<li><p><strong>基波 (Fundamental
+Wave)</strong>：构成声音的频率最低的那个正弦波，其频率就是 <strong>基频
+(F0)</strong>。它通常也被称为 <strong>一次谐波</strong>。</p>
+<ul>
+<li><strong>特别注意</strong>：这里的“一次”指的是基频的
+<strong>1倍</strong>，是一个序号或倍数，<strong>不代表频率就是1Hz</strong>。</li>
+<li><strong>例如</strong>：一个成年男性的基频 (F0) 可能在 120 Hz
+左右。那么：
+<ul>
+<li>他的 <strong>基波（一次谐波）</strong> 频率就是 1×120 Hz=120
+Hz。</li>
+<li><strong>二次谐波</strong> 的频率就是 2×120 Hz=240 Hz。</li>
+<li><strong>三次谐波</strong> 的频率就是 3×120 Hz=360
+Hz，以此类推。</li>
+</ul></li>
+</ul></li>
+<li><p><strong>谐波 (Harmonics)</strong>：频率是基频 (F0) 整数倍
+(2F0,3F0,4F0,...) 的一系列正弦波。</p></li>
+<li><p><strong>音色
+(Timbre)</strong>：区别不同声音的关键特征（例如，小提琴和钢琴以相同的音高和响度演奏同一个音符，我们依然能区分它们）。音色主要由两个因素决定：</p>
+<ol type="1">
+<li><strong>谐波的相对强度</strong>：谐波与基波的能量分布比例。</li>
+<li><strong>共振峰 (Formants)</strong>。</li>
+</ol></li>
+</ul>
+<h4 id="共振峰-formants---音色的塑造者">4. 共振峰 (Formants) -
+音色的塑造者</h4>
+<ul>
+<li><p><strong>定义</strong>：当声带产生的原始声音（包含基频和各次谐波）经过声道（咽喉、口腔、鼻腔）时，特定频率的能量会被放大和增强（能量集中区域），形成能量的峰值，这些峰值就是<strong>共振峰</strong>。在同一个时间点，<em>一个声音可以包含多个共振峰，因此有多个共振峰频率</em>。</p></li>
+<li><p><strong>成因</strong>：共振峰的频率位置由
+<strong>声道的形状</strong>
+决定。当我们说话时，舌头、嘴唇、下巴等发音器官的运动会不断改变声道的形状，从而导致<mark style="background: #FFB86CA6;">共振峰的频率实时变化</mark>。</p></li>
+<li><p><strong>作用</strong>：共振峰是决定 <strong>音色</strong>，特别是
+<strong>元音 (Vowel)</strong> 音色的关键。不同的元音（如 a, i,
+u）就是通过舌头和嘴唇的位置变化，塑造出不同的共振峰结构，从而被我们区分开来。例如，元音
+/i/（“衣”）的特点是第一共振峰 (F1) 频率很低，而第二共振峰 (F2)
+频率很高。<mark style="background: #FF5582A6;">这就是为什么声谱图上，共振峰通常表现为多条平行的、明亮的能量带，而不是一条单一的线。每条明亮的带都代表一个共振峰。</mark></p></li>
+</ul>
+<h4 id="幅度包络-amplitude-envelope---声音的动态轮廓">5. 幅度包络
+(Amplitude Envelope) - 声音的动态轮廓</h4>
+<ul>
+<li><strong>定义</strong>：描述声音 <strong>响度</strong>
+随时间变化的轮廓线。一个典型的声音事件通常包含四个阶段：
+<ol type="1">
+<li><strong>起音 (Attack)</strong>：响度从零迅速上升到峰值。</li>
+<li><strong>衰减 (Decay)</strong>：从峰值略微下降。</li>
+<li><strong>延持
+(Sustain)</strong>：响度在一个相对稳定的水平上保持一段时间。</li>
+<li><strong>释音 (Release)</strong>：响度逐渐衰减至零。</li>
+</ol></li>
+<li><strong>作用</strong>：包络线同样是影响 <strong>音色</strong>
+的重要因素。它定义了声音的“生命周期”或动态特性。例如，敲击乐器（如鼓）和拉弦乐器（如小提琴）的包络线就截然不同。</li>
+</ul>
+<h4 id="声谱图-spectrogram-中的视觉特征解读">6. 声谱图 (Spectrogram)
+中的视觉特征解读</h4>
+<p>声谱图是一个三维图，它同时展示了 <strong>时间</strong>
+(x轴)、<strong>频率</strong> (y轴) 和 <strong>能量/幅度</strong>
+(颜色深浅或亮度)。
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241733147.png" alt="Pasted image 20250828184653" style="zoom:60%;" /></p>
+<p>第三行的声谱图中黄色虚线可能是共振峰的轨迹（也可能作者错了。<strong>共振峰的绘制不是取平均值，而是通过在每个时间点上找到多个能量峰值。算法将这些峰值按频率高低排序，并分别命名为
+F1（频率最低）、F2（频率次低）
+等，然后将同序号的峰值点连接成多条平滑轨迹</strong>，间一个例子<a
+href="https://blog.csdn.net/shaopengfei/article/details/112492637?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-112492637-blog-89528535.235%5Ev43%5Epc_blog_bottom_relevance_base6&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-112492637-blog-89528535.235%5Ev43%5Epc_blog_bottom_relevance_base6&amp;utm_relevant_index=5">提取时长和共振峰的具体例子-CSDN博客</a>）。该图片摘录自Temporal-Frequency
+State Space Duality: An Efficient Paradigm for Speech Emotion
+Recognition，ICASSP 2025</p>
+<ul>
+<li><strong>垂直条纹 (Vertical
+Stripes)</strong>：在浊音（声带振动）区域，可以看到密集的垂直细条纹。<em>每一条细纹大致对应于声带的一次振动</em>，条纹的疏密程度反映了
+<strong>基频 (F0)
+的高低</strong>。<mark style="background: #BBFABBA6;">条纹越密，基频越高，音高也越高</mark>。</li>
+<li><strong>水平谐波带 (Horizontal Harmonic
+Bands)</strong>：细看这些垂直条纹，它们在能量强的频率上会连成一片，形成明亮的
+<strong>水平条带</strong>，这就是
+<strong>谐波</strong>。最下面、通常最亮的一条即为 <strong>基频
+(F0)</strong> 的轨迹。</li>
+<li>垂直条纹的断裂是由浊音和清音的交替引起的，而水平条纹的连续性则是因为声音的频率成分在整个发音过程中都存在。</li>
+<li><strong>共振峰
+(Formants)</strong>：表现为频率范围内更宽、能量更集中的
+<strong>亮带</strong>。这些亮带的中心频率会随着发音内容的变化而
+<strong>上下移动</strong>。上图注释中提到的“黄色虚线很可能追踪的就是某个共振峰的轨迹”，这个判断是非常正确的，因为共振峰反映了发音器官的运动，是动态变化的。F1（第一共振峰）反映了发音时<strong>舌头的高低</strong>，而F2（第二共振峰）则反映了<strong>舌头的前后位置</strong>，两者共同决定了元音的音色。</li>
+</ul>
+<h4 id="声谱图中垂直和水平条纹的成因">7.
+声谱图中垂直和水平条纹的成因</h4>
+<p>声谱图中的条纹模式反映了人类发声的两种基本物理机制： ##### 1).
+垂直条纹的成因：声带振动
+垂直条纹是由<strong>声带的周期性振动</strong>产生的。在语音学中，声谱图的分析方法是将<u>一个连续的语音信号切分成非常短的、连续的时间片段</u>。在每一个时间片段内，<em>如果说话者的声带正在快速、规律地振动，就会在频谱上产生一系列离散的能量峰值</em>，这些峰值对应于基频和其谐波。在声谱图上，这些离散的能量峰值在垂直方向上被描绘为一条细线。</p>
+<p>因此，每一条<strong>垂直细线</strong>都代表了声带的一次完整振动周期。这种条纹只出现在<strong>浊音</strong>（如元音和浊辅音）中。而那些发音时声带不振动的辅音，即清辅音（例如
+/p/, /t/, /k/, /s/,
+/f/），则不会产生垂直条纹。它们的声谱图通常是一片模糊或高频的噪声区域。条纹越密，代表声带振动越快，声音的<strong>音高</strong>越高。</p>
+<h5 id="水平条纹的成因频率成分">2). 水平条纹的成因：频率成分</h5>
+<p>水平条纹是由声音的<strong>频率成分</strong>（即谐波和共振峰）产生的。<u>无论声带是否振动</u>，声音都有其独特的频率组成。这些在特定频率上的能量峰值在声谱图上形成了明亮的水平条带。这些条带反映了声音在不同频率上的能量分布。</p>
+<p>这些水平条纹贯穿整个语音，因为声音的频率组成始终存在。它们主要决定了声音的<strong>音色</strong>。例如，共振峰的频率起伏变化反映了发音器官（如舌头和嘴唇）的运动，这使得我们可以区分不同的元音。</p>
+<h5
+id="在人类语音的声谱图中水平条纹通常是连续的而垂直条纹则经常是断裂的">3).
+在人类语音的声谱图中，水平条纹通常是连续的，而垂直条纹则经常是断裂的</h5>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241734506.png" alt="Pasted image 20250828184653" style="zoom:40%;" />
+这个现象完美地反映了人类发声的两种基本模式：<strong>浊音</strong>和<strong>清音</strong>。</p>
+<ul>
+<li><strong>垂直条纹</strong>代表<strong>声带的振动</strong>。这些条纹只在发出<strong>浊音</strong>（如元音
+a, e, i, o, u，以及辅音 m, n,
+l）时出现。当声带不振动，发出<strong>清音</strong>（如辅音 p, t, k, s,
+f）时，垂直条纹就会中断，声谱图上呈现为一片不规则的能量。因此，垂直条纹在整个语音流中是断断续续出现的。</li>
+<li><strong>水平条纹</strong>代表声音的<strong>频率成分</strong>。无论声带是否振动，声音总是由不同频率的能量组成。这些频率成分（谐波和共振峰）在整个语音过程中持续存在，所以它们在声谱图上形成了连续的水平轨迹。</li>
+</ul>
+<h3 id="总结与对比">8. 总结与对比</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 19%" />
+<col style="width: 33%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th>概念</th>
+<th>决定因素</th>
+<th>听觉感知</th>
+<th>在声谱图中的体现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>基频 (F0)</strong></td>
+<td>声带振动快慢</td>
+<td><strong>音高 (Pitch)</strong></td>
+<td>最低的一条谐波亮带；或垂直条纹的疏密</td>
+</tr>
+<tr>
+<td><strong>谐波 (Harmonics)</strong></td>
+<td>基频的整数倍</td>
+<td>(与共振峰共同决定) <strong>音色 (Timbre)</strong></td>
+<td>与基频平行的一系列水平亮带</td>
+</tr>
+<tr>
+<td><strong>共振峰 (Formants)</strong></td>
+<td>声道（口腔、舌头等）的形状</td>
+<td>(与谐波共同决定) <strong>音色 (Timbre)</strong>，尤其是元音</td>
+<td>宽阔且动态变化的<strong>水平能量集中区域</strong></td>
+</tr>
+<tr>
+<td><strong>振幅 (Amplitude)</strong></td>
+<td>气流强度与声门闭合力度</td>
+<td><strong>响度 (Loudness)</strong></td>
+<td>颜色的深浅或亮度（越亮/颜色越深，能量越强）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="音频模态的主要特征">音频模态的主要特征</h3>
+<p>GPT-4o 从声学角度，音频模态的主要特征可以概括为以下几类：
+1．时域特征：描述音频信号在时间维度上的属性。常见特征包括能量
+（Energy），过零率（Zero－Crossing Rate，ZCR），音长（Duration）。
+2．频域特征：描述音频信号在频率维度上的分布。常见特征包括频谱质心（Spectral
+Centroid），频谱带宽（Spectral Bandwidth），谱摘 （Spectral Entropy）。
+3．时频特征：描述信号<strong>在时间和频率上</strong>的<strong>联合变化</strong>。常见特征包括短时傅里叶变换（STFT），Mel频率倒谱系数（MFCC），线性预测倒谱系数（LPCC）。
+4．谱特征：描述频谱形状的具体属性，反映声道结构和发声机制。从本质上看，谱特征属于频域特征的一个子集。常见特征包括共振峰（Formants），谱包络（Spectral
+Envelope，对应也有时间包络），谐波与非谐波比（HNR）。<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241735496.png" alt="Pasted image 20250828184653" style="zoom:30%;" />
+5．韵律特征：描述语音的超音段特性，与情感，语调密切相关。常见特征包括基频（FO），音强（Intensity），音长（Duration），语速
+（Speech Rate），节奏性变化。
+6．音质特征：描述语音信号的清踝度，纯净度和信号质量。常见特征包括抖动（Jitter），颤动（Shimmer），信噪比（SNR）。
+7．动态特征：描述频谱特征或韵律特征的变化趋势和动态模式，常见的有一阶差分（Delta
+Features）， 二阶差分（Delta-Delta Features）
+8．音色特征：主要归属于<strong>谱特征</strong>，但它的表征也会涉及<strong>时频特征</strong>和<strong>韵律特征</strong>。研究音色时，应结合谱特征的静态描述（如频谱质心、谱包络）和动态变化（如MFCC及其差分特征）来全面表征音色属性。</p>
+<h3 id="频域特性与动态特性的关系">频域特性与动态特性的关系</h3>
+<p>频域特性是可以反映动态变化的，但这种变化通常通过短时分析或时间差分来捕捉。相比之下，<strong>时频特性</strong>更进一步，将时间和频率的动态关系综合呈现，因此在描述动态变化时，时频特性可能更为直观和全面。
+频域特性本质上反映了信号在特定时间窗口内的频率分布情况
+静态频域特性：例如单一时刻的谱包络、谱质心，这些特性在短时间内是固定的。
+动态频域特性：通过分析这些特性随时间的连续变化（如轨迹、差分等），可以体现信号的动态属性。</p>
+<h2 id="对数梅尔频谱图如何计算">对数梅尔频谱图如何计算</h2>
+<p>--<em>GPT-4o回答</em> ### 简介
+<strong>对数梅尔频谱图</strong>（Log-Mel
+Spectrogram）是将音频信号表示为随时间变化的频率能量图的图像表示。其英文术语是
+<strong>Log-Mel
+Spectrogram</strong>。Log-Mel频谱图是声音信号处理中常用的特征表示方法，广泛应用于语音识别、音乐信息检索等领域。它是通过短时傅立叶变换（STFT）和
+Mel 频率滤波得到的，然后对其进行对数变换。
+例如，一个处理后的语音声谱图数据也可以表示为一个二维张量，但它的维度有不同的含义：
+- <strong>高度（频率轴）</strong>：代表 <strong>梅尔滤波器组（mel-filter
+banks）</strong> 的数量，通常为 40、64 或
+128。这决定了我们分析语音频率的精细程度。 -
+<strong>宽度（时间轴）</strong>：代表<strong>总帧数</strong>。这个数字取决于音频的总时长、帧长和帧移。例如，一个
+10 秒的音频，帧长 25 毫秒，帧移 10 毫秒，就会有大约 1000 帧，宽度就是
+1000。</p>
+<h3 id="处理步骤">处理步骤</h3>
+<ol type="1">
+<li><strong>加载音频文件</strong>：使用 <code>librosa</code>
+库加载音频文件并进行重采样。</li>
+<li><strong>短时傅立叶变换 (STFT)</strong>：对音频信号进行
+STFT，得到频域表示。</li>
+<li><strong>Mel 滤波</strong>：将频域表示映射到 Mel 频率尺度。</li>
+<li><strong>对数变换</strong>：对 Mel 频谱进行对数变换，得到 Log-Mel
+频谱图。 ### 计算公式描述过程</li>
+<li><strong>短时傅立叶变换 (STFT)</strong></li>
+</ol>
+<p><span class="math display">\[
+X(t, f) = \sum_{n=0}^{N-1} x[n] \cdot w[n-t] \cdot e^{-j2\pi fn/N}
+\]</span></p>
+<p>其中，( x[n] ) 为音频信号，( w[n] ) 为窗口函数，( N ) 为 FFT 的大小。
+具体来说，窗口函数 w[n]是短时傅立叶变换 (STFT)
+中用来处理信号的一段取样窗口。它的作用是在计算傅立叶变换时平滑信号的边缘，减小频谱泄露效应。常见的窗口函数有矩形窗、汉宁窗、汉明窗和黑曼窗等。</p>
+<ol start="2" type="1">
+<li><strong>Mel 频率转换</strong></li>
+</ol>
+<p><span class="math display">\[
+M(f) = 2595 \cdot \log_{10}(1 + f / 700)
+\]</span></p>
+<ol start="3" type="1">
+<li><strong>Mel 频谱</strong></li>
+</ol>
+<p><span class="math display">\[
+S_{mel}(t, m) = \sum_{k=0}^{K-1} |X(t, k)|^2 \cdot H_m(k)
+\]</span></p>
+<p>其中，( H_m(k) ) 为 Mel 滤波器，( K ) 为频谱的频率分辨率。</p>
+<ol start="4" type="1">
+<li><strong>对数变换</strong></li>
+</ol>
+<p><span class="math display">\[
+\text{Log-Mel}(t, m) = \log(S_{mel}(t, m) + \epsilon)
+\]</span></p>
+<p>其中，( ) 是一个小常数，用于避免对数零值。</p>
+<ol start="5" type="1">
+<li><strong>时间轴长度的保持</strong>
+前后时间段的长度保持一致，即如果你计算了3秒钟的音频信号，对应的对数梅尔频谱图也是描述这3秒的频率变化，只不过它被分割成了多个短时窗。在对音频信号进行处理时，通常会将信号划分为多个小的时间窗口或“帧”（frame）。每一帧包含了一定数量的连续采样点。然后，针对每一帧进行频谱分析（如傅里叶变换），从而提取该时间段内的频率特征。
+例如，如果原始信号的采样率为16kHz，窗口大小为25ms（也就是一帧），步长为10ms，那么对于3秒钟的信号，经过处理后你会得到大约
+(3 / 0.01) = 300
+帧。每一帧会在横坐标上表示一个时间点，这个时间点对应的是窗的开始时刻。</li>
+</ol>
+<h3 id="代码实现">代码实现</h3>
+<p>以下是使用 <code>librosa</code> 库进行 Log-Mel 频谱图计算的 Python
+代码示例。补充一句，<code>torchaudio</code> 是 PyTorch
+的一个音频处理库，提供了很多音频相关的功能，可以方便地集成到 PyTorch
+的深度学习框架中。：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> librosa</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_log_mel_spectrogram</span><span class="params">(audio_path, sr=<span class="number">22050</span>, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>, n_mels=<span class="number">128</span>)</span>:</span></span><br><span class="line">    <span class="comment"># 加载音频文件</span></span><br><span class="line">    audio, sr = librosa.load(audio_path, sr=sr)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算短时傅立叶变换 (STFT)</span></span><br><span class="line">    stft = librosa.stft(audio, n_fft=n_fft, hop_length=hop_length)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算 Mel 频谱</span></span><br><span class="line">    mel_spectrogram = librosa.feature.melspectrogram(S=np.abs(stft)**<span class="number">2</span>, sr=sr, n_mels=n_mels)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算对数 Mel 频谱图</span></span><br><span class="line">    log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> log_mel_spectrogram</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例用法</span></span><br><span class="line">audio_path = <span class="string">'example_audio.wav'</span></span><br><span class="line">log_mel_spectrogram = compute_log_mel_spectrogram(audio_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化 Log-Mel 频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">4</span>))</span><br><span class="line">librosa.display.specshow(log_mel_spectrogram, sr=<span class="number">22050</span>, hop_length=<span class="number">512</span>, x_axis=<span class="string">'time'</span>, y_axis=<span class="string">'mel'</span>)</span><br><span class="line">plt.colorbar(format=<span class="string">'%+2.0f dB'</span>)</span><br><span class="line">plt.title(<span class="string">'Log-Mel Spectrogram'</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h3 id="参数具体解释">参数具体解释</h3>
+<ul>
+<li><strong>sr (sampling rate)</strong>: 22050
+<ul>
+<li>这是音频信号的采样率，表示每秒钟采样的次数。22050 Hz 表示每秒钟采样
+22050 个点。</li>
+</ul></li>
+<li><strong>n_fft</strong>: 2048
+<ul>
+<li>这是傅立叶变换的窗口大小，也就是每个窗口包含的采样点数。2048
+个采样点表示窗口长度为 2048 个点。</li>
+</ul></li>
+<li><strong>hop_length</strong>: 512
+<ul>
+<li>这是窗口之间的步长。512 表示每个窗口之间有 512
+个点的间隔。换句话说，窗口的重叠部分有 ( n_fft - hop_length = 2048 - 512
+= 1536 ) 个点。</li>
+</ul></li>
+<li><strong>n_mels</strong>: 128
+<ul>
+<li>这是 Mel 频谱图中的 Mel 滤波器组数量。128 表示 Mel 频谱图有 128 个
+Mel 频带。</li>
+</ul></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241736583.png" style="zoom:60%;" /></p>
+<p>如果需要更底层的控制，可以使用 <code>SoundFile</code> 和
+<code>NumPy</code> 来处理音频数据并生成频谱图。以下是一个使用
+<code>SoundFile</code> 和 <code>NumPy</code> 生成 Log-Mel
+频谱图的示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> soundfile <span class="keyword">as</span> sf</span><br><span class="line"><span class="keyword">from</span> scipy.signal <span class="keyword">import</span> stft</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载音频文件</span></span><br><span class="line">waveform, sample_rate = sf.read(<span class="string">"example_audio.wav"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 短时傅立叶变换</span></span><br><span class="line">n_fft = <span class="number">2048</span></span><br><span class="line">hop_length = <span class="number">512</span></span><br><span class="line">frequencies, times, Zxx = stft(waveform, fs=sample_rate, nperseg=n_fft, noverlap=hop_length)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mel 频谱</span></span><br><span class="line">n_mels = <span class="number">128</span></span><br><span class="line">mel_frequencies = np.linspace(<span class="number">0</span>, sample_rate // <span class="number">2</span>, n_mels)</span><br><span class="line">mel_spectrogram = np.abs(Zxx) ** <span class="number">2</span></span><br><span class="line">mel_spectrogram = np.dot(mel_frequencies, mel_spectrogram)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对数变换</span></span><br><span class="line">log_mel_spectrogram = <span class="number">10</span> * np.log10(mel_spectrogram + <span class="number">1e-6</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">4</span>))</span><br><span class="line">plt.imshow(log_mel_spectrogram, aspect=<span class="string">'auto'</span>, origin=<span class="string">'lower'</span>)</span><br><span class="line">plt.colorbar(format=<span class="string">'%+2.0f dB'</span>)</span><br><span class="line">plt.title(<span class="string">'Log-Mel Spectrogram'</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h3 id="数据预处理">数据预处理</h3>
+<p>在输入给用于声音分类的深度网络前，通常需要进行以下数据预处理操作：</p>
+<ol type="1">
+<li><p><strong>归一化</strong>：将频谱图的值归一化到某个范围（如 0 到 1
+或 -1 到 1），这有助于提高网络的训练稳定性和收敛速度。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">scaler = MinMaxScaler()</span><br><span class="line">log_mel_spectrogram_normalized = scaler.fit_transform(log_mel_spectrogram)</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>调整维度</strong>：如果深度学习模型期望的输入是特定的维度，需要对频谱图进行裁剪或填充，以确保所有输入样本具有相同的形状。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pad_spectrogram</span><span class="params">(spectrogram, target_shape)</span>:</span></span><br><span class="line">    padded_spectrogram = np.zeros(target_shape)</span><br><span class="line">    padded_spectrogram[:spectrogram.shape[<span class="number">0</span>], :spectrogram.shape[<span class="number">1</span>]] = spectrogram</span><br><span class="line">    <span class="keyword">return</span> padded_spectrogram</span><br><span class="line"></span><br><span class="line">target_shape = (<span class="number">128</span>, <span class="number">216</span>)  <span class="comment"># Example shape</span></span><br><span class="line">log_mel_spectrogram_padded = pad_spectrogram(log_mel_spectrogram_normalized, target_shape)</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>添加通道维度</strong>：如果使用的深度学习框架期望输入具有通道维度（如
+CNN），需要增加此维度。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log_mel_spectrogram_padded = np.expand_dims(log_mel_spectrogram_padded, axis=<span class="number">-1</span>)</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>批量处理</strong>：处理多个音频文件，并将它们存储在批量数据集中，以便于模型的训练和验证。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_audio_files</span><span class="params">(file_paths)</span>:</span></span><br><span class="line">    spectrograms = []</span><br><span class="line">    <span class="keyword">for</span> file_path <span class="keyword">in</span> file_paths:</span><br><span class="line">        audio, sr = librosa.load(file_path, sr=<span class="number">22050</span>)</span><br><span class="line">        stft = librosa.stft(audio, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line">        mel_spectrogram = librosa.feature.melspectrogram(S=np.abs(stft)**<span class="number">2</span>, sr=sr, n_mels=<span class="number">128</span>)</span><br><span class="line">        log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_normalized = scaler.fit_transform(log_mel_spectrogram)</span><br><span class="line">        log_mel_spectrogram_padded = pad_spectrogram(log_mel_spectrogram_normalized, target_shape)</span><br><span class="line">        log_mel_spectrogram_padded = np.expand_dims(log_mel_spectrogram_padded, axis=<span class="number">-1</span>)</span><br><span class="line">        spectrograms.append(log_mel_spectrogram_padded)</span><br><span class="line">    <span class="keyword">return</span> np.array(spectrograms)</span><br><span class="line"></span><br><span class="line">file_paths = [<span class="string">"/path/to/audio1.wav"</span>, <span class="string">"/path/to/audio2.wav"</span>]  <span class="comment"># Example file paths</span></span><br><span class="line">dataset = process_audio_files(file_paths)</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h3 id="总结">总结</h3>
+<p>对数梅尔频谱图（Log-Mel
+Spectrogram）是通过短时傅立叶变换（STFT）将音频信号在时间和频率两个维度上进行表示，展示了随时间变化的不同频率信号的能量分布。在输入给深度网络之前，需要进行归一化、调整维度、添加通道维度等数据预处理操作。通过这些步骤，可以将音频信号转换为适合深度学习模型处理的输入格式，从而进行声音分类等任务。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate me via WeChatPay or AliPay.</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/images/weixin_pay.jpg" alt="Jia Li WechatPay">
+        <p>WechatPay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/images/ali_pay.jpg" alt="Jia Li AliPay">
+        <p>AliPay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jia Li
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://hellojialee.github.io/2023/10/11/Tutorial4A&T/" title="文本和音频数据预处理速通">https://hellojialee.github.io/2023/10/11/Tutorial4A&T/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习 - 机器学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/10/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/" rel="prev" title="博客站点重建说明">
+      <i class="fa fa-chevron-left"></i> 博客站点重建说明
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/12/Tutorial4DL&CV/" rel="next" title="深度学习、计算机视觉入门和技能经验">
+      深度学习、计算机视觉入门和技能经验 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Insert clustrmaps.com, the following single line is inserted by jialee-->
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=QL-1Sagpgczc7G2fmX1QXKQOnj-EMUBDxB3pA6RxWIY'></script>
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自然语言处理基础"><span class="nav-number">1.</span> <span class="nav-text">自然语言处理基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语辨析"><span class="nav-number">1.1.</span> <span class="nav-text">术语辨析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#text-embedding-word-embedding-sentence-embedding-linguistic-embedding概念辨析"><span class="nav-number">1.1.1.</span> <span class="nav-text">text
+embedding, word embedding, sentence embedding, linguistic
+embedding概念辨析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linguistic-verbal-textlanguagelexical单词辨析"><span class="nav-number">1.1.2.</span> <span class="nav-text">linguistic,
+verbal, text，language，lexical单词辨析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#word-embedding"><span class="nav-number">1.2.</span> <span class="nav-text">Word Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding概念和原理"><span class="nav-number">1.2.1.</span> <span class="nav-text">Word Embedding概念和原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nn.embedding与nn.linear的计算区别"><span class="nav-number">1.2.2.</span> <span class="nav-text">nn.Embedding与nn.Linear的计算区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding和token-embedding区别"><span class="nav-number">1.2.3.</span> <span class="nav-text">Word Embedding和Token
+Embedding区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tokenizer"><span class="nav-number">1.3.</span> <span class="nav-text">Tokenizer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tokenization定义"><span class="nav-number">1.3.1.</span> <span class="nav-text">Tokenization定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊文本标记"><span class="nav-number">1.3.2.</span> <span class="nav-text">特殊文本标记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要特殊文本标记"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">为什么需要特殊文本标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bert中的殊文本标记"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Bert中的殊文本标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#special-tokens的作用"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">special tokens的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于用cls做句子的表示"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">关于用[CLS]做句子的表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用哪个特殊标记做下游任务影响不大"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">用哪个特殊标记做下游任务影响不大</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#simpletokenizer"><span class="nav-number">1.3.3.</span> <span class="nav-text">SimpleTokenizer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构建bpe分词"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">构建BPE分词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个分词例子"><span class="nav-number">1.3.4.</span> <span class="nav-text">一个分词例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tokenizer-api-in-transformer"><span class="nav-number">1.3.5.</span> <span class="nav-text">Tokenizer API in Transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tokenizer-api-in-hugging-face"><span class="nav-number">1.3.6.</span> <span class="nav-text">Tokenizer API in Hugging
+Face</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#openai的tokenizer"><span class="nav-number">1.3.7.</span> <span class="nav-text">OpenAI的Tokenizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何构建支持中文的tokenizer"><span class="nav-number">1.3.8.</span> <span class="nav-text">如何构建支持中文的Tokenizer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#声音信号处理基础"><span class="nav-number">2.</span> <span class="nav-text">声音信号处理基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语辨析-1"><span class="nav-number">2.1.</span> <span class="nav-text">术语辨析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#acoustic-vocal-acoustics-audiospeech单词辨析"><span class="nav-number">2.1.1.</span> <span class="nav-text">acoustic, vocal,
+acoustics, audio，speech单词辨析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pitch和tone的区别"><span class="nav-number">2.1.2.</span> <span class="nav-text">pitch和tone的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音素"><span class="nav-number">2.1.3.</span> <span class="nav-text">音素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#韵律音色音质"><span class="nav-number">2.1.4.</span> <span class="nav-text">韵律、音色、音质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声学知识"><span class="nav-number">2.2.</span> <span class="nav-text">声学知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#音频帧"><span class="nav-number">2.2.1.</span> <span class="nav-text">音频帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分贝的计算"><span class="nav-number">2.2.2.</span> <span class="nav-text">分贝的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声音信号分析核心概念"><span class="nav-number">2.2.3.</span> <span class="nav-text">声音信号分析核心概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语音信号分析核心概念总结-补充完善版"><span class="nav-number">2.2.4.</span> <span class="nav-text">语音信号分析核心概念总结
+(补充完善版)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#声音信号的三个基本物理维度"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">1. 声音信号的三个基本物理维度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音高-pitch-vs.-基频-fundamental-frequency-f0"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">2. 音高 (Pitch)
+vs. 基频 (Fundamental Frequency, F0)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#频谱-spectrum-与音色-timbre"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">3. 频谱 (Spectrum) 与音色
+(Timbre)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共振峰-formants---音色的塑造者"><span class="nav-number">2.2.4.4.</span> <span class="nav-text">4. 共振峰 (Formants) -
+音色的塑造者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#幅度包络-amplitude-envelope---声音的动态轮廓"><span class="nav-number">2.2.4.5.</span> <span class="nav-text">5. 幅度包络
+(Amplitude Envelope) - 声音的动态轮廓</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声谱图-spectrogram-中的视觉特征解读"><span class="nav-number">2.2.4.6.</span> <span class="nav-text">6. 声谱图 (Spectrogram)
+中的视觉特征解读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声谱图中垂直和水平条纹的成因"><span class="nav-number">2.2.4.7.</span> <span class="nav-text">7.
+声谱图中垂直和水平条纹的成因</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平条纹的成因频率成分"><span class="nav-number">2.2.4.7.1.</span> <span class="nav-text">2). 水平条纹的成因：频率成分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在人类语音的声谱图中水平条纹通常是连续的而垂直条纹则经常是断裂的"><span class="nav-number">2.2.4.7.2.</span> <span class="nav-text">3).
+在人类语音的声谱图中，水平条纹通常是连续的，而垂直条纹则经常是断裂的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结与对比"><span class="nav-number">2.2.5.</span> <span class="nav-text">8. 总结与对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音频模态的主要特征"><span class="nav-number">2.2.6.</span> <span class="nav-text">音频模态的主要特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频域特性与动态特性的关系"><span class="nav-number">2.2.7.</span> <span class="nav-text">频域特性与动态特性的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数梅尔频谱图如何计算"><span class="nav-number">2.3.</span> <span class="nav-text">对数梅尔频谱图如何计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#处理步骤"><span class="nav-number">2.3.1.</span> <span class="nav-text">处理步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.3.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数具体解释"><span class="nav-number">2.3.3.</span> <span class="nav-text">参数具体解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.3.4.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.3.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jia Li"
+      src="/images/touxiang1.jpg">
+  <p class="site-author-name" itemprop="name">Jia Li</p>
+  <div class="site-description" itemprop="description">Be happy, be healthy!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hellojialee" title="GitHub → https://github.com/hellojialee" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com/citations?user=LVAnDxwAAAAJ" title="Scholar → https://scholar.google.com/citations?user=LVAnDxwAAAAJ" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hellojialee@gmail.com" title="E-Mail → mailto:hellojialee@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm" title="SchoolPage → http://faculty.hfut.edu.cn/lijia/zh_CN/index.htm" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>SchoolPage</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/xiaojiajia007" title="CSDN → https://blog.csdn.net/xiaojiajia007" rel="noopener" target="_blank"><i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/lijia.ustc" title="ZhiHu → https://www.zhihu.com/people/lijia.ustc" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jia Li</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">175k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:39</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

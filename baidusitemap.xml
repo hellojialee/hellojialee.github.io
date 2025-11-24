@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hellojialee.github.io/2023/10/10/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2025-11-24</lastmod>
+  </url>  <url>
+    <loc>https://hellojialee.github.io/2023/10/11/Tutorial4A&T/</loc>
+    <lastmod>2025-11-24</lastmod>
+  </url>  <url>
     <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
     <lastmod>2025-11-24</lastmod>
   </url>  <url>
@@ -18,9 +24,6 @@
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/02/12/Apex%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2024-03-25</lastmod>
-  </url>  <url>
-    <loc>https://hellojialee.github.io/2023/10/12/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2023-10-12</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/02/03/Pytorch%E4%B8%AD%E7%9A%84Batch-Normalization-layer%E8%B8%A9%E5%9D%91/</loc>
     <lastmod>2023-10-12</lastmod>

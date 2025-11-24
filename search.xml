@@ -322,7 +322,7 @@ linguistic embedding概念辨析 概念]]</p>
 <p><strong>输入</strong>：该变量一般取名src。例如可以用0表示句子开始的特殊文本标记(<code>&lt;bos&gt;</code>)，1表示句子结束(<code>&lt;eos&gt;</code>)，2为填充(<code>&lt;pad&gt;</code>)。填充的目的是为了让不同长度的句子变为同一个长度，这样才可以组成一个batch。
 <strong>输出</strong>：输出这一步推理出的内容，并将此结果作为下一步的输入之一。例如上一轮输出“<code>&lt;bos&gt;</code>我”，通过推理这一轮输出
 “<code>&lt;bos&gt;</code>我爱”。输出变量一般取名tgt（target）。
-<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241722426.png" style="zoom: 75%;" /></p>
+<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241722426.png" style="zoom: 90%;" /></p>
 <p>一个机器翻译的例子</p>
 <h4 id="bert中的殊文本标记">Bert中的殊文本标记</h4>
 <h4 id="special-tokens的作用">special tokens的作用</h4>
@@ -512,9 +512,9 @@ phonetics and <strong>acoustics</strong>.</p>
 区分<mark style="background: #D2B3FFA6;">词义</mark>的最小发音单位</p>
 <table>
 <colgroup>
-<col style="width: 43%" />
-<col style="width: 15%" />
-<col style="width: 40%" />
+<col style="width: 9%" />
+<col style="width: 25%" />
+<col style="width: 65%" />
 </colgroup>
 <thead>
 <tr>
@@ -534,13 +534,9 @@ phonetics and <strong>acoustics</strong>.</p>
 <td>辅音 + 元音</td>
 <td>音高只用于语调，不影响词义（cat 升调只是问句，不是新词）</td>
 </tr>
-<tr>
-<td>注意：英语中的语调（音高变化）不是音素，例如表中的例子cat升调，但<mark style="background: #FFB86CA6;">不会改变词义</mark>。</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p>注意：英语中的语调（音高变化）不是音素，例如表中的例子cat升调，但<mark style="background: #FFB86CA6;">不会改变词义</mark>。</p>
 <h3 id="韵律音色音质">韵律、音色、音质</h3>
 <p>韵律 (Prosody)、音色 (Timbre) 和 音质 (Voice
 Quality)被视为三个<strong>正交（orthogonal）</strong>

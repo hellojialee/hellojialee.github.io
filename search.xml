@@ -189,45 +189,62 @@ embedding, word embedding, sentence embedding, linguistic
 embedding概念辨析</h3>
 <p>-- <em>ChatGPT回答</em> -- 在描述BERT等语言模型时，应该使用"word
 embedding"（词嵌入）和"sentence
-embedding"（句子嵌入）这两个术语来准确地表达。这两个术语更符合描述BERT等模型输出的内容。
-1. <strong>Word Embedding（词嵌入）：</strong>
+embedding"（句子嵌入）这两个术语来准确地表达。这两个术语更符合描述BERT等模型输出的内容。</p>
+<ol type="1">
+<li><strong>Word Embedding（词嵌入）：</strong>
 BERT等模型的输出是每个单词的上下文相关的词嵌入。每个词都被嵌入到一个高维空间中，这个嵌入向量包含了单词的语义信息。这个过程被称为"word
-embedding"，因为它将单词映射到一个向量空间中。 2. <strong>Sentence
-Embedding（句子嵌入）：</strong>
+embedding"，因为它将单词映射到一个向量空间中。</li>
+<li><strong>Sentence Embedding（句子嵌入）：</strong>
 BERT等模型的输出也可以用于生成整个句子的嵌入向量，用于表示句子的语义信息。这个过程被称为"sentence
-embedding"，因为它将整个句子嵌入到一个向量空间中。 3. <strong>"Text
-embedding"（文本嵌入）</strong>
+embedding"，因为它将整个句子嵌入到一个向量空间中。</li>
+<li><strong>"Text embedding"（文本嵌入）</strong>
 是一个更广义的术语，可以包括词嵌入和句子嵌入，但在描述BERT等特定的语言模型时，使用"word
-embedding"和"sentence embedding"会更具体和准确。 4. <strong>"linguistic
-embedding"（语言嵌入）</strong>
-是一个相对较宽泛的术语，可能会包括不仅仅是词和句子，还可能包括更高级的语言单元，如短语、段落等。</p>
+embedding"和"sentence embedding"会更具体和准确。</li>
+<li><strong>"linguistic embedding"（语言嵌入）</strong>
+是一个相对较宽泛的术语，可能会包括不仅仅是词和句子，还可能包括更高级的语言单元，如短语、段落等。</li>
+</ol>
 <h3 id="linguistic-verbal-textlanguagelexical单词辨析">linguistic,
 verbal, text，language，lexical单词辨析</h3>
-<p>-- <em>ChatGPT回答</em> -- 1. <strong>Linguistic, adj:</strong> -
-<strong>一般使用场景：</strong>
-用于描述与语言学相关的特性，例如语法、语义等。 -
-<strong>多模态情感分析：</strong>
-在这个领域，主要用于分析文本中的语言学特征，如情感词汇、语法结构等。 2.
-<strong>Verbal, adj:</strong> - <strong>一般使用场景：</strong>
-强调与用言语表达的有关。 - <strong>多模态情感分析：</strong>
-主要用于描述通过口头言语传达的情感，注重言辞和措辞中的情感。 3.
-<strong>Text, n，形容词形式是 "textual":</strong> -
-<strong>一般使用场景：</strong> 指书面语言的形式。 -
-<strong>多模态情感分析：</strong>
-用于描述书面语言，强调在文本中表达的情感，适用于文本情感分析。 4.
-<strong>Language, n:</strong> - <strong>一般使用场景：</strong>
-指人类沟通的工具，包括口头和书面语言。 -
-<strong>多模态情感分析：</strong>
+<p>-- <em>ChatGPT回答</em> --</p>
+<ol type="1">
+<li><strong>Linguistic, adj:</strong>
+<ul>
+<li><strong>一般使用场景：</strong>
+用于描述与语言学相关的特性，例如语法、语义等。</li>
+<li><strong>多模态情感分析：</strong>
+在这个领域，主要用于分析文本中的语言学特征，如情感词汇、语法结构等。</li>
+</ul></li>
+<li><strong>Verbal, adj:</strong>
+<ul>
+<li><strong>一般使用场景：</strong> 强调与用言语表达的有关。</li>
+<li><strong>多模态情感分析：</strong>
+主要用于描述通过口头言语传达的情感，注重言辞和措辞中的情感。</li>
+</ul></li>
+<li><strong>Text, n，形容词形式是 "textual":</strong>
+<ul>
+<li><strong>一般使用场景：</strong> 指书面语言的形式。</li>
+<li><strong>多模态情感分析：</strong>
+用于描述书面语言，强调在文本中表达的情感，适用于文本情感分析。</li>
+</ul></li>
+<li><strong>Language, n:</strong>
+<ul>
+<li><strong>一般使用场景：</strong>
+指人类沟通的工具，包括口头和书面语言。</li>
+<li><strong>多模态情感分析：</strong>
 作为泛指语言的术语，在机器学习领域中，术语 "language"
 通常指的是文本句子，即书面或书写形式的语言。当涉及到包括说话声音时，更常使用术语
 "speech" 或 "audio"
-来表示口头语言的形式。语音识别和语音处理是涉及声音信号的子领域，而自然语言处理（NLP）通常专注于处理文本数据。
-5. <strong>Lexical (词汇的), adj：</strong> -
-用于描述与词汇（单词和词组）相关的事物。例如，"lexical analysis"
+来表示口头语言的形式。语音识别和语音处理是涉及声音信号的子领域，而自然语言处理（NLP）通常专注于处理文本数据。</li>
+</ul></li>
+<li><strong>Lexical (词汇的), adj：</strong></li>
+</ol>
+<ul>
+<li>用于描述与词汇（单词和词组）相关的事物。例如，"lexical analysis"
 涉及对文本中的词汇进行分析，而 "lexical choice"
 可能指选择适当的词汇来表达思想。"lexical"
 更侧重于词汇层面，涉及到单词和其特性，而 "textual"
-更关注整个文本，包括其结构、语法、主题等</p>
+更关注整个文本，包括其结构、语法、主题等</li>
+</ul>
 <h2 id="word-embedding">Word Embedding</h2>
 <p>基本结构其实就是一个嵌入矩阵，且没有bias项。</p>
 <h3 id="word-embedding概念和原理">Word Embedding概念和原理</h3>
@@ -567,8 +584,8 @@ Structure)</strong>：各次谐波的相对能量分布。 - 音质
 <p>•
 在音频信号处理中，<mark style="background: #FFB86CA6;">音频“帧”</mark>通常指的是在<strong>特定时间窗</strong>内的音频数据。每一帧包含一定时长的连续音频信号。
 •
-举个例子，如果音频信号被切分成25毫秒长的帧，每一帧就包含该时间段内的音频数据。这些音频数据会被用来进行特征提取（如计算频谱、梅尔频谱图等），从而反映出该时段的频率特征。因为语音信号在这一时间范围内可以近似为平稳信号。
-•
+举个例子，如果音频信号被切分成25毫秒长的帧，每一帧就包含该时间段内的音频数据。这些音频数据会被用来进行特征提取（如计算频谱、梅尔频谱图等），从而反映出该时段的频率特征。因为语音信号在这一时间范围内可以近似为平稳信号。</p>
+<p>•
 <strong>帧的大小</strong>通常是由时间窗的长度（如25ms、50ms等）决定的，而<strong>帧移</strong>（frame
 shift）决定了帧之间的重叠程度。例如，帧移为10ms时，相邻两帧有15ms的重叠部分，以避免切分导致的信息丢失，并确保相邻帧的平滑过渡。</p>
 <p><strong>那么为什么不用每个声音采样点直接作为最小单元</strong>？
@@ -767,39 +784,43 @@ f）时，垂直条纹就会中断，声谱图上呈现为一片不规则的能�
 </tbody>
 </table>
 <h3 id="音频模态的主要特征">音频模态的主要特征</h3>
-<p>GPT-4o 从声学角度，音频模态的主要特征可以概括为以下几类：
-1．时域特征：描述音频信号在时间维度上的属性。常见特征包括能量
-（Energy），过零率（Zero－Crossing Rate，ZCR），音长（Duration）。
-2．频域特征：描述音频信号在频率维度上的分布。常见特征包括频谱质心（Spectral
-Centroid），频谱带宽（Spectral Bandwidth），谱摘 （Spectral Entropy）。
-3．时频特征：描述信号<strong>在时间和频率上</strong>的<strong>联合变化</strong>。常见特征包括短时傅里叶变换（STFT），Mel频率倒谱系数（MFCC），线性预测倒谱系数（LPCC）。
-4．谱特征：描述频谱形状的具体属性，反映声道结构和发声机制。从本质上看，谱特征属于频域特征的一个子集。常见特征包括共振峰（Formants），谱包络（Spectral
-Envelope，对应也有时间包络），谐波与非谐波比（HNR）。<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241735496.png" alt="Pasted image 20250828184653" style="zoom:30%;" />
-5．韵律特征：描述语音的超音段特性，与情感，语调密切相关。常见特征包括基频（FO），音强（Intensity），音长（Duration），语速
-（Speech Rate），节奏性变化。
-6．音质特征：描述语音信号的清踝度，纯净度和信号质量。常见特征包括抖动（Jitter），颤动（Shimmer），信噪比（SNR）。
-7．动态特征：描述频谱特征或韵律特征的变化趋势和动态模式，常见的有一阶差分（Delta
-Features）， 二阶差分（Delta-Delta Features）
-8．音色特征：主要归属于<strong>谱特征</strong>，但它的表征也会涉及<strong>时频特征</strong>和<strong>韵律特征</strong>。研究音色时，应结合谱特征的静态描述（如频谱质心、谱包络）和动态变化（如MFCC及其差分特征）来全面表征音色属性。</p>
+<p>GPT-4o 从声学角度，音频模态的主要特征可以概括为以下几类：</p>
+<p>1．时域特征：描述音频信号在时间维度上的属性。常见特征包括能量
+（Energy），过零率（Zero－Crossing Rate，ZCR），音长（Duration）。</p>
+<p>2．频域特征：描述音频信号在频率维度上的分布。常见特征包括频谱质心（Spectral
+Centroid），频谱带宽（Spectral Bandwidth），谱摘 （Spectral
+Entropy）。</p>
+<p>3．时频特征：描述信号<strong>在时间和频率上</strong>的<strong>联合变化</strong>。常见特征包括短时傅里叶变换（STFT），Mel频率倒谱系数（MFCC），线性预测倒谱系数（LPCC）。</p>
+<p>4．谱特征：描述频谱形状的具体属性，反映声道结构和发声机制。从本质上看，谱特征属于频域特征的一个子集。常见特征包括共振峰（Formants），谱包络（Spectral
+Envelope，对应也有时间包络），谐波与非谐波比（HNR）。<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202511241735496.png" alt="Pasted image 20250828184653" style="zoom:30%;" /></p>
+<p>5．韵律特征：描述语音的超音段特性，与情感，语调密切相关。常见特征包括基频（FO），音强（Intensity），音长（Duration），语速
+（Speech Rate），节奏性变化。</p>
+<p>6．音质特征：描述语音信号的清踝度，纯净度和信号质量。常见特征包括抖动（Jitter），颤动（Shimmer），信噪比（SNR）。</p>
+<p>7．动态特征：描述频谱特征或韵律特征的变化趋势和动态模式，常见的有一阶差分（Delta
+Features）， 二阶差分（Delta-Delta Features）</p>
+<p>8．音色特征：主要归属于<strong>谱特征</strong>，但它的表征也会涉及<strong>时频特征</strong>和<strong>韵律特征</strong>。研究音色时，应结合谱特征的静态描述（如频谱质心、谱包络）和动态变化（如MFCC及其差分特征）来全面表征音色属性。</p>
 <h3 id="频域特性与动态特性的关系">频域特性与动态特性的关系</h3>
 <p>频域特性是可以反映动态变化的，但这种变化通常通过短时分析或时间差分来捕捉。相比之下，<strong>时频特性</strong>更进一步，将时间和频率的动态关系综合呈现，因此在描述动态变化时，时频特性可能更为直观和全面。
 频域特性本质上反映了信号在特定时间窗口内的频率分布情况
 静态频域特性：例如单一时刻的谱包络、谱质心，这些特性在短时间内是固定的。
 动态频域特性：通过分析这些特性随时间的连续变化（如轨迹、差分等），可以体现信号的动态属性。</p>
 <h2 id="对数梅尔频谱图如何计算">对数梅尔频谱图如何计算</h2>
-<p>--<em>GPT-4o回答</em> ### 简介</p>
+<p>--<em>GPT-4o回答</em></p>
+<h3 id="简介">简介</h3>
 <p><strong>对数梅尔频谱图</strong>（Log-Mel
 Spectrogram）是将音频信号表示为随时间变化的频率能量图的图像表示。其英文术语是
 <strong>Log-Mel
 Spectrogram</strong>。Log-Mel频谱图是声音信号处理中常用的特征表示方法，广泛应用于语音识别、音乐信息检索等领域。它是通过短时傅立叶变换（STFT）和
 Mel 频率滤波得到的，然后对其进行对数变换。
-例如，一个处理后的语音声谱图数据也可以表示为一个二维张量，但它的维度有不同的含义：
-- <strong>高度（频率轴）</strong>：代表 <strong>梅尔滤波器组（mel-filter
-banks）</strong> 的数量，通常为 40、64 或
-128。这决定了我们分析语音频率的精细程度。 -
-<strong>宽度（时间轴）</strong>：代表<strong>总帧数</strong>。这个数字取决于音频的总时长、帧长和帧移。例如，一个
+例如，一个处理后的语音声谱图数据也可以表示为一个二维张量，但它的维度有不同的含义：</p>
+<ol type="1">
+<li><strong>高度（频率轴）</strong>：代表
+<strong>梅尔滤波器组（mel-filter banks）</strong> 的数量，通常为 40、64
+或 128。这决定了我们分析语音频率的精细程度。</li>
+<li><strong>宽度（时间轴）</strong>：代表<strong>总帧数</strong>。这个数字取决于音频的总时长、帧长和帧移。例如，一个
 10 秒的音频，帧长 25 毫秒，帧移 10 毫秒，就会有大约 1000 帧，宽度就是
-1000。</p>
+1000。</li>
+</ol>
 <h3 id="处理步骤">处理步骤</h3>
 <ol type="1">
 <li><p><strong>加载音频文件</strong>：使用 <code>librosa</code>

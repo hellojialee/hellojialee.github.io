@@ -54,6 +54,9 @@
 <meta property="og:description" content="hexo简单入门配置和next主题使用">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309120950382.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124411.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124192.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309121038585.png">
 <meta property="article:published_time" content="2023-03-14T07:16:25.000Z">
 <meta property="article:modified_time" content="2024-06-21T07:07:48.545Z">
@@ -285,133 +288,71 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="hexo简单使用"><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>简单使用</h1>
-<p>This is your very first post. Check <a
-href="https://hexo.io/docs/">documentation</a> for more info. If you get
-any problems when using Hexo, you can find the answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <h1 id="Hexo简单使用"><a href="#Hexo简单使用" class="headerlink" title="Hexo简单使用"></a><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>简单使用</h1><p>This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>. </p>
 <p>注意⚠️：需要在博客项目文件夹路径下执行hexo命令！命令行export代理后，部署到github更快</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># or hexo s</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># or hexo s</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"><span class="comment"># or hexo g</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># or hexo d</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a>，
-https://zhuanlan.zhihu.com/p/71544809</p>
-<p>逻辑：新建hexo分支，保存hexo博客源码到github的hexo
-分支，然后默认待渲染的HTML项目放到master分支</p>
-<h3 id="generate-and-deploy-in-one-command">Generate and deploy in one
-command</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-<h2 id="attention">Attention!</h2>
-<p>注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题（例如<a
-href="https://evestorm.github.io/posts/430/">ERR_INVALID_ARG_TYPE</a>）。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo
-4.2.1应该使用Node
-12.18.3，这样可以快速修复或者继续使用之前的hexo项目。</p>
-<p>降低版本方法参考：https://blog.csdn.net/weixin_46316234/article/details/121475363</p>
-<ol type="1">
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"><span class="comment"># or hexo g</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># or hexo d</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a>， <a href="https://zhuanlan.zhihu.com/p/71544809" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/71544809</a></p>
+<p>逻辑：新建hexo分支，保存hexo博客源码到github的hexo 分支，然后默认待渲染的HTML项目放到master分支</p>
+<h3 id="Generate-and-deploy-in-one-command"><a href="#Generate-and-deploy-in-one-command" class="headerlink" title="Generate and deploy in one command"></a>Generate and deploy in one command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<h2 id="Attention"><a href="#Attention" class="headerlink" title="Attention!"></a>Attention!</h2><p>注意hexo和node版本号必须要匹配，否则会出现编译公式显示问题，以及无法部署到github上等问题（例如<a href="https://evestorm.github.io/posts/430/" target="_blank" rel="noopener">ERR_INVALID_ARG_TYPE</a>）。升级hexo配置有点麻烦，可以暂时降级node到合适的版本号，例如Hexo 4.2.1应该使用Node 12.18.3，这样可以快速修复或者继续使用之前的hexo项目。</p>
+<p>降低版本方法参考：<a href="https://blog.csdn.net/weixin_46316234/article/details/121475363" target="_blank" rel="noopener">https://blog.csdn.net/weixin_46316234/article/details/121475363</a></p>
+<ol>
 <li><p>安装node版本管理模块 n</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br></pre></td></tr></table></figure></li>
-<li><p>可以根据自己的需要选择安装版本[可选] 2.1 安装稳定版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以根据自己的需要选择安装版本[可选]<br>2.1 安装稳定版</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure>
 <p>2.2 安装最新版</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n latest</span><br></pre></td></tr></table></figure>
 <p>2.3 版本降级/升级</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n 版本号   &#x2F;&#x2F; 8.16.0   &#x2F;   12.8.3</span><br></pre></td></tr></table></figure>
-<p>在主题文件夹--&gt;package.json--&gt;搜索“version"，得知当前我使用的Next主题版本号为"version":
-"7.7.0"</p>
-<p>Hexo版本和官方最新落后情况可以使用命令 <code>npm outdate</code>
-查询：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309120950382.png" alt="image-20230912上午94927638" style="zoom: 67%;" /></p></li>
+<p>在主题文件夹—&gt;package.json—&gt;搜索“version”，得知当前我使用的Next主题版本号为”version”: “7.7.0”</p>
+<p>Hexo版本和官方最新落后情况可以使用命令 <code>npm outdate</code> 查询：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309120950382.png" alt="image-20230912上午94927638" style="zoom: 67%;" /></p>
+</li>
 </ol>
-<hr />
-<p>以下搬运自我的CSDN博客 <a
-href="https://blog.csdn.net/xiaojiajia007/article/details/104105250">hexo实用技巧随记</a></p>
-<h1 id="关于hexo">关于hexo</h1>
-<h2 id="默认起始页定制">默认起始页定制</h2>
-<p>hexo默认起始页是发表的博客罗列，我懒得整了。想要自定义起始页可以参考这个博文：https://qingchen1995.gitee.io/2021/10/20/2110-Change-Blog-Index/</p>
-<h2 id="安装hexo及主题">安装hexo及主题</h2>
-<p>安装hexo，可以参考：<a
-href="https://ryanluoxu.github.io/2017/11/24/%E7%94%A8-Hexo-%E5%92%8C-GitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">用
-Hexo 和 GitHub Pages 搭建博客</a></p>
+<hr>
+<p>以下搬运自我的CSDN博客 <a href="https://blog.csdn.net/xiaojiajia007/article/details/104105250" target="_blank" rel="noopener">hexo实用技巧随记</a></p>
+<h1 id="关于hexo"><a href="#关于hexo" class="headerlink" title="关于hexo"></a>关于hexo</h1><h2 id="默认起始页定制"><a href="#默认起始页定制" class="headerlink" title="默认起始页定制"></a>默认起始页定制</h2><p>hexo默认起始页是发表的博客罗列，我懒得整了。想要自定义起始页可以参考这个博文：<a href="https://qingchen1995.gitee.io/2021/10/20/2110-Change-Blog-Index/" target="_blank" rel="noopener">https://qingchen1995.gitee.io/2021/10/20/2110-Change-Blog-Index/</a></p>
+<h2 id="安装hexo及主题"><a href="#安装hexo及主题" class="headerlink" title="安装hexo及主题"></a>安装hexo及主题</h2><p>安装hexo，可以参考：<a href="https://ryanluoxu.github.io/2017/11/24/%E7%94%A8-Hexo-%E5%92%8C-GitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">用 Hexo 和 GitHub Pages 搭建博客</a></p>
 <p>解决latex公式渲染的问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-<p>然后到配置的主题next下的配置文件
-/Users/lijia/科研&amp;学习/github博客/themes/next/_config.yml，更改配置如下：</p>
+<p>然后到配置的主题next下的配置文件 /Users/lijia/科研&amp;学习/github博客/themes/next/_config.yml，更改配置如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  # Default (true) will load mathjax &#x2F; katex script on demand.</span><br><span class="line">  # That is it only render those page which has &#96;mathjax: true&#96; in Front-matter.</span><br><span class="line">  # If you set it to false, it will load mathjax &#x2F; katex srcipt EVERY PAGE.</span><br><span class="line">  per_page: false</span><br><span class="line"></span><br><span class="line">  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br><span class="line">    # See: https:&#x2F;&#x2F;mhchem.github.io&#x2F;MathJax-mhchem&#x2F;</span><br><span class="line">    mhchem: false</span><br></pre></td></tr></table></figure>
-<h2 id="行内数学公式显示异常">行内数学公式显示异常</h2>
-<p>未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况<img
-src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png"
-alt="在这里插入图片描述" /></p>
+<h2 id="行内数学公式显示异常"><a href="#行内数学公式显示异常" class="headerlink" title="行内数学公式显示异常"></a>行内数学公式显示异常</h2><p>未知问题：有时在typora中显示正常的行内数学公式，在hexo中就显示异常了，比如下面一个情况<img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124330.png" alt="在这里插入图片描述"></p>
 <p><strong>暂时的解决办法</strong>：</p>
 <ul>
-<li><p>通过尝试发现，对于有些显示不正常的行内公式<span
-class="math inline">\(X=\left(x_{1}, x_{2}, \ldots,
-x_{n}\right)\)</span>我们只需要在前面或者后面一个$符号插入一个空格,
-或者在前后都插入一个空格，公式渲染显示就正常了。</p></li>
-<li><p><del>而且有时例如需要( x_{1} 在(后插入一个空格。</del></p></li>
-<li><p>有可能是node版本和hexo不兼容出现的编译问题</p></li>
-<li><p>不知道原因的情况：查看本地部署时，虽然Safari浏览器里无法正常渲染，但是Chrome里正常，推送到github网页端也正常</p></li>
+<li><p>通过尝试发现，对于有些显示不正常的行内公式$X=\left(x_{1}, x_{2}, \ldots, x_{n}\right)$我们只需要在前面或者后面一个$符号插入一个空格, 或者在前后都插入一个空格，公式渲染显示就正常了。 </p>
+</li>
+<li><p><del>而且有时例如需要\left( x_{1} 在\left(后插入一个空格。</del> </p>
+</li>
+<li><p>有可能是node版本和hexo不兼容出现的编译问题</p>
+</li>
+<li><p>不知道原因的情况：查看本地部署时，虽然Safari浏览器里无法正常渲染，但是Chrome里正常，推送到github网页端也正常</p>
+</li>
 </ul>
-<h2 id="更改markdown信息头模板">更改markdown信息头模板</h2>
-<p>默认的信息头不全，我们把markdown模板
-/Users/lijia/科研&amp;学习/github博客/scaffolds/post.md
-里面最开始的信息更改如下：</p>
+<h2 id="更改markdown信息头模板"><a href="#更改markdown信息头模板" class="headerlink" title="更改markdown信息头模板"></a>更改markdown信息头模板</h2><p>默认的信息头不全，我们把markdown模板 /Users/lijia/科研&amp;学习/github博客/scaffolds/post.md 里面最开始的信息更改如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">description: 点击阅读前文前, 首页能看到的文章的简短描述 </span><br><span class="line">categories:</span><br></pre></td></tr></table></figure>
-<h2 id="添加搜索功能">添加搜索功能</h2>
-<p>首先在blog文件夹目录下安装依赖
-<code>npm install hexo-generator-searchdb --save</code></p>
+<h2 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h2><p>首先在blog文件夹目录下安装依赖<br><code>npm install hexo-generator-searchdb --save</code></p>
 <p>然后在站点配置文件中_config.yml中增加如下内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
-<p>最后在主题配置文件（_config.yml），修改local_search的值如下</p>
+<p>最后在主题配置文件（\themes\next_config.yml），修改local_search的值如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;flashlab&#x2F;hexo-generator-search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="关于next主题">关于next主题</h1>
-<p>首先进入本地blog目录，使用git clone，把主题项目克隆下来,
-<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>
-然后在站点配置文件中更改theme选项为 next.</p>
-<h2 id="更改主题细节设置">更改主题细节设置</h2>
-<h3 id="页面配置">页面配置</h3>
-<p>设置开始页面显示，设置头像，设置社交媒体链接等等，
-可以参考这个博客：<a
-href="http://www.zhangblog.com/2019/06/16/hexo04/">Linux下使用
-github+hexo 搭建个人博客04-next主题优化</a> 或者参考这个文章：<a
-href="https://zhuanlan.zhihu.com/p/25959864">Hexo+Next配置Blog</a></p>
-<h3 id="更改默认字体大小">更改默认字体大小</h3>
-<p>主题默认的字体太大了，一个页面放不下很多内容，根据我们创建的路径，在/Users/lijia/科研&amp;学习/github博客/themes/next/source/css/_variables/base.styl
-中找到font size，把font-size-base默认值更改即可</p>
+<hr>
+<h1 id="关于next主题"><a href="#关于next主题" class="headerlink" title="关于next主题"></a>关于next主题</h1><p>首先进入本地blog目录，使用git clone，把主题项目克隆下来,<br><code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code><br>然后在站点配置文件中更改theme选项为 next.</p>
+<h2 id="更改主题细节设置"><a href="#更改主题细节设置" class="headerlink" title="更改主题细节设置"></a>更改主题细节设置</h2><h3 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h3><p>设置开始页面显示，设置头像，设置社交媒体链接等等，<br>可以参考这个博客：<a href="http://www.zhangblog.com/2019/06/16/hexo04/" target="_blank" rel="noopener">Linux下使用 github+hexo 搭建个人博客04-next主题优化</a><br>或者参考这个文章：<a href="https://zhuanlan.zhihu.com/p/25959864" target="_blank" rel="noopener">Hexo+Next配置Blog</a></p>
+<h3 id="更改默认字体大小"><a href="#更改默认字体大小" class="headerlink" title="更改默认字体大小"></a>更改默认字体大小</h3><p>主题默认的字体太大了，一个页面放不下很多内容，根据我们创建的路径，在/Users/lijia/科研&amp;学习/github博客/themes/next/source/css/_variables/base.styl 中找到font size，把font-size-base默认值更改即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Font size</span><br><span class="line">$font-size-base           &#x3D; (hexo-config(&#39;font.enable&#39;) and hexo-config(&#39;font.global.size&#39;) is a &#39;unit&#39;) ? unit(hexo-config(&#39;font.global.size&#39;), em) : 14px;</span><br></pre></td></tr></table></figure>
-<h3 id="网址缩略图">网址缩略图</h3>
-<p><img
-src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124411.png"
-alt="在这里插入图片描述" />
-如果我们想要更改网址栏左侧的缩略图标，我们先制作好图标，放入对应的
-<code>/Users/lijia/科研&amp;学习/github博客/themes/next/source/images</code>
-文件夹下，然后更改主题（我们用的是next)下的配置文件如下：</p>
+<h3 id="网址缩略图"><a href="#网址缩略图" class="headerlink" title="网址缩略图"></a>网址缩略图</h3><p><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124411.png" alt="在这里插入图片描述"><br>如果我们想要更改网址栏左侧的缩略图标，我们先制作好图标，放入对应的 <code>/Users/lijia/科研&amp;学习/github博客/themes/next/source/images</code> 文件夹下，然后更改主题（我们用的是next)下的配置文件如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;flower-16x16.png</span><br><span class="line">  medium: &#x2F;images&#x2F;flower.ico # 建议使用ico图标而不是png图片，以防兼容性问题</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;flower.png # apple-touch-icon-next.png</span><br><span class="line">  #safari_pinned_tab: &#x2F;images&#x2F;flower.svg #logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
-<h3
-id="接入评论系统以及文章阅读次数显示">接入评论系统以及文章阅读次数显示</h3>
-<p>参考： http://www.zhangblog.com/2019/06/16/hexo05/
-http://www.zhangblog.com/2019/06/16/hexo06/ 使用 <a
-href="https://leancloud.cn/dashboard/applist.html#/apps">LeanCloud</a>，可以同时实现评论留言系统以及文章阅读次数统计。
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Valine</span><br><span class="line"># For more information: https:&#x2F;&#x2F;valine.js.org, https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine</span><br><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: hcHrBNtFBdqhBMIhjL67LT0t-gzGzoHsz # Your leancloud application appid</span><br><span class="line">  appkey: Pe1HEgFp3AUcNCQ7dpQ3HRE4 # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: 欢迎讨论留言！ # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: # Language, available values: en, zh-cn</span><br><span class="line">  visitor: true # Article reading statistic # 这里控制显示文章阅读次数</span><br></pre></td></tr></table></figure> 设置完成后文章的开头就会显示如下： <img
-src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124192.png"
-alt="在这里插入图片描述" /> 增加了 Views 和
-Valine，而博客文章下面就有了留言板。</p>
-<h3 id="side-bar添加访问者ip地区地图">Side bar添加访问者ip地区地图</h3>
-<p>使用clustrmaps，选择插件风格，拷贝网站出现的脚本 javascript代码</p>
+<h3 id="接入评论系统以及文章阅读次数显示"><a href="#接入评论系统以及文章阅读次数显示" class="headerlink" title="接入评论系统以及文章阅读次数显示"></a>接入评论系统以及文章阅读次数显示</h3><p>参考：<br><a href="http://www.zhangblog.com/2019/06/16/hexo05/" target="_blank" rel="noopener">http://www.zhangblog.com/2019/06/16/hexo05/</a><br><a href="http://www.zhangblog.com/2019/06/16/hexo06/" target="_blank" rel="noopener">http://www.zhangblog.com/2019/06/16/hexo06/</a><br>使用  <a href="https://leancloud.cn/dashboard/applist.html#/apps" target="_blank" rel="noopener">LeanCloud</a>，可以同时实现评论留言系统以及文章阅读次数统计。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Valine</span><br><span class="line"># For more information: https:&#x2F;&#x2F;valine.js.org, https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine</span><br><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: hcHrBNtFBdqhBMIhjL67LT0t-gzGzoHsz # Your leancloud application appid</span><br><span class="line">  appkey: Pe1HEgFp3AUcNCQ7dpQ3HRE4 # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: 欢迎讨论留言！ # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: # Language, available values: en, zh-cn</span><br><span class="line">  visitor: true # Article reading statistic # 这里控制显示文章阅读次数</span><br></pre></td></tr></table></figure><br>设置完成后文章的开头就会显示如下：<br><img src="https://cdn.jsdelivr.net/gh/hellojialee/PictureBed@master/img2bolg/202309111124192.png" alt="在这里插入图片描述"><br>增加了 Views 和 Valine，而博客文章下面就有了留言板。</p>
+<h3 id="Side-bar添加访问者ip地区地图"><a href="#Side-bar添加访问者ip地区地图" class="headerlink" title="Side bar添加访问者ip地区地图"></a>Side bar添加访问者ip地区地图</h3><p>使用clustrmaps，选择插件风格，拷贝网站出现的脚本 javascript代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">'text/javascript'</span> id=<span class="string">'clustrmaps'</span> src=<span class="string">'//cdn.clustrmaps.com/map_v2.js?cl=fff&amp;w=a&amp;t=n&amp;d=QL- 巴拉巴拉省略号 -xB3pA6RxWIY'</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>粘贴到Next主题下某个位置，参考链接中给出了两个可插入上述代码的配置文件，这里我们选择了其中一个位置的配置文件<code>/***jlee.github.io/themes/next/layout/_macro/sidebar.swig</code>粘贴代码，插入如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;aside class&#x3D;&quot;sidebar&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;sidebar-inner&quot;&gt;</span><br><span class="line"></span><br><span class="line">      &#123;%- set display_toc &#x3D; page.toc.enable and display_toc %&#125;</span><br><span class="line">      &#123;%- if display_toc %&#125;</span><br><span class="line">        &#123;%- set toc &#x3D; toc(page.content, &#123; &quot;class&quot;: &quot;nav&quot;, list_number: page.toc.number, max_depth: page.toc.max_depth &#125;) %&#125;</span><br><span class="line">        &#123;%- set display_toc &#x3D; toc.length &gt; 1 and display_toc %&#125;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">      &lt;!-- Insert clustrmaps.com, the following single line is inserted by jialee--&gt;</span><br><span class="line">      &lt;script type&#x3D;&#39;text&#x2F;javascript&#39; id&#x3D;&#39;clustrmaps&#39; src&#x3D;&#39;&#x2F;&#x2F;cdn.clustrmaps.com&#x2F;map_v2.js?cl&#x3D;fff&amp;w&#x3D;a&amp;t&#x3D;n&amp;d&#x3D;QL- 巴拉巴拉省略号 -xB3pA6RxWIY&#39;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
@@ -540,8 +481,7 @@ Valine，而博客文章下面就有了留言板。</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo简单使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#quick-start"><span class="nav-number">1.1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">1.1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-static-files"><span class="nav-number">1.1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploy-to-remote-sites"><span class="nav-number">1.1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-and-deploy-in-one-command"><span class="nav-number">1.1.5.</span> <span class="nav-text">Generate and deploy in one
-command</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attention"><span class="nav-number">1.2.</span> <span class="nav-text">Attention!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于hexo"><span class="nav-number">2.</span> <span class="nav-text">关于hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认起始页定制"><span class="nav-number">2.1.</span> <span class="nav-text">默认起始页定制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo及主题"><span class="nav-number">2.2.</span> <span class="nav-text">安装hexo及主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行内数学公式显示异常"><span class="nav-number">2.3.</span> <span class="nav-text">行内数学公式显示异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改markdown信息头模板"><span class="nav-number">2.4.</span> <span class="nav-text">更改markdown信息头模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">2.5.</span> <span class="nav-text">添加搜索功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于next主题"><span class="nav-number">3.</span> <span class="nav-text">关于next主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改主题细节设置"><span class="nav-number">3.1.</span> <span class="nav-text">更改主题细节设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面配置"><span class="nav-number">3.1.1.</span> <span class="nav-text">页面配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改默认字体大小"><span class="nav-number">3.1.2.</span> <span class="nav-text">更改默认字体大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网址缩略图"><span class="nav-number">3.1.3.</span> <span class="nav-text">网址缩略图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接入评论系统以及文章阅读次数显示"><span class="nav-number">3.1.4.</span> <span class="nav-text">接入评论系统以及文章阅读次数显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#side-bar添加访问者ip地区地图"><span class="nav-number">3.1.5.</span> <span class="nav-text">Side bar添加访问者ip地区地图</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简单使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-and-deploy-in-one-command"><span class="nav-number">1.1.5.</span> <span class="nav-text">Generate and deploy in one command</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attention"><span class="nav-number">1.2.</span> <span class="nav-text">Attention!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于hexo"><span class="nav-number">2.</span> <span class="nav-text">关于hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认起始页定制"><span class="nav-number">2.1.</span> <span class="nav-text">默认起始页定制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo及主题"><span class="nav-number">2.2.</span> <span class="nav-text">安装hexo及主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行内数学公式显示异常"><span class="nav-number">2.3.</span> <span class="nav-text">行内数学公式显示异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改markdown信息头模板"><span class="nav-number">2.4.</span> <span class="nav-text">更改markdown信息头模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">2.5.</span> <span class="nav-text">添加搜索功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于next主题"><span class="nav-number">3.</span> <span class="nav-text">关于next主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改主题细节设置"><span class="nav-number">3.1.</span> <span class="nav-text">更改主题细节设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面配置"><span class="nav-number">3.1.1.</span> <span class="nav-text">页面配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改默认字体大小"><span class="nav-number">3.1.2.</span> <span class="nav-text">更改默认字体大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网址缩略图"><span class="nav-number">3.1.3.</span> <span class="nav-text">网址缩略图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接入评论系统以及文章阅读次数显示"><span class="nav-number">3.1.4.</span> <span class="nav-text">接入评论系统以及文章阅读次数显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Side-bar添加访问者ip地区地图"><span class="nav-number">3.1.5.</span> <span class="nav-text">Side bar添加访问者ip地区地图</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -624,7 +564,7 @@ command</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">176k</span>
+    <span title="Symbols count total">175k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

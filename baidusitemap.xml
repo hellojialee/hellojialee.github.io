@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>  <url>
     <loc>https://hellojialee.github.io/2023/10/11/Tutorial4A&T/</loc>
     <lastmod>2025-11-25</lastmod>
   </url>  <url>
@@ -8,9 +11,6 @@
     <lastmod>2025-11-24</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2023/10/10/%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E8%AF%B4%E6%98%8E/</loc>
-    <lastmod>2025-11-24</lastmod>
-  </url>  <url>
-    <loc>https://hellojialee.github.io/2023/10/12/Tutorial4DL&CV/</loc>
     <lastmod>2025-11-24</lastmod>
   </url>  <url>
     <loc>https://hellojialee.github.io/2020/05/28/Pytorch%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
